@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLLQLNS;
+using DTOQLNS;
+
 
 namespace kthp
 {
@@ -14,43 +17,43 @@ namespace kthp
     {
         private string maSach;
         private string tenSach;
-        private int soLuong;
         private int giaTien;
+        private int soLuong;
 
-        public frmSanPhamCapNhat(string maSach, string tenSach, int soLuong, int giaTien)
+        BLLSanPham bLLSanPham = new BLLSanPham();
+        DTOSanPham dTOSanPham = null;
+        
+        public frmSanPhamCapNhat(string maSach, string tenSach, int giaTien, int soLuong)
         {
             InitializeComponent();
             this.maSach = maSach;
             this.tenSach = tenSach;
-            this.soLuong = soLuong;
             this.giaTien = giaTien;
+            this.soLuong = soLuong;
         }
 
         private void frmSanPhamCapNhat_Load(object sender, EventArgs e)
         {
             txtMaSach.Text = maSach;
             txtTenSach.Text = tenSach;
-            txtSoLuong.Text = soLuong.ToString();
             txtGiaTien.Text = giaTien.ToString();
+            txtSoLuong.Text = soLuong.ToString();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (txtTenSach.Text != null && txtSoLuong.Text != null && txtGiaTien.Text != null)
             {
-                dcKTHPDataContext data = new dcKTHPDataContext();
-                SanPham sp = (from sanpham in data.SanPhams
-                              where sanpham.MaSach == txtMaSach.Text.Trim()
-                              select sanpham).Single<SanPham>();
+                dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuong.Text), int.Parse(txtGiaTien.Text));
 
-                sp.MaSach = txtMaSach.Text;
-                sp.TenSach = txtTenSach.Text;
-                sp.SoLuongTon = int.Parse(txtSoLuong.Text);
-                sp.GiaTien = int.Parse(txtGiaTien.Text);
-
-                data.SubmitChanges();
-
-                MessageBox.Show("Hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (bLLSanPham.UpdateSanPham(dTOSanPham))
+                {
+                    MessageBox.Show("Hợp lệ! Thực hiện thành công cập nhật thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không hợp lệ! Thực hiện không thành công cập nhật thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

@@ -36,5 +36,9 @@ namespace BLLQLNS
             DataTable dt = dALSanPham.PhanLoaiSanPham(sp);
             return dt;
         }
+        public bool UpdateSanPham(DTOSanPham sp)
+        {
+            return dALSanPham.UpdateSanPham(sp);
+        }
     }
 }

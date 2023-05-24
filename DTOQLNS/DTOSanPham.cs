@@ -11,7 +11,7 @@ namespace DTOQLNS
         private string _MaSach;
         private string _TenSach;
         private int _SoLuongTon;
-        private string _GiaTien;
+        private int _GiaTien;
         private string _LoaiSach;
         private string _NoiDungChinh;
 
@@ -30,26 +30,25 @@ namespace DTOQLNS
             get { return _SoLuongTon; }
             set { _SoLuongTon = value; }
         }
-        public string GiaTien
-        {
-            get { return _GiaTien; }
-            set { _GiaTien = value; }
-        }
-        public string LoaiSach
-        {
-            get { return _LoaiSach; }
-            set { _LoaiSach = value; }
-        }
-        public string NoiDungChinh
-        {
-            get { return _NoiDungChinh; }
-            set { _NoiDungChinh = value; }
-        }
 
+        public int GiaTien { get => _GiaTien; set => _GiaTien = value; }
+        public string LoaiSach { get => _LoaiSach; set => _LoaiSach = value; }
+        public string NoiDungChinh { get => _NoiDungChinh; set => _NoiDungChinh = value; }
+        
         public DTOSanPham()
         {
+
         }
-        public DTOSanPham(string maSach, string tenSach, int soLuongTon, string giaTien, string loaiSach, string noiDungChinh)
+
+        public DTOSanPham(string maSach, string tenSach, int soLuongTon, int giaTien)
+        {
+            _MaSach = maSach;
+            _TenSach = tenSach;
+            _SoLuongTon = soLuongTon;
+            _GiaTien = giaTien;
+        }
+
+        public DTOSanPham(string maSach, string tenSach, int soLuongTon, int giaTien, string loaiSach, string noiDungChinh)
         {
             _MaSach = maSach;
             _TenSach = tenSach;

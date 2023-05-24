@@ -79,7 +79,6 @@
             this.txtTenSach.Location = new System.Drawing.Point(226, 138);
             this.txtTenSach.Multiline = true;
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.ReadOnly = true;
             this.txtTenSach.Size = new System.Drawing.Size(484, 60);
             this.txtTenSach.TabIndex = 2;
             // 
@@ -89,7 +88,6 @@
             this.txtSoLuong.Location = new System.Drawing.Point(226, 232);
             this.txtSoLuong.Multiline = true;
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(236, 63);
             this.txtSoLuong.TabIndex = 6;
             // 
@@ -99,7 +97,6 @@
             this.txtGiaTien.Location = new System.Drawing.Point(226, 343);
             this.txtGiaTien.Multiline = true;
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.ReadOnly = true;
             this.txtGiaTien.Size = new System.Drawing.Size(484, 60);
             this.txtGiaTien.TabIndex = 7;
             // 
@@ -161,6 +158,7 @@
             this.Controls.Add(this.txtTenSach);
             this.Controls.Add(this.panel1);
             this.Name = "frmSanPhamCapNhat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sanPhamCapNhat";
             this.Load += new System.EventHandler(this.frmSanPhamCapNhat_Load);
             this.panel1.ResumeLayout(false);

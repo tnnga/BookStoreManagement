@@ -65,19 +65,19 @@ namespace kthp
         {
             if (cbTimKiem.SelectedIndex == 0)
             {
-                sp = new DTOSanPham( "", txtTimKiem.Text, 0, "", "", "");
+                sp = new DTOSanPham( "", txtTimKiem.Text, 0, 0, "", "");
                 dgwSanPham.DataSource = bLLSanPham.FindTenSanPham(sp);
                 ConfigureSP();
             }
             if (cbTimKiem.SelectedIndex == 1)
             {
-                sp = new DTOSanPham(txtTimKiem.Text, "", 0, "", "", "");
+                sp = new DTOSanPham(txtTimKiem.Text, "", 0, 0, "", "");
                 dgwSanPham.DataSource = bLLSanPham.FindMaSanPham(sp);
                 ConfigureSP();
             }
             if (cbLoaiSach.SelectedIndex != -1 && txtTimKiem.Text == "" )
             {
-                sp = new DTOSanPham("", "", 0, "", cbLoaiSach.Text, "");
+                sp = new DTOSanPham("", "", 0, 0, cbLoaiSach.Text, "");
                 dgwSanPham.DataSource = bLLSanPham.PhanLoaiSanPham(sp);
                 ConfigureSP();
             }
@@ -91,55 +91,43 @@ namespace kthp
             }
         }
 
-        private void dgwSanPham_MouseClick(object sender, MouseEventArgs e)
+        private void ChiTietThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right) 
+            int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
+
+            maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+            tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
+            soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+
+            frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, giaTien, soLuong);
+            frmSanPhamChiTiet.ShowDialog();
+        }
+
+        private void CapNhatThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
+
+            maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+            tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
+            soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+
+            frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, giaTien, soLuong);
+            frmSanPhamCapNhat.ShowDialog();
+
+            dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
+            ConfigureSP();
+        }
+
+        private void XoaThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin của sản phẩm không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (res == DialogResult.Yes)
             {
-                ContextMenu contextMenu = new ContextMenu();
-                contextMenu.MenuItems.Add(new MenuItem("Chi tiết thông tin sách"));
-                contextMenu.MenuItems.Add(new MenuItem("Cập nhật thông tin sách"));
-                contextMenu.MenuItems.Add(new MenuItem("Xoá thông tin sách"));
 
-                int currentMouseSelectedRow = dgwSanPham.HitTest(e.X, e.Y).RowIndex;
-
-                contextMenu.Show(dgwSanPham, new Point(e.X, e.Y));
-
-                if (currentMouseSelectedRow  == 0)
-                {
-                    int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
-
-                    maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
-                    tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
-                    soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
-                    giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
-
-                    frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, soLuong, giaTien);
-                    frmSanPhamChiTiet.ShowDialog();
-                }
-                
-                if (currentMouseSelectedRow == 1)
-                {
-                    int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
-
-                    maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
-                    tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
-                    soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
-                    giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
-
-                    frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, soLuong, giaTien);
-                    frmSanPhamCapNhat.ShowDialog();
-                }
-                
-                if (currentMouseSelectedRow == 2)
-                {
-                    var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin của sản phẩm không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if (res == DialogResult.Yes)
-                    {
-
-                        dgwSanPham.Refresh();
-                    }
-                }
+                dgwSanPham.Refresh();
             }
         }
     }

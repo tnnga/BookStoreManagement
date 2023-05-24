@@ -43,15 +43,17 @@
             this.lblTenSach.Name = "lblTenSach";
             this.lblTenSach.Size = new System.Drawing.Size(512, 53);
             this.lblTenSach.TabIndex = 0;
+            this.lblTenSach.Text = "Tên sách";
             // 
             // lblGiaSach
             // 
             this.lblGiaSach.BackColor = System.Drawing.Color.MintCream;
             this.lblGiaSach.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiaSach.Location = new System.Drawing.Point(595, 34);
+            this.lblGiaSach.Location = new System.Drawing.Point(22, 258);
             this.lblGiaSach.Name = "lblGiaSach";
-            this.lblGiaSach.Size = new System.Drawing.Size(92, 53);
+            this.lblGiaSach.Size = new System.Drawing.Size(243, 53);
             this.lblGiaSach.TabIndex = 0;
+            this.lblGiaSach.Text = "Giá tiền";
             // 
             // lblLoaiSach
             // 
@@ -67,9 +69,9 @@
             // 
             this.lblSoLuongTon.BackColor = System.Drawing.Color.MintCream;
             this.lblSoLuongTon.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLuongTon.Location = new System.Drawing.Point(22, 243);
+            this.lblSoLuongTon.Location = new System.Drawing.Point(558, 34);
             this.lblSoLuongTon.Name = "lblSoLuongTon";
-            this.lblSoLuongTon.Size = new System.Drawing.Size(243, 68);
+            this.lblSoLuongTon.Size = new System.Drawing.Size(129, 53);
             this.lblSoLuongTon.TabIndex = 1;
             this.lblSoLuongTon.Text = "Số lượng";
             // 
