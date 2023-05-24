@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgwNhapHang = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chiTiếtNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaThôngTinNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbTimKiemTheo = new System.Windows.Forms.ComboBox();
             this.lblTimKiemTheo = new System.Windows.Forms.Label();
             this.btnTaoNhapHang = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwNhapHang)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwNhapHang
             // 
             this.dgwNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwNhapHang.ContextMenuStrip = this.contextMenuStrip1;
             this.dgwNhapHang.Location = new System.Drawing.Point(12, 115);
             this.dgwNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgwNhapHang.Name = "dgwNhapHang";
@@ -47,6 +54,37 @@
             this.dgwNhapHang.RowTemplate.Height = 28;
             this.dgwNhapHang.Size = new System.Drawing.Size(1014, 494);
             this.dgwNhapHang.TabIndex = 28;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chiTiếtNhậpHàngToolStripMenuItem,
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem,
+            this.xóaThôngTinNhậpHàngToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(324, 133);
+            // 
+            // chiTiếtNhậpHàngToolStripMenuItem
+            // 
+            this.chiTiếtNhậpHàngToolStripMenuItem.Name = "chiTiếtNhậpHàngToolStripMenuItem";
+            this.chiTiếtNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
+            this.chiTiếtNhậpHàngToolStripMenuItem.Text = "Chi tiết nhập hàng";
+            this.chiTiếtNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtNhậpHàngToolStripMenuItem_Click);
+            // 
+            // cậpNhậtThôngTinNhậpHàngToolStripMenuItem
+            // 
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Name = "cậpNhậtThôngTinNhậpHàngToolStripMenuItem";
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Text = "Cập nhật thông tin nhập hàng";
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem_Click);
+            // 
+            // xóaThôngTinNhậpHàngToolStripMenuItem
+            // 
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Name = "xóaThôngTinNhậpHàngToolStripMenuItem";
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Text = "Xóa thông tin nhập hàng";
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.xóaThôngTinNhậpHàngToolStripMenuItem_Click);
             // 
             // txtTimKiem
             // 
@@ -127,6 +165,7 @@
             this.Text = "nhapHang";
             this.Load += new System.EventHandler(this.nhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwNhapHang)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +179,9 @@
         private System.Windows.Forms.Label lblTimKiemTheo;
         private System.Windows.Forms.Button btnTaoNhapHang;
         private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem chiTiếtNhậpHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cậpNhậtThôngTinNhậpHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaThôngTinNhậpHàngToolStripMenuItem;
     }
 }

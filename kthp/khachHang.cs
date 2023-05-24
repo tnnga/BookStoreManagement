@@ -25,14 +25,18 @@ namespace kthp
             dgwKhachHang.Columns[1].HeaderText = "Tên khách hàng";
             dgwKhachHang.Columns[2].HeaderText = "Giới tính";
             dgwKhachHang.Columns[3].HeaderText = "Số điện thoại";
+            dgwKhachHang.Columns[4].HeaderText = "Địa chỉ";
+
             dgwKhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwKhachHang.Columns[0].Width = 100;
             dgwKhachHang.Columns[1].Width = 200;
             dgwKhachHang.Columns[2].Width = 100;
             dgwKhachHang.Columns[3].Width = 150;
+            dgwKhachHang.Columns[4].Width = 180;
+
             dgwKhachHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwKhachHang.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwKhachHang.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void khachHang_Load(object sender, EventArgs e)
@@ -41,7 +45,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listKhachHang = from khachhang in data.KhachHangs
-                                select new {khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT};
+                                select new {khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
 
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();
@@ -117,7 +121,7 @@ namespace kthp
                 dcKTHPDataContext data = new dcKTHPDataContext();
 
                 var listKhachHang = from khachhang in data.KhachHangs
-                                    select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT};
+                                    select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
 
                 dgwKhachHang.DataSource = listKhachHang;
                 ConfigureSP();
@@ -132,7 +136,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listKhachHang = from khachhang in data.KhachHangs
-                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT};
+                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
 
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();

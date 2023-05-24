@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace kthp
 {
-    public partial class khachHangChiTiet : Form
+    public partial class nhapHangCapNhatChiTiet : Form
     {
-        public khachHangChiTiet()
+        public nhapHangCapNhatChiTiet()
         {
             InitializeComponent();
         }

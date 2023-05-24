@@ -40,6 +40,10 @@ namespace BLLQLNS
         {
             return dALNhapHang.InSertChiTietNhapHang(sp);
         }
-
+        public DataTable SelectChiTietNhapHang(DTOChiTietNhapHang sp)
+        {
+            DataTable dt = dALNhapHang.SelectChiTietNhapHang(sp);
+            return dt;
+        }
     }
 }

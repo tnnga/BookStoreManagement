@@ -127,12 +127,20 @@ namespace kthp
 
         private void XoaThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
+
+            maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+
             var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin của sản phẩm không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (res == DialogResult.Yes)
             {
-
-                dgwSanPham.Refresh();
+                sp = new DTOSanPham(maSach, "", 0, 0, "", "");
+                if (bLLSanPham.DeleteSanPham(sp))
+                {
+                    dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
+                    ConfigureSP();
+                }
             }
         }
     }

@@ -189,5 +189,30 @@ namespace DALQLNS
                 }
             }
         }
+        public bool DeleteSanPham(DTOSanPham sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM SanPham WHERE MaSach = @MaSach", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSach);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
     }
 }

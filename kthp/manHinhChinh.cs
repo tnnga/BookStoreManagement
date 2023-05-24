@@ -38,11 +38,13 @@ namespace kthp
             DialogResult result = MessageBox.Show("Bạn chắc chắn muốn đăng xuất", "Nhắc nhờ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                this.Hide();
 
                 frmDangNhap dangNhap = new frmDangNhap();
                 dangNhap.ShowDialog();
+                if(dangNhap != null)
+                    this.Close();
             }
+
         }
 
         private void lblDangXuat_MouseEnter(object sender, EventArgs e)

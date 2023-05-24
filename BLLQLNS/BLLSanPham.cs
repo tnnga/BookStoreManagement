@@ -40,5 +40,9 @@ namespace BLLQLNS
         {
             return dALSanPham.UpdateSanPham(sp);
         }
+        public bool DeleteSanPham(DTOSanPham sp)
+        {
+            return dALSanPham.DeleteSanPham(sp);
+        }
     }
 }
