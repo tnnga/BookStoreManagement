@@ -82,6 +82,18 @@
     <Compile Include="hoaDon.Designer.cs">
       <DependentUpon>hoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="hoaDonCapNhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaDonCapNhat.Designer.cs">
+      <DependentUpon>hoaDonCapNhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaDonChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaDonChiTiet.Designer.cs">
+      <DependentUpon>hoaDonChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="hoaDonThemChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,12 @@
     <Compile Include="khachHang.Designer.cs">
       <DependentUpon>khachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="khachHangChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="khachHangChiTiet.Designer.cs">
+      <DependentUpon>khachHangChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="khachHangThemMoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +129,12 @@
     </Compile>
     <Compile Include="nhapHang.Designer.cs">
       <DependentUpon>nhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhapHangChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhapHangChiTiet.Designer.cs">
+      <DependentUpon>nhapHangChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="nhapHangThemChiTiet.cs">
       <SubType>Form</SubType>
@@ -149,6 +173,12 @@
     </Compile>
     <Compile Include="sanPham.Designer.cs">
       <DependentUpon>sanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sanPhamCapNhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sanPhamCapNhat.Designer.cs">
+      <DependentUpon>sanPhamCapNhat.cs</DependentUpon>
     </Compile>
     <Compile Include="sanPhamChiTiet.cs">
       <SubType>Form</SubType>
@@ -221,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sanPham.resx">
       <DependentUpon>sanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sanPhamCapNhat.resx">
+      <DependentUpon>sanPhamCapNhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sanPhamChiTiet.resx">
       <DependentUpon>sanPhamChiTiet.cs</DependentUpon>

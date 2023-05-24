@@ -53,20 +53,20 @@
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnThemSanPham);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Location = new System.Drawing.Point(9, 8);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 114);
+            this.panel1.Size = new System.Drawing.Size(905, 91);
             this.panel1.TabIndex = 17;
             // 
             // cbLoaiSach
             // 
             this.cbLoaiSach.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiSach.FormattingEnabled = true;
-            this.cbLoaiSach.Location = new System.Drawing.Point(16, 61);
+            this.cbLoaiSach.Location = new System.Drawing.Point(14, 49);
             this.cbLoaiSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoaiSach.Name = "cbLoaiSach";
-            this.cbLoaiSach.Size = new System.Drawing.Size(146, 32);
+            this.cbLoaiSach.Size = new System.Drawing.Size(130, 29);
             this.cbLoaiSach.TabIndex = 23;
             this.cbLoaiSach.Text = "(Lựa chọn)";
             // 
@@ -74,20 +74,20 @@
             // 
             this.cbTimKiem.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTimKiem.FormattingEnabled = true;
-            this.cbTimKiem.Location = new System.Drawing.Point(182, 61);
+            this.cbTimKiem.Location = new System.Drawing.Point(162, 49);
             this.cbTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTimKiem.Name = "cbTimKiem";
-            this.cbTimKiem.Size = new System.Drawing.Size(146, 32);
+            this.cbTimKiem.Size = new System.Drawing.Size(130, 29);
             this.cbTimKiem.TabIndex = 24;
             this.cbTimKiem.Text = "(Lựa chọn)";
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(345, 61);
+            this.txtTimKiem.Location = new System.Drawing.Point(307, 49);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(419, 32);
+            this.txtTimKiem.Size = new System.Drawing.Size(373, 28);
             this.txtTimKiem.TabIndex = 22;
             // 
             // lblLocLoaiSach
@@ -95,9 +95,9 @@
             this.lblLocLoaiSach.AutoSize = true;
             this.lblLocLoaiSach.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocLoaiSach.ForeColor = System.Drawing.Color.White;
-            this.lblLocLoaiSach.Location = new System.Drawing.Point(12, 15);
+            this.lblLocLoaiSach.Location = new System.Drawing.Point(11, 12);
             this.lblLocLoaiSach.Name = "lblLocLoaiSach";
-            this.lblLocLoaiSach.Size = new System.Drawing.Size(155, 24);
+            this.lblLocLoaiSach.Size = new System.Drawing.Size(134, 21);
             this.lblLocLoaiSach.TabIndex = 21;
             this.lblLocLoaiSach.Text = "Chọn loại sách";
             // 
@@ -106,9 +106,9 @@
             this.lblTimKiemTheo.AutoSize = true;
             this.lblTimKiemTheo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimKiemTheo.ForeColor = System.Drawing.Color.White;
-            this.lblTimKiemTheo.Location = new System.Drawing.Point(178, 15);
+            this.lblTimKiemTheo.Location = new System.Drawing.Point(158, 12);
             this.lblTimKiemTheo.Name = "lblTimKiemTheo";
-            this.lblTimKiemTheo.Size = new System.Drawing.Size(160, 24);
+            this.lblTimKiemTheo.Size = new System.Drawing.Size(137, 21);
             this.lblTimKiemTheo.TabIndex = 20;
             this.lblTimKiemTheo.Text = "Tìm kiếm theo:";
             // 
@@ -116,10 +116,10 @@
             // 
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Location = new System.Drawing.Point(780, 54);
+            this.btnTim.Location = new System.Drawing.Point(693, 43);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(115, 45);
+            this.btnTim.Size = new System.Drawing.Size(102, 36);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -129,10 +129,10 @@
             // 
             this.btnThemSanPham.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSanPham.ForeColor = System.Drawing.Color.Black;
-            this.btnThemSanPham.Location = new System.Drawing.Point(901, 54);
+            this.btnThemSanPham.Location = new System.Drawing.Point(801, 43);
             this.btnThemSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(115, 45);
+            this.btnThemSanPham.Size = new System.Drawing.Size(102, 36);
             this.btnThemSanPham.TabIndex = 19;
             this.btnThemSanPham.Text = "Thêm";
             this.btnThemSanPham.UseVisualStyleBackColor = true;
@@ -142,10 +142,10 @@
             // 
             this.panel2.Controls.Add(this.dgwSanPham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 124);
+            this.panel2.Location = new System.Drawing.Point(9, 99);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1018, 430);
+            this.panel2.Size = new System.Drawing.Size(905, 344);
             this.panel2.TabIndex = 18;
             // 
             // dgwSanPham
@@ -158,21 +158,22 @@
             this.dgwSanPham.Name = "dgwSanPham";
             this.dgwSanPham.RowHeadersWidth = 62;
             this.dgwSanPham.RowTemplate.Height = 28;
-            this.dgwSanPham.Size = new System.Drawing.Size(1018, 430);
+            this.dgwSanPham.Size = new System.Drawing.Size(905, 344);
             this.dgwSanPham.TabIndex = 17;
+            this.dgwSanPham.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgwSanPham_MouseClick);
             // 
             // sanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1038, 564);
+            this.ClientSize = new System.Drawing.Size(923, 451);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "sanPham";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sanPham";
             this.Load += new System.EventHandler(this.sanPham_Load);

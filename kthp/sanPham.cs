@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,12 @@ namespace kthp
         {
             InitializeComponent();
         }
+
+        private string maSach;
+        private string tenSach;
+        private int soLuong;
+        private int giaTien;
+
         private void ConfigureSP()
         {
             dgwSanPham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -31,6 +38,7 @@ namespace kthp
             dgwSanPham.Columns[3].Width = 150;
             dgwSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
         private void sanPham_Load(object sender, EventArgs e)
         {
@@ -50,7 +58,7 @@ namespace kthp
             frmSanPhamThemMoi.ShowDialog();
             
             dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
-            ConfigureSP();
+            ConfigureSP();     
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -80,6 +88,58 @@ namespace kthp
             {
                 dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
                 ConfigureSP();
+            }
+        }
+
+        private void dgwSanPham_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) 
+            {
+                ContextMenu contextMenu = new ContextMenu();
+                contextMenu.MenuItems.Add(new MenuItem("Chi tiết thông tin sách"));
+                contextMenu.MenuItems.Add(new MenuItem("Cập nhật thông tin sách"));
+                contextMenu.MenuItems.Add(new MenuItem("Xoá thông tin sách"));
+
+                int currentMouseSelectedRow = dgwSanPham.HitTest(e.X, e.Y).RowIndex;
+
+                contextMenu.Show(dgwSanPham, new Point(e.X, e.Y));
+
+                if (currentMouseSelectedRow  == 0)
+                {
+                    int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
+
+                    maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                    tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                    soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
+                    giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+
+                    frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, soLuong, giaTien);
+                    frmSanPhamChiTiet.ShowDialog();
+                }
+                
+                if (currentMouseSelectedRow == 1)
+                {
+                    int rowIndex = this.dgwSanPham.CurrentCell.RowIndex;
+
+                    maSach = dgwSanPham.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                    tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                    soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
+                    giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+
+                    frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, soLuong, giaTien);
+                    frmSanPhamCapNhat.ShowDialog();
+                }
+                
+                if (currentMouseSelectedRow == 2)
+                {
+                    var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin của sản phẩm không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (res == DialogResult.Yes)
+                    {
+
+                        dgwSanPham.Refresh();
+                    }
+                }
             }
         }
     }
