@@ -25,15 +25,19 @@ namespace kthp
             dgwHoaDon.Columns[0].HeaderText = "Mã hoá đơn";
             dgwHoaDon.Columns[1].HeaderText = "Tên khách hàng";
             dgwHoaDon.Columns[2].HeaderText = "Ngày lập hoá đơn";
-            dgwHoaDon.Columns[3].HeaderText = "Đơn giá";
+            dgwHoaDon.Columns[3].HeaderText = "Giờ lập hóa đơn";
+            dgwHoaDon.Columns[4].HeaderText = "Đơn giá";
+
             dgwHoaDon.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwHoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwHoaDon.Columns[0].Width = 100;
-            dgwHoaDon.Columns[1].Width = 250;
+            dgwHoaDon.Columns[1].Width = 200;
             dgwHoaDon.Columns[2].Width = 150;
-            dgwHoaDon.Columns[3].Width = 100;
+            dgwHoaDon.Columns[3].Width = 150;
+            dgwHoaDon.Columns[4].Width = 150;
+
             dgwHoaDon.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwHoaDon.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
         }
 
@@ -43,7 +47,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
-                             select new {hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.DonGia};   
+                             select new {hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};   
             
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();
@@ -148,7 +152,7 @@ namespace kthp
                 dcKTHPDataContext data = new dcKTHPDataContext();
 
                 var listHoaDon = from hoadon in data.HoaDons
-                                 select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.DonGia };
+                                 select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
 
                 dgwHoaDon.DataSource = listHoaDon;
                 ConfigureSP();
@@ -163,7 +167,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
-                             select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.DonGia };
+                             select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};
 
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();

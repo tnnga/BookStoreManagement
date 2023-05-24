@@ -157,7 +157,7 @@ namespace kthp
                 {
                     if (txtTenDangNhap.Text == tenDangNhap[i] && txtMatKhau.Text == matKhau[i])
                     {
-                        this.Hide();
+                        this.Close();
 
                         frmManHinhChinh trangChu = new frmManHinhChinh();
                         trangChu.ShowDialog();

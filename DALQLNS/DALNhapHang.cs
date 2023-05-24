@@ -16,7 +16,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', DonGia as 'Đơn giá' from NhapHang", conn);
+                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', GioNhap as 'Giờ nhập', DonGia as 'Đơn giá' from NhapHang", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -70,7 +70,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', DonGia as 'Đơn giá' from NhapHang WHERE MaNhapHang LIKE @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', GioNhap as 'Giờ nhập', DonGia as 'Đơn giá' from NhapHang WHERE MaNhapHang LIKE @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", "%" + sp.MaNhapHang + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -100,7 +100,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', DonGia as 'Đơn giá' from NhapHang WHERE TenNhanVien LIKE @TenNhanVien", conn);
+                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', GioNhap as 'Giờ nhập', DonGia as 'Đơn giá' from NhapHang WHERE TenNhanVien LIKE @TenNhanVien", conn);
                 cmd.Parameters.AddWithValue("@TenNhanVien", "%" + sp.TenNhanVien + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -130,7 +130,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', DonGia as 'Đơn giá' from NhapHang WHERE NgayNhap LIKE @NgayNhap", conn);
+                SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', GioNhap as 'Giờ nhập', DonGia as 'Đơn giá' from NhapHang WHERE NgayNhap LIKE @NgayNhap", conn);
                 cmd.Parameters.AddWithValue("@NgayNhap", sp.NgayNhap + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -150,6 +150,29 @@ namespace DALQLNS
                 {
                     conn.Close();
                 }
+            }
+        }
+        public DataTable SelectChiTietNhapHang(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = '@MaNhapHang'", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                da.Dispose();
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
         public bool InSertChiTietNhapHang(DTOChiTietNhapHang sp)

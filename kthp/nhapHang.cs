@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace kthp
     {
         BLLNhapHang bLLNhapHang = new BLLNhapHang();
         DTONhapHang sp = null;
+        private string maNhapHang;
         public nhapHang()
         {
             InitializeComponent();
@@ -25,16 +27,21 @@ namespace kthp
         {
             dgwNhapHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwNhapHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             dgwNhapHang.Columns[0].Width = 100;
             dgwNhapHang.Columns[1].Width = 200;
             dgwNhapHang.Columns[2].Width = 150;
             dgwNhapHang.Columns[3].Width = 150;
+            dgwNhapHang.Columns[4].Width = 150;
+
             dgwNhapHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwNhapHang.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwNhapHang.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void nhapHang_Load(object sender, EventArgs e)
         {
+            
+
             dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
             ConfigureSP();
         }
@@ -73,6 +80,26 @@ namespace kthp
 
             dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
             ConfigureSP();
+        }
+
+        private void chiTiếtNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwNhapHang.CurrentCell.RowIndex;
+
+            maNhapHang = dgwNhapHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+
+            nhapHangChiTiet nhapHangChiTiet = new nhapHangChiTiet(maNhapHang);
+            nhapHangChiTiet.ShowDialog();
+        }
+
+        private void cậpNhậtThôngTinNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xóaThôngTinNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
