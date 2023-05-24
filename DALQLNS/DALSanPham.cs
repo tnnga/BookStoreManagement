@@ -65,6 +65,36 @@ namespace DALQLNS
             }
             return false;
         }
+
+        public bool UpdateSanPham(DTOSanPham sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET TenSach = N'@TenSach', SoLuongTon = N'@SoLuongTon', GiaTien =  N'@GiaTien' WHERE MaSach = N'@MaSach';", conn);
+                cmd.Parameters.AddWithValue("@TenSach", sp.TenSach);
+                cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
+                cmd.Parameters.AddWithValue("@GiaTien", sp.GiaTien);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSach);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
         public DataTable PhanLoaiSanPham(DTOSanPham sp)
         {
             if (sp.LoaiSach == "(Lựa chọn)")
@@ -105,7 +135,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT  MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' FROM SanPham WHERE MaSach LIKE @MaSach", conn);
+                SqlCommand cmd = new SqlCommand("SELECT MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' FROM SanPham WHERE MaSach LIKE @MaSach", conn);
                 cmd.Parameters.AddWithValue("@MaSach", "%" + sp.MaSach + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 

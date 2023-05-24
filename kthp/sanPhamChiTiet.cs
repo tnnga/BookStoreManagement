@@ -14,23 +14,23 @@ namespace kthp
     {
         private string maSach;
         private string tenSach;
-        private int soLuong;
         private int giaTien;
+        private int soLuong;
 
-        public frmSanPhamChiTiet(string maSach, string tenSach, int soLuong, int giaTien)
+        public frmSanPhamChiTiet(string maSach, string tenSach, int giaTien, int soLuong)
         {
             InitializeComponent();
             this.maSach = maSach;
             this.tenSach = tenSach;
-            this.soLuong = soLuong;
             this.giaTien = giaTien;
+            this.soLuong = soLuong;
         }     
 
         private void frmSanPhamChiTiet_Load(object sender, EventArgs e)
         {
             lblTenSach.Text = tenSach;
-            lblSoLuongTon.Text = soLuong.ToString();
             lblGiaSach.Text = giaTien.ToString();
+            lblSoLuongTon.Text = soLuong.ToString();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbLoaiSach = new System.Windows.Forms.ComboBox();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
@@ -38,9 +39,14 @@
             this.btnThemSanPham = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgwSanPham = new System.Windows.Forms.DataGridView();
+            this.cms_dgwSanPham = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ChiTietThongTinSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CapNhatThongTinSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XoaThongTinSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwSanPham)).BeginInit();
+            this.cms_dgwSanPham.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,6 +157,7 @@
             // dgwSanPham
             // 
             this.dgwSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwSanPham.ContextMenuStrip = this.cms_dgwSanPham;
             this.dgwSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwSanPham.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dgwSanPham.Location = new System.Drawing.Point(0, 0);
@@ -160,7 +167,37 @@
             this.dgwSanPham.RowTemplate.Height = 28;
             this.dgwSanPham.Size = new System.Drawing.Size(905, 344);
             this.dgwSanPham.TabIndex = 17;
-            this.dgwSanPham.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgwSanPham_MouseClick);
+            // 
+            // cms_dgwSanPham
+            // 
+            this.cms_dgwSanPham.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_dgwSanPham.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ChiTietThongTinSachToolStripMenuItem,
+            this.CapNhatThongTinSachToolStripMenuItem,
+            this.XoaThongTinSachToolStripMenuItem});
+            this.cms_dgwSanPham.Name = "cms_dgwSanPham";
+            this.cms_dgwSanPham.Size = new System.Drawing.Size(235, 104);
+            // 
+            // ChiTietThongTinSachToolStripMenuItem
+            // 
+            this.ChiTietThongTinSachToolStripMenuItem.Name = "ChiTietThongTinSachToolStripMenuItem";
+            this.ChiTietThongTinSachToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
+            this.ChiTietThongTinSachToolStripMenuItem.Text = "Chi tiết thông tin sách ";
+            this.ChiTietThongTinSachToolStripMenuItem.Click += new System.EventHandler(this.ChiTietThongTinSachToolStripMenuItem_Click);
+            // 
+            // CapNhatThongTinSachToolStripMenuItem
+            // 
+            this.CapNhatThongTinSachToolStripMenuItem.Name = "CapNhatThongTinSachToolStripMenuItem";
+            this.CapNhatThongTinSachToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
+            this.CapNhatThongTinSachToolStripMenuItem.Text = "Cập nhật thông tin sách";
+            this.CapNhatThongTinSachToolStripMenuItem.Click += new System.EventHandler(this.CapNhatThongTinSachToolStripMenuItem_Click);
+            // 
+            // XoaThongTinSachToolStripMenuItem
+            // 
+            this.XoaThongTinSachToolStripMenuItem.Name = "XoaThongTinSachToolStripMenuItem";
+            this.XoaThongTinSachToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
+            this.XoaThongTinSachToolStripMenuItem.Text = "Xoá thông tin sách";
+            this.XoaThongTinSachToolStripMenuItem.Click += new System.EventHandler(this.XoaThongTinSachToolStripMenuItem_Click);
             // 
             // sanPham
             // 
@@ -181,6 +218,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwSanPham)).EndInit();
+            this.cms_dgwSanPham.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -197,5 +235,9 @@
         private System.Windows.Forms.Button btnThemSanPham;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgwSanPham;
+        private System.Windows.Forms.ContextMenuStrip cms_dgwSanPham;
+        private System.Windows.Forms.ToolStripMenuItem ChiTietThongTinSachToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CapNhatThongTinSachToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem XoaThongTinSachToolStripMenuItem;
     }
 }

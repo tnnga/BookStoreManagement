@@ -36,7 +36,7 @@ namespace kthp
                 txtGiaTien.Text != "" &&
                 txtLoaiSach.Text != "")
             {
-                dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuongTon.Text), txtGiaTien.Text, txtLoaiSach.Text, txtNoiDungChinh.Text);
+                dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuongTon.Text), int.Parse(txtGiaTien.Text), txtLoaiSach.Text, txtNoiDungChinh.Text);
                 if (bLLSanPham.InSertSanPham(dTOSanPham))
                 {
                     MessageBox.Show("Bạn đã thêm dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

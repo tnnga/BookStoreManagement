@@ -95,19 +95,19 @@ namespace kthp
 			}
 		}
 		
-		public System.Data.Linq.Table<KhachHang> KhachHangs
-		{
-			get
-			{
-				return this.GetTable<KhachHang>();
-			}
-		}
-		
 		public System.Data.Linq.Table<NhapHang> NhapHangs
 		{
 			get
 			{
 				return this.GetTable<NhapHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KhachHang> KhachHangs
+		{
+			get
+			{
+				return this.GetTable<KhachHang>();
 			}
 		}
 		
@@ -492,6 +492,105 @@ namespace kthp
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhapHang")]
+	public partial class NhapHang
+	{
+		
+		private string _MaNhapHang;
+		
+		private string _TenNhanVien;
+		
+		private string _NgayNhap;
+		
+		private string _GioNhap;
+		
+		private System.Nullable<int> _DonGia;
+		
+		public NhapHang()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhapHang", DbType="NChar(10)")]
+		public string MaNhapHang
+		{
+			get
+			{
+				return this._MaNhapHang;
+			}
+			set
+			{
+				if ((this._MaNhapHang != value))
+				{
+					this._MaNhapHang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNhanVien", DbType="NVarChar(500)")]
+		public string TenNhanVien
+		{
+			get
+			{
+				return this._TenNhanVien;
+			}
+			set
+			{
+				if ((this._TenNhanVien != value))
+				{
+					this._TenNhanVien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNhap", DbType="VarChar(50)")]
+		public string NgayNhap
+		{
+			get
+			{
+				return this._NgayNhap;
+			}
+			set
+			{
+				if ((this._NgayNhap != value))
+				{
+					this._NgayNhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioNhap", DbType="VarChar(50)")]
+		public string GioNhap
+		{
+			get
+			{
+				return this._GioNhap;
+			}
+			set
+			{
+				if ((this._GioNhap != value))
+				{
+					this._GioNhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int")]
+		public System.Nullable<int> DonGia
+		{
+			get
+			{
+				return this._DonGia;
+			}
+			set
+			{
+				if ((this._DonGia != value))
+				{
+					this._DonGia = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhachHang")]
 	public partial class KhachHang : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -646,105 +745,6 @@ namespace kthp
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhapHang")]
-	public partial class NhapHang
-	{
-		
-		private string _MaNhapHang;
-		
-		private string _TenNhanVien;
-		
-		private string _NgayNhap;
-		
-		private string _GioNhap;
-		
-		private System.Nullable<int> _DonGia;
-		
-		public NhapHang()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhapHang", DbType="NChar(10)")]
-		public string MaNhapHang
-		{
-			get
-			{
-				return this._MaNhapHang;
-			}
-			set
-			{
-				if ((this._MaNhapHang != value))
-				{
-					this._MaNhapHang = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNhanVien", DbType="NVarChar(500)")]
-		public string TenNhanVien
-		{
-			get
-			{
-				return this._TenNhanVien;
-			}
-			set
-			{
-				if ((this._TenNhanVien != value))
-				{
-					this._TenNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNhap", DbType="VarChar(50)")]
-		public string NgayNhap
-		{
-			get
-			{
-				return this._NgayNhap;
-			}
-			set
-			{
-				if ((this._NgayNhap != value))
-				{
-					this._NgayNhap = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioNhap", DbType="VarChar(50)")]
-		public string GioNhap
-		{
-			get
-			{
-				return this._GioNhap;
-			}
-			set
-			{
-				if ((this._GioNhap != value))
-				{
-					this._GioNhap = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int")]
-		public System.Nullable<int> DonGia
-		{
-			get
-			{
-				return this._DonGia;
-			}
-			set
-			{
-				if ((this._DonGia != value))
-				{
-					this._DonGia = value;
-				}
 			}
 		}
 	}

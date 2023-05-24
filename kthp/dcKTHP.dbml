@@ -25,15 +25,6 @@
       <Association Name="HoaDon_HoaDon" Member="HoaDon1" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.KhachHang" Member="KhachHangs">
-    <Type Name="KhachHang">
-      <Column Name="MaKhachHang" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.NhapHang" Member="NhapHangs">
     <Type Name="NhapHang">
       <Column Name="MaNhapHang" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
@@ -41,6 +32,15 @@
       <Column Name="NgayNhap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="GioNhap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKhachHang" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
