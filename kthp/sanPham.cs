@@ -27,17 +27,21 @@ namespace kthp
         private string tenSach;
         private int soLuong;
         private int giaTien;
+        private string loaiSach;
+        private string noiDungChinh;
 
         private void ConfigureSP()
         {
             dgwSanPham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgwSanPham.Columns[0].Width = 100;
-            dgwSanPham.Columns[1].Width = 300;
-            dgwSanPham.Columns[2].Width = 200;
-            dgwSanPham.Columns[3].Width = 150;
+            dgwSanPham.Columns[0].Width = 80;
+            dgwSanPham.Columns[1].Width = 200;
+            dgwSanPham.Columns[2].Width = 80;
+            dgwSanPham.Columns[3].Width = 120;
+            dgwSanPham.Columns[4].Width = 120;
+            dgwSanPham.Columns[5].Width = 100;
             dgwSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
         }
         private void sanPham_Load(object sender, EventArgs e)
@@ -99,8 +103,10 @@ namespace kthp
             tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
             giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
             soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+            loaiSach = dgwSanPham.Rows[rowIndex].Cells[4].Value.ToString().Trim();
+            noiDungChinh = dgwSanPham.Rows[rowIndex].Cells[5].Value.ToString().Trim();
 
-            frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, giaTien, soLuong);
+            frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, giaTien, soLuong, loaiSach,noiDungChinh);
             frmSanPhamChiTiet.ShowDialog();
         }
 
@@ -112,12 +118,11 @@ namespace kthp
             tenSach = dgwSanPham.Rows[rowIndex].Cells[1].Value.ToString().Trim();
             giaTien = int.Parse(dgwSanPham.Rows[rowIndex].Cells[2].Value.ToString().Trim());
             soLuong = int.Parse(dgwSanPham.Rows[rowIndex].Cells[3].Value.ToString().Trim());
+            loaiSach = dgwSanPham.Rows[rowIndex].Cells[4].Value.ToString().Trim();
+            noiDungChinh = dgwSanPham.Rows[rowIndex].Cells[5].Value.ToString().Trim();
 
-            frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, giaTien, soLuong);
+            frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, giaTien, soLuong, loaiSach, noiDungChinh);
             frmSanPhamCapNhat.ShowDialog();
-
-            dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
-            ConfigureSP();
         }
 
         private void XoaThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)

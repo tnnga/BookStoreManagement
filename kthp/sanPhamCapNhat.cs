@@ -19,17 +19,21 @@ namespace kthp
         private string tenSach;
         private int giaTien;
         private int soLuong;
+        private string loaiSach;
+        private string noiDungChinh;
 
         BLLSanPham bLLSanPham = new BLLSanPham();
         DTOSanPham dTOSanPham = null;
         
-        public frmSanPhamCapNhat(string maSach, string tenSach, int giaTien, int soLuong)
+        public frmSanPhamCapNhat(string maSach, string tenSach, int giaTien, int soLuong, string loaiSach, string noiDungChinh)
         {
             InitializeComponent();
             this.maSach = maSach;
             this.tenSach = tenSach;
             this.giaTien = giaTien;
             this.soLuong = soLuong;
+            this.loaiSach = loaiSach;
+            this.noiDungChinh = noiDungChinh;
         }
 
         private void frmSanPhamCapNhat_Load(object sender, EventArgs e)
@@ -38,26 +42,23 @@ namespace kthp
             txtTenSach.Text = tenSach;
             txtGiaTien.Text = giaTien.ToString();
             txtSoLuong.Text = soLuong.ToString();
+            txtLoaiSach.Text = loaiSach;
+            txtNoiDungChinh.Text = noiDungChinh;
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (txtTenSach.Text != null && txtSoLuong.Text != null && txtGiaTien.Text != null)
-            {
-                dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuong.Text), int.Parse(txtGiaTien.Text));
+            dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuong.Text), int.Parse(txtGiaTien.Text), txtLoaiSach.Text, txtNoiDungChinh.Text);
+            bLLSanPham.UpdateSanPham(dTOSanPham);
 
-                if (bLLSanPham.UpdateSanPham(dTOSanPham))
-                {
-                    MessageBox.Show("Hợp lệ! Thực hiện thành công cập nhật thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Không hợp lệ! Thực hiện không thành công cập nhật thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (bLLSanPham.UpdateSanPham(dTOSanPham) == true)
+            {
+                MessageBox.Show("Cập nhật thông tin sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             else
             {
-                MessageBox.Show("Không hợp lệ!\nVui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cập nhật thông tin sản phẩm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

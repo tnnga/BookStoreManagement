@@ -39,15 +39,6 @@ namespace DTOQLNS
         {
 
         }
-
-        public DTOSanPham(string maSach, string tenSach, int soLuongTon, int giaTien)
-        {
-            _MaSach = maSach;
-            _TenSach = tenSach;
-            _SoLuongTon = soLuongTon;
-            _GiaTien = giaTien;
-        }
-
         public DTOSanPham(string maSach, string tenSach, int soLuongTon, int giaTien, string loaiSach, string noiDungChinh)
         {
             _MaSach = maSach;

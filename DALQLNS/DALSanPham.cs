@@ -16,7 +16,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select MaSach as 'Mã sách',TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' from SanPham", conn);
+                SqlCommand cmd = new SqlCommand("select MaSach as 'Mã sách',TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn', LoaiSach as 'Loại sách', NoiDungChinh as 'Nội dung chính' from SanPham", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -71,11 +71,13 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET TenSach = N'@TenSach', SoLuongTon = N'@SoLuongTon', GiaTien =  N'@GiaTien' WHERE MaSach = N'@MaSach';", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET MaSach = '@MaSach', TenSach = '@TenSach', SoLuongTon = '@SoLuongTon', GiaTien =  '@GiaTien', LoaiSach = '@LoaiSach', NoiDungChinh = '@NoiDungChinh' WHERE MaSach = '@MaSach'", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSach);
                 cmd.Parameters.AddWithValue("@TenSach", sp.TenSach);
                 cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
                 cmd.Parameters.AddWithValue("@GiaTien", sp.GiaTien);
-                cmd.Parameters.AddWithValue("@MaSach", sp.MaSach);
+                cmd.Parameters.AddWithValue("@LoaiSach", sp.LoaiSach);
+                cmd.Parameters.AddWithValue("@NoiDungChinh", sp.NoiDungChinh);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -107,7 +109,7 @@ namespace DALQLNS
                 try
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("select MaSach as 'Mã sách',TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' from SanPham WHERE LoaiSach LIKE @LoaiSach", conn);
+                    SqlCommand cmd = new SqlCommand("select MaSach as 'Mã sách',TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn', LoaiSach as 'Loại sách', NoiDungChinh as 'Nội dung chính' from SanPham WHERE LoaiSach LIKE @LoaiSach", conn);
                     cmd.Parameters.AddWithValue("@LoaiSach", "%" + sp.LoaiSach + "%");
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -135,7 +137,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' FROM SanPham WHERE MaSach LIKE @MaSach", conn);
+                SqlCommand cmd = new SqlCommand("SELECT MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn', LoaiSach as 'Loại sách', NoiDungChinh as 'Nội dung chính' FROM SanPham WHERE MaSach LIKE @MaSach", conn);
                 cmd.Parameters.AddWithValue("@MaSach", "%" + sp.MaSach + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -165,7 +167,7 @@ namespace DALQLNS
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT  MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' FROM SanPham WHERE TenSach LIKE @TenSach", conn);
+                SqlCommand cmd = new SqlCommand("SELECT  MaSach as 'Mã Sách', TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn', LoaiSach as 'Loại sách', NoiDungChinh as 'Nội dung chính' FROM SanPham WHERE TenSach LIKE @TenSach", conn);
                 cmd.Parameters.AddWithValue("@TenSach", "%" + sp.TenSach + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
