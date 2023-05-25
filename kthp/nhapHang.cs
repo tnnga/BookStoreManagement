@@ -101,5 +101,10 @@ namespace kthp
         {
 
         }
+
+        private void dgwNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

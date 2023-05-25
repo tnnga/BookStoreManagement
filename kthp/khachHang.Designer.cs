@@ -50,7 +50,7 @@
             this.panel2.Location = new System.Drawing.Point(9, 94);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(905, 349);
+            this.panel2.Size = new System.Drawing.Size(1014, 439);
             this.panel2.TabIndex = 27;
             // 
             // dgwKhachHang
@@ -61,7 +61,7 @@
             this.dgwKhachHang.Name = "dgwKhachHang";
             this.dgwKhachHang.RowHeadersWidth = 51;
             this.dgwKhachHang.RowTemplate.Height = 24;
-            this.dgwKhachHang.Size = new System.Drawing.Size(905, 349);
+            this.dgwKhachHang.Size = new System.Drawing.Size(1014, 439);
             this.dgwKhachHang.TabIndex = 0;
             // 
             // panel1
@@ -78,16 +78,16 @@
             this.panel1.Location = new System.Drawing.Point(9, 8);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 86);
+            this.panel1.Size = new System.Drawing.Size(1014, 86);
             this.panel1.TabIndex = 26;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(374, 46);
+            this.txtTimKiem.Location = new System.Drawing.Point(388, 46);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(312, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(396, 28);
             this.txtTimKiem.TabIndex = 29;
             // 
             // cbBoLoc
@@ -146,7 +146,7 @@
             // 
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Location = new System.Drawing.Point(692, 41);
+            this.btnTim.Location = new System.Drawing.Point(801, 41);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(102, 36);
@@ -159,7 +159,7 @@
             // 
             this.btnThemSanPham.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSanPham.ForeColor = System.Drawing.Color.Black;
-            this.btnThemSanPham.Location = new System.Drawing.Point(800, 41);
+            this.btnThemSanPham.Location = new System.Drawing.Point(909, 41);
             this.btnThemSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemSanPham.Name = "btnThemSanPham";
             this.btnThemSanPham.Size = new System.Drawing.Size(102, 36);
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(923, 451);
+            this.ClientSize = new System.Drawing.Size(1032, 541);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
