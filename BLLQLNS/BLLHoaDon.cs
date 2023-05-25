@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace BLLQLNS
 {
@@ -18,6 +19,24 @@ namespace BLLQLNS
         public bool InsertChiTietHoaDon(DTOChiTietHoaDon sp)
         {
             return dALHoaDon.InSertChiTietHoaDon(sp);
+        }
+        public DataTable SelectChiTietHoaDon(DTOChiTietHoaDon sp)
+        {
+            DataTable dt = dALHoaDon.SelectChiTietHoaDon(sp);
+            return dt;
+        }
+        public bool UpdateHoaDon(DTOHoaDon sp)
+        {
+            return dALHoaDon.UpdateHoaDon(sp);
+        }
+        public bool DeleteChiTietHoaDon(DTOChiTietHoaDon sp)
+        {
+            return dALHoaDon.DeleteChiTietHoaDon(sp);
+
+        }
+        public bool DeleteHoaDon(DTOHoaDon sp)
+        {
+            return dALHoaDon.DeleteHoaDon(sp);
         }
     }
 }

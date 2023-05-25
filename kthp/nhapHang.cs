@@ -17,7 +17,14 @@ namespace kthp
     {
         BLLNhapHang bLLNhapHang = new BLLNhapHang();
         DTONhapHang sp = null;
+        DTOChiTietNhapHang sp2 = null;
+
         private string maNhapHang;
+        private string tenNhanVien;
+        private string ngayNhap;
+        private string gioNhap;
+        private int donGia;
+
         public nhapHang()
         {
             InitializeComponent();
@@ -82,7 +89,7 @@ namespace kthp
             ConfigureSP();
         }
 
-        private void chiTiếtNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void chiTietNhapHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int rowIndex = this.dgwNhapHang.CurrentCell.RowIndex;
 
@@ -91,20 +98,47 @@ namespace kthp
             nhapHangChiTiet nhapHangChiTiet = new nhapHangChiTiet(maNhapHang);
             nhapHangChiTiet.ShowDialog();
         }
-
-        private void cậpNhậtThôngTinNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void capNhatThongTinNhapHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int rowIndex = this.dgwNhapHang.CurrentCell.RowIndex;
+            
+            maNhapHang = dgwNhapHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+            tenNhanVien = dgwNhapHang.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            ngayNhap = dgwNhapHang.Rows[rowIndex].Cells[2].Value.ToString().Trim();
+            gioNhap = dgwNhapHang.Rows[rowIndex].Cells[3].Value.ToString().Trim();
+            donGia = int.Parse(dgwNhapHang.Rows[rowIndex].Cells[4].Value.ToString().Trim());
 
+            nhapHangCapNhat frmNhapHangCapNhat = new nhapHangCapNhat(maNhapHang, tenNhanVien, ngayNhap, gioNhap, donGia);
+            frmNhapHangCapNhat.ShowDialog();
+
+            dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
+            ConfigureSP();
         }
-
-        private void xóaThôngTinNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void xoaThongTinNhapHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int rowIndex = this.dgwNhapHang.CurrentCell.RowIndex;
 
-        }
+            maNhapHang = dgwNhapHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
 
-        private void dgwNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin nhập hàng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
+            if (res == DialogResult.Yes)
+            {
+                sp = new DTONhapHang(maNhapHang,"","","",0);
+                sp2 = new DTOChiTietNhapHang(maNhapHang, "", 0);
+                if (bLLNhapHang.DeleteNhapHang(sp) && bLLNhapHang.DeleteChiTietNhapHang(sp2))
+                {
+                    var res1 = MessageBox.Show("Xóa thông tin nhập hàng thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
+                    ConfigureSP();
+                }
+                else
+                {
+                    var res3 = MessageBox.Show("Xóa thông tin nhập hàng thất bại?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                }
+            }
         }
     }
 }

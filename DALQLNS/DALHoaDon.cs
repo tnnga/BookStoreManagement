@@ -41,14 +41,43 @@ namespace DALQLNS
             }
             return false;
         }
-        public DataTable SelectSanPham()
+        public bool InSertChiTietHoaDon(DTOChiTietHoaDon sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select MaSach as 'Mã sách',TenSach as 'Tên sách', GiaTien as 'Giá tiền', SoLuongTon as 'Số lượng tồn' from SanPham", conn);
+                SqlCommand cmd = new SqlCommand("insert into ChiTietHoaDon(MaHoaDon, TenSanPham, SoLuong) values (@MaHoaDon, @TenSanPham, @SoLuong)", conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
+                cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
+                cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public DataTable SelectChiTietHoaDon(DTOChiTietHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon", conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
+
                 da.Fill(dt);
 
                 da.Dispose();
@@ -63,15 +92,69 @@ namespace DALQLNS
                 conn.Close();
             }
         }
-        public bool InSertChiTietHoaDon(DTOChiTietHoaDon sp)
+        public bool DeleteChiTietHoaDon(DTOChiTietHoaDon sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into ChiTietHoaDon(MaHoaDon, TenSanPham, SoLuong) values (@MaHoaDon, @TenSanPham, @SoLuong)", conn);
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
-                cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
-                cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool UpdateHoaDon(DTOHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE HoaDon SET MaHoaDon = @MaHoaDon, TenKhachHang = @TenKhachHang, NgayHoaDon = @NgayHoaDon, GioHoaDon =  @GioHoaDon, DonGia = @DonGia WHERE MaHoaDon = @MaHoaDon", conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
+                cmd.Parameters.AddWithValue("@TenKhachHang", sp.TenKhachHang);
+                cmd.Parameters.AddWithValue("@NgayHoaDon", sp.NgayHoaDon);
+                cmd.Parameters.AddWithValue("@GioHoaDon", sp.GioHoaDon);
+                cmd.Parameters.AddWithValue("@DonGia", sp.DonGia);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool DeleteHoaDon(DTOHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM HoaDon WHERE MaHoaDon = @MaHoaDon", conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

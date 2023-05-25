@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtMaNhapHang = new System.Windows.Forms.TextBox();
             this.lblCapNhatThongTinSach = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtSoLuong3 = new System.Windows.Forms.TextBox();
             this.txtSoLuong2 = new System.Windows.Forms.TextBox();
@@ -50,9 +51,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.lblTenSanPham = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,8 +64,43 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(810, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtMaNhapHang);
+            this.panel3.Controls.Add(this.lblCapNhatThongTinSach);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(810, 100);
+            this.panel3.TabIndex = 1;
+            // 
+            // txtMaNhapHang
+            // 
+            this.txtMaNhapHang.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.txtMaNhapHang.Enabled = false;
+            this.txtMaNhapHang.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNhapHang.ForeColor = System.Drawing.Color.White;
+            this.txtMaNhapHang.Location = new System.Drawing.Point(623, 25);
+            this.txtMaNhapHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaNhapHang.Multiline = true;
+            this.txtMaNhapHang.Name = "txtMaNhapHang";
+            this.txtMaNhapHang.ReadOnly = true;
+            this.txtMaNhapHang.Size = new System.Drawing.Size(167, 50);
+            this.txtMaNhapHang.TabIndex = 5;
+            // 
+            // lblCapNhatThongTinSach
+            // 
+            this.lblCapNhatThongTinSach.AutoSize = true;
+            this.lblCapNhatThongTinSach.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapNhatThongTinSach.ForeColor = System.Drawing.Color.Azure;
+            this.lblCapNhatThongTinSach.Location = new System.Drawing.Point(11, 28);
+            this.lblCapNhatThongTinSach.Name = "lblCapNhatThongTinSach";
+            this.lblCapNhatThongTinSach.Size = new System.Drawing.Size(563, 43);
+            this.lblCapNhatThongTinSach.TabIndex = 4;
+            this.lblCapNhatThongTinSach.Text = "Cập nhật thông tin nhập hàng";
             // 
             // panel2
             // 
@@ -86,43 +124,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 541);
+            this.panel2.Size = new System.Drawing.Size(810, 541);
             this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txtMaSach);
-            this.panel3.Controls.Add(this.lblCapNhatThongTinSach);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 100);
-            this.panel3.TabIndex = 1;
-            // 
-            // txtMaSach
-            // 
-            this.txtMaSach.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.txtMaSach.Enabled = false;
-            this.txtMaSach.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSach.ForeColor = System.Drawing.Color.White;
-            this.txtMaSach.Location = new System.Drawing.Point(623, 25);
-            this.txtMaSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaSach.Multiline = true;
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.ReadOnly = true;
-            this.txtMaSach.Size = new System.Drawing.Size(167, 50);
-            this.txtMaSach.TabIndex = 5;
-            // 
-            // lblCapNhatThongTinSach
-            // 
-            this.lblCapNhatThongTinSach.AutoSize = true;
-            this.lblCapNhatThongTinSach.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapNhatThongTinSach.ForeColor = System.Drawing.Color.Azure;
-            this.lblCapNhatThongTinSach.Location = new System.Drawing.Point(11, 28);
-            this.lblCapNhatThongTinSach.Name = "lblCapNhatThongTinSach";
-            this.lblCapNhatThongTinSach.Size = new System.Drawing.Size(563, 43);
-            this.lblCapNhatThongTinSach.TabIndex = 4;
-            this.lblCapNhatThongTinSach.Text = "Cập nhật thông tin nhập hàng";
             // 
             // btnThem
             // 
@@ -135,6 +138,7 @@
             this.btnThem.TabIndex = 44;
             this.btnThem.Text = "CẬP NHẬT";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSoLuong3
             // 
@@ -179,6 +183,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(143, 54);
             this.txtSoLuong.TabIndex = 29;
+            this.txtSoLuong.Leave += new System.EventHandler(this.txtSoLuong_Leave);
             // 
             // label6
             // 
@@ -300,6 +305,7 @@
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.Size = new System.Drawing.Size(472, 54);
             this.txtTenSanPham.TabIndex = 28;
+            this.txtTenSanPham.Leave += new System.EventHandler(this.txtTenSanPham_Leave);
             // 
             // lblTenSanPham
             // 
@@ -312,21 +318,27 @@
             this.lblTenSanPham.TabIndex = 37;
             this.lblTenSanPham.Text = "Tên Sản Phẩm";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // nhapHangCapNhatChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 641);
+            this.ClientSize = new System.Drawing.Size(810, 641);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "nhapHangCapNhatChiTiet";
             this.Text = "nhapHangCapNhatChiTiet";
+            this.Load += new System.EventHandler(this.nhapHangCapNhatChiTiet_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,7 +348,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtMaSach;
+        private System.Windows.Forms.TextBox txtMaNhapHang;
         private System.Windows.Forms.Label lblCapNhatThongTinSach;
         private System.Windows.Forms.Button btnThem;
         public System.Windows.Forms.TextBox txtSoLuong3;
@@ -355,5 +367,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.Label lblTenSanPham;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -55,28 +55,28 @@
             this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem,
             this.xóaThôngTinNhậpHàngToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(276, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(324, 100);
             // 
             // chiTiếtNhậpHàngToolStripMenuItem
             // 
             this.chiTiếtNhậpHàngToolStripMenuItem.Name = "chiTiếtNhậpHàngToolStripMenuItem";
-            this.chiTiếtNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(275, 24);
+            this.chiTiếtNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
             this.chiTiếtNhậpHàngToolStripMenuItem.Text = "Chi tiết nhập hàng";
-            this.chiTiếtNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtNhậpHàngToolStripMenuItem_Click);
+            this.chiTiếtNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.chiTietNhapHangToolStripMenuItem_Click);
             // 
             // cậpNhậtThôngTinNhậpHàngToolStripMenuItem
             // 
             this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Name = "cậpNhậtThôngTinNhậpHàngToolStripMenuItem";
-            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(275, 24);
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
             this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Text = "Cập nhật thông tin nhập hàng";
-            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem_Click);
+            this.cậpNhậtThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.capNhatThongTinNhapHangToolStripMenuItem_Click);
             // 
             // xóaThôngTinNhậpHàngToolStripMenuItem
             // 
             this.xóaThôngTinNhậpHàngToolStripMenuItem.Name = "xóaThôngTinNhậpHàngToolStripMenuItem";
-            this.xóaThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(275, 24);
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(323, 32);
             this.xóaThôngTinNhậpHàngToolStripMenuItem.Text = "Xóa thông tin nhập hàng";
-            this.xóaThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.xóaThôngTinNhậpHàngToolStripMenuItem_Click);
+            this.xóaThôngTinNhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.xoaThongTinNhapHangToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -87,29 +87,31 @@
             this.panel1.Controls.Add(this.btnTaoNhapHang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 75);
+            this.panel1.Size = new System.Drawing.Size(1161, 94);
             this.panel1.TabIndex = 30;
             // 
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Location = new System.Drawing.Point(785, 32);
+            this.btnTim.Location = new System.Drawing.Point(759, 39);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(102, 36);
+            this.btnTim.Size = new System.Drawing.Size(115, 45);
             this.btnTim.TabIndex = 34;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(192, 37);
+            this.txtTimKiem.Location = new System.Drawing.Point(213, 46);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(559, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(527, 32);
             this.txtTimKiem.TabIndex = 33;
             // 
             // cbTimKiemTheo
@@ -120,9 +122,10 @@
             "Mã nhập hàng",
             "Tên nhân viên",
             "Ngày nhập hàng"});
-            this.cbTimKiemTheo.Location = new System.Drawing.Point(14, 37);
+            this.cbTimKiemTheo.Location = new System.Drawing.Point(16, 46);
+            this.cbTimKiemTheo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTimKiemTheo.Name = "cbTimKiemTheo";
-            this.cbTimKiemTheo.Size = new System.Drawing.Size(158, 29);
+            this.cbTimKiemTheo.Size = new System.Drawing.Size(177, 32);
             this.cbTimKiemTheo.TabIndex = 32;
             this.cbTimKiemTheo.Text = "(Lựa chọn)";
             // 
@@ -131,9 +134,9 @@
             this.lblTimKiemTheo.AutoSize = true;
             this.lblTimKiemTheo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimKiemTheo.ForeColor = System.Drawing.Color.White;
-            this.lblTimKiemTheo.Location = new System.Drawing.Point(10, 6);
+            this.lblTimKiemTheo.Location = new System.Drawing.Point(11, 8);
             this.lblTimKiemTheo.Name = "lblTimKiemTheo";
-            this.lblTimKiemTheo.Size = new System.Drawing.Size(137, 21);
+            this.lblTimKiemTheo.Size = new System.Drawing.Size(160, 24);
             this.lblTimKiemTheo.TabIndex = 31;
             this.lblTimKiemTheo.Text = "Tìm kiếm theo:";
             // 
@@ -141,10 +144,10 @@
             // 
             this.btnTaoNhapHang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoNhapHang.ForeColor = System.Drawing.Color.Black;
-            this.btnTaoNhapHang.Location = new System.Drawing.Point(917, 32);
+            this.btnTaoNhapHang.Location = new System.Drawing.Point(885, 39);
             this.btnTaoNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaoNhapHang.Name = "btnTaoNhapHang";
-            this.btnTaoNhapHang.Size = new System.Drawing.Size(102, 36);
+            this.btnTaoNhapHang.Size = new System.Drawing.Size(115, 45);
             this.btnTaoNhapHang.TabIndex = 30;
             this.btnTaoNhapHang.Text = "Tạo";
             this.btnTaoNhapHang.UseVisualStyleBackColor = true;
@@ -153,13 +156,15 @@
             // 
             this.panel2.Controls.Add(this.dgwNhapHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 75);
+            this.panel2.Location = new System.Drawing.Point(0, 94);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1032, 466);
+            this.panel2.Size = new System.Drawing.Size(1161, 582);
             this.panel2.TabIndex = 31;
             // 
             // dgwNhapHang
             // 
+            this.dgwNhapHang.BackgroundColor = System.Drawing.Color.LightSeaGreen;
             this.dgwNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwNhapHang.ContextMenuStrip = this.contextMenuStrip1;
             this.dgwNhapHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,15 +173,15 @@
             this.dgwNhapHang.Name = "dgwNhapHang";
             this.dgwNhapHang.RowHeadersWidth = 62;
             this.dgwNhapHang.RowTemplate.Height = 28;
-            this.dgwNhapHang.Size = new System.Drawing.Size(1032, 466);
+            this.dgwNhapHang.Size = new System.Drawing.Size(1161, 582);
             this.dgwNhapHang.TabIndex = 31;
             // 
             // nhapHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1032, 541);
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(1161, 676);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
