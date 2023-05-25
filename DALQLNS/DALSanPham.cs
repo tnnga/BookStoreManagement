@@ -47,8 +47,9 @@ namespace DALQLNS
                 cmd.Parameters.AddWithValue("@LoaiSach", sp.LoaiSach);
                 cmd.Parameters.AddWithValue("@NoiDungChinh", sp.NoiDungChinh);
 
+                var kq = cmd.ExecuteNonQuery();
 
-                if (cmd.ExecuteNonQuery() > 0)
+                if (kq > 0)
                 {
                     cmd.Dispose();
                     conn.Close();
@@ -71,7 +72,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET MaSach = '@MaSach', TenSach = '@TenSach', SoLuongTon = '@SoLuongTon', GiaTien =  '@GiaTien', LoaiSach = '@LoaiSach', NoiDungChinh = '@NoiDungChinh' WHERE MaSach = '@MaSach'", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET MaSach = @MaSach, TenSach = @TenSach, SoLuongTon = @SoLuongTon, GiaTien =  @GiaTien, LoaiSach = @LoaiSach, NoiDungChinh = @NoiDungChinh WHERE MaSach = @MaSach", conn);
                 cmd.Parameters.AddWithValue("@MaSach", sp.MaSach);
                 cmd.Parameters.AddWithValue("@TenSach", sp.TenSach);
                 cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
@@ -79,7 +80,9 @@ namespace DALQLNS
                 cmd.Parameters.AddWithValue("@LoaiSach", sp.LoaiSach);
                 cmd.Parameters.AddWithValue("@NoiDungChinh", sp.NoiDungChinh);
 
-                if (cmd.ExecuteNonQuery() > 0)
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
                 {
                     cmd.Dispose();
                     conn.Close();
