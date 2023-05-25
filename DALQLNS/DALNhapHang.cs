@@ -152,15 +152,72 @@ namespace DALQLNS
                 }
             }
         }
+        public bool UpdateNhapHang(DTONhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE NhapHang SET MaNhapHang = @MaNhapHang, TenNhanVien = @TenNhanVien, NgayNhap = @NgayNhap, GioNhap =  @GioNhap, DonGia = @DonGia WHERE MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
+                cmd.Parameters.AddWithValue("@TenNhanVien", sp.TenNhanVien);
+                cmd.Parameters.AddWithValue("@NgayNhap", sp.NgayNhap);
+                cmd.Parameters.AddWithValue("@GioNhap", sp.GioNhap);
+                cmd.Parameters.AddWithValue("@DonGia", sp.DonGia);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool DeleteNhapHang(DTONhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM NhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
         public DataTable SelectChiTietNhapHang(DTOChiTietNhapHang sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = '@MaNhapHang'", conn);
+                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
+
                 da.Fill(dt);
 
                 da.Dispose();
@@ -184,6 +241,31 @@ namespace DALQLNS
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
                 cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool DeleteChiTietNhapHang(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

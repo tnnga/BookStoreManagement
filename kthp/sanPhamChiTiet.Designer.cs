@@ -48,7 +48,6 @@
             this.lblTenSach.Name = "lblTenSach";
             this.lblTenSach.Size = new System.Drawing.Size(559, 66);
             this.lblTenSach.TabIndex = 0;
-            this.lblTenSach.Text = "Tên sách";
             // 
             // lblGiaSach
             // 
@@ -58,7 +57,6 @@
             this.lblGiaSach.Name = "lblGiaSach";
             this.lblGiaSach.Size = new System.Drawing.Size(273, 66);
             this.lblGiaSach.TabIndex = 0;
-            this.lblGiaSach.Text = "Giá tiền";
             // 
             // lblLoaiSach
             // 
@@ -68,7 +66,6 @@
             this.lblLoaiSach.Name = "lblLoaiSach";
             this.lblLoaiSach.Size = new System.Drawing.Size(273, 76);
             this.lblLoaiSach.TabIndex = 1;
-            this.lblLoaiSach.Text = "Loại sách";
             // 
             // lblSoLuongTon
             // 
@@ -78,7 +75,6 @@
             this.lblSoLuongTon.Name = "lblSoLuongTon";
             this.lblSoLuongTon.Size = new System.Drawing.Size(163, 66);
             this.lblSoLuongTon.TabIndex = 1;
-            this.lblSoLuongTon.Text = "Số lượng";
             // 
             // lblTomTatNoiDung
             // 
@@ -88,7 +84,6 @@
             this.lblTomTatNoiDung.Name = "lblTomTatNoiDung";
             this.lblTomTatNoiDung.Size = new System.Drawing.Size(435, 193);
             this.lblTomTatNoiDung.TabIndex = 1;
-            this.lblTomTatNoiDung.Text = "Nội dung chính ";
             // 
             // label1
             // 

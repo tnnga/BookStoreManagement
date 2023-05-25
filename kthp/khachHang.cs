@@ -1,4 +1,5 @@
-﻿using DTOQLNS;
+﻿using BLLQLNS;
+using DTOQLNS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,12 @@ namespace kthp
 {
     public partial class khachHang : Form
     {
+        private string maKhachHang;
+        private string tenKhachHang;
+        private string gioiTinh;
+        private string soDienThoai;
+        private string diaChi;
+
         public khachHang()
         {
             InitializeComponent();
@@ -50,7 +57,34 @@ namespace kthp
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();
         }
+        public bool UpdateKhachHang(string maKhachHang, string tenKhachHang, string gioiTinh, string soDienThoai, string diaChi)
+        {
+            dcKTHPDataContext data = new dcKTHPDataContext();
 
+            KhachHang sp = (from khachHang in data.KhachHangs
+                          where khachHang.MaKhachHang == maKhachHang.Trim()
+                          select khachHang).Single<KhachHang>();
+
+            sp.TenKhachHang = tenKhachHang;
+            sp.GioiTinh = gioiTinh;
+            sp.SDT = soDienThoai;
+            sp.DiaChi = diaChi;
+
+            data.SubmitChanges();
+            return true;
+        }
+        public bool DeleteKhachHang(string maKhachHang)
+        {
+            dcKTHPDataContext data = new dcKTHPDataContext();
+
+            KhachHang sp = (from khachHang in data.KhachHangs
+                          where khachHang.MaKhachHang == maKhachHang.Trim()
+                          select khachHang).Single<KhachHang>();
+            data.KhachHangs.DeleteOnSubmit(sp);
+            data.SubmitChanges();
+
+            return true;
+        }
         private void btnTim_Click(object sender, EventArgs e)
         {
             if (cbTimKiemTheo.SelectedIndex == 1)
@@ -140,6 +174,56 @@ namespace kthp
 
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();
+        }
+
+        private void capNhatThongTinKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwKhachHang.CurrentCell.RowIndex;
+
+            maKhachHang = dgwKhachHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+            tenKhachHang = dgwKhachHang.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            gioiTinh = dgwKhachHang.Rows[rowIndex].Cells[2].Value.ToString().Trim();
+            soDienThoai = dgwKhachHang.Rows[rowIndex].Cells[3].Value.ToString().Trim();
+            diaChi = dgwKhachHang.Rows[rowIndex].Cells[4].Value.ToString().Trim();
+
+            khachHangCapNhat frmKhachHangCapNhat = new khachHangCapNhat(maKhachHang, tenKhachHang, gioiTinh, soDienThoai, diaChi);
+            frmKhachHangCapNhat.ShowDialog();
+
+            dcKTHPDataContext data = new dcKTHPDataContext();
+
+            var listKhachHang = from khachhang in data.KhachHangs
+                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi };
+
+            dgwKhachHang.DataSource = listKhachHang;
+            ConfigureSP();
+        }
+
+        private void xoaThongTinKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwKhachHang.CurrentCell.RowIndex;
+
+            maKhachHang = dgwKhachHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+
+            var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin khách hàng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (res == DialogResult.Yes)
+            {
+                if (DeleteKhachHang(maKhachHang))
+                {
+                    MessageBox.Show("Xóa thông tin khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dcKTHPDataContext data = new dcKTHPDataContext();
+
+                    var listKhachHang = from khachhang in data.KhachHangs
+                                        select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi };
+
+                    dgwKhachHang.DataSource = listKhachHang;
+                    ConfigureSP();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thông tin khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

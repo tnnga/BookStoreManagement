@@ -36,6 +36,14 @@ namespace BLLQLNS
             DataTable dt = dALNhapHang.FindNgayNhapHang(sp);
             return dt;
         }
+        public bool UpdateNhapHang(DTONhapHang sp)
+        {
+            return dALNhapHang.UpdateNhapHang(sp);
+        }
+        public bool DeleteNhapHang(DTONhapHang sp)
+        {
+            return dALNhapHang.DeleteNhapHang(sp);
+        }
         public bool InsertChiTietNhapHang(DTOChiTietNhapHang sp)
         {
             return dALNhapHang.InSertChiTietNhapHang(sp);
@@ -44,6 +52,11 @@ namespace BLLQLNS
         {
             DataTable dt = dALNhapHang.SelectChiTietNhapHang(sp);
             return dt;
+        }
+        public bool DeleteChiTietNhapHang(DTOChiTietNhapHang sp)
+        {
+            return dALNhapHang.DeleteChiTietNhapHang(sp);
+
         }
     }
 }

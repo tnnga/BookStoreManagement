@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMaNhapHang = new System.Windows.Forms.Label();
             this.txtMaNhapHang = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dgwChiTietNhapHang = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -49,23 +49,14 @@
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgwChiTietNhapHang);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 350);
-            this.panel2.TabIndex = 1;
-            // 
             // lblMaNhapHang
             // 
             this.lblMaNhapHang.AutoSize = true;
-            this.lblMaNhapHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaNhapHang.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNhapHang.ForeColor = System.Drawing.Color.White;
-            this.lblMaNhapHang.Location = new System.Drawing.Point(19, 38);
+            this.lblMaNhapHang.Location = new System.Drawing.Point(3, 32);
             this.lblMaNhapHang.Name = "lblMaNhapHang";
-            this.lblMaNhapHang.Size = new System.Drawing.Size(167, 27);
+            this.lblMaNhapHang.Size = new System.Drawing.Size(215, 34);
             this.lblMaNhapHang.TabIndex = 14;
             this.lblMaNhapHang.Text = "Mã nhập hàng";
             // 
@@ -77,6 +68,15 @@
             this.txtMaNhapHang.Name = "txtMaNhapHang";
             this.txtMaNhapHang.Size = new System.Drawing.Size(559, 66);
             this.txtMaNhapHang.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgwChiTietNhapHang);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 350);
+            this.panel2.TabIndex = 1;
             // 
             // dgwChiTietNhapHang
             // 

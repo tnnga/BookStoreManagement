@@ -15,6 +15,16 @@ namespace kthp
 {
     public partial class hoaDon : Form
     {
+        BLLHoaDon bLLHoaDon = new BLLHoaDon();
+        DTOHoaDon sp = null;
+        DTOChiTietHoaDon sp2 = null;
+
+        private string maHoaDon;
+        private string tenKhachHang;
+        private string ngayHoaDon;
+        private string gioHoaDon;
+        private int donGia;
+
         public hoaDon()
         {
             InitializeComponent();
@@ -43,7 +53,6 @@ namespace kthp
 
         private void hoaDon_Load(object sender, EventArgs e)
         {
-            // Khai bao du lieu
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
@@ -171,6 +180,70 @@ namespace kthp
 
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();
+        }
+
+        private void chiTietHoaĐonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwHoaDon.CurrentCell.RowIndex;
+
+            maHoaDon = dgwHoaDon.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+
+            hoaDonChiTiet hoaDonChiTiet = new hoaDonChiTiet(maHoaDon);
+            hoaDonChiTiet.ShowDialog();
+        }
+
+        private void chinhSuaThongTinHoaĐonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwHoaDon.CurrentCell.RowIndex;
+
+            maHoaDon = dgwHoaDon.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+            tenKhachHang = dgwHoaDon.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            ngayHoaDon = dgwHoaDon.Rows[rowIndex].Cells[2].Value.ToString().Trim();
+            gioHoaDon = dgwHoaDon.Rows[rowIndex].Cells[3].Value.ToString().Trim();
+            donGia = int.Parse(dgwHoaDon.Rows[rowIndex].Cells[4].Value.ToString().Trim());
+
+            hoaDonCapNhat frmHoaDonCapNhat = new hoaDonCapNhat(maHoaDon, tenKhachHang, ngayHoaDon, gioHoaDon, donGia);
+            frmHoaDonCapNhat.ShowDialog();
+
+            dcKTHPDataContext data = new dcKTHPDataContext();
+
+            var listHoaDon = from hoadon in data.HoaDons
+                             select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
+
+            dgwHoaDon.DataSource = listHoaDon;
+            ConfigureSP();
+        }
+
+        private void xoaThongTinHoaĐonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.dgwHoaDon.CurrentCell.RowIndex;
+
+            maHoaDon = dgwHoaDon.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+
+            var res = MessageBox.Show("Bạn có chắc chắn muốn xoá thông tin hóa đơn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (res == DialogResult.Yes)
+            {
+                sp = new DTOHoaDon(maHoaDon, "", "", "", 0);
+                sp2 = new DTOChiTietHoaDon(maHoaDon, "", 0);
+                if (bLLHoaDon.DeleteHoaDon(sp) && bLLHoaDon.DeleteChiTietHoaDon(sp2))
+                {
+                    var res1 = MessageBox.Show("Xóa thông tin hóa đơn thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    dcKTHPDataContext data = new dcKTHPDataContext();
+
+                    var listHoaDon = from hoadon in data.HoaDons
+                                     select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
+
+                    dgwHoaDon.DataSource = listHoaDon;
+                    ConfigureSP();
+                }
+                else
+                {
+                    var res3 = MessageBox.Show("Xóa thông tin hóa đơn thất bại?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                }
+            }
         }
     }
 }
