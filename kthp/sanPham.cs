@@ -123,6 +123,9 @@ namespace kthp
 
             frmSanPhamCapNhat frmSanPhamCapNhat = new frmSanPhamCapNhat(maSach, tenSach, giaTien, soLuong, loaiSach, noiDungChinh);
             frmSanPhamCapNhat.ShowDialog();
+
+            dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
+            ConfigureSP();
         }
 
         private void XoaThongTinSachToolStripMenuItem_Click(object sender, EventArgs e)

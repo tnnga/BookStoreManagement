@@ -46,6 +46,7 @@ namespace kthp
                     txtSoLuongTon.Text = null;
                     txtGiaTien.Text = null;
                     txtLoaiSach.Text = null;
+                    txtNoiDungChinh.Text = null;
                 }
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

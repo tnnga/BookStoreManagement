@@ -49,12 +49,11 @@ namespace kthp
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             dTOSanPham = new DTOSanPham(txtMaSach.Text, txtTenSach.Text, int.Parse(txtSoLuong.Text), int.Parse(txtGiaTien.Text), txtLoaiSach.Text, txtNoiDungChinh.Text);
-            bLLSanPham.UpdateSanPham(dTOSanPham);
 
-            if (bLLSanPham.UpdateSanPham(dTOSanPham) == true)
+            if (bLLSanPham.UpdateSanPham(dTOSanPham))
             {
                 MessageBox.Show("Cập nhật thông tin sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                this.Close();
             }
             else
             {
