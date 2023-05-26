@@ -112,6 +112,12 @@
     <Compile Include="hoaDonThemMoi.Designer.cs">
       <DependentUpon>hoaDonThemMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonThemMoiChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonThemMoiChiTiet.Designer.cs">
+      <DependentUpon>HoaDonThemMoiChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="khachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hoaDonThemMoi.resx">
       <DependentUpon>hoaDonThemMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonThemMoiChiTiet.resx">
+      <DependentUpon>HoaDonThemMoiChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="khachHang.resx">
       <DependentUpon>khachHang.cs</DependentUpon>

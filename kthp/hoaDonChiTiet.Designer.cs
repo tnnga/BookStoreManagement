@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dgwChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.txtMaHoaDon = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgwChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwChiTietHoaDon)).BeginInit();
@@ -48,6 +48,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 116);
             this.panel1.TabIndex = 0;
+            // 
+            // lblMaHoaDon
+            // 
+            this.lblMaHoaDon.AutoSize = true;
+            this.lblMaHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHoaDon.ForeColor = System.Drawing.Color.White;
+            this.lblMaHoaDon.Location = new System.Drawing.Point(54, 46);
+            this.lblMaHoaDon.Name = "lblMaHoaDon";
+            this.lblMaHoaDon.Size = new System.Drawing.Size(179, 34);
+            this.lblMaHoaDon.TabIndex = 16;
+            this.lblMaHoaDon.Text = "Mã hóa đơn";
+            // 
+            // txtMaHoaDon
+            // 
+            this.txtMaHoaDon.BackColor = System.Drawing.Color.MintCream;
+            this.txtMaHoaDon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHoaDon.Location = new System.Drawing.Point(257, 25);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Size = new System.Drawing.Size(559, 66);
+            this.txtMaHoaDon.TabIndex = 15;
             // 
             // panel2
             // 
@@ -72,26 +92,6 @@
             this.dgwChiTietHoaDon.RowTemplate.Height = 28;
             this.dgwChiTietHoaDon.Size = new System.Drawing.Size(870, 411);
             this.dgwChiTietHoaDon.TabIndex = 1;
-            // 
-            // lblMaHoaDon
-            // 
-            this.lblMaHoaDon.AutoSize = true;
-            this.lblMaHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lblMaHoaDon.Location = new System.Drawing.Point(54, 46);
-            this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(179, 34);
-            this.lblMaHoaDon.TabIndex = 16;
-            this.lblMaHoaDon.Text = "Mã hóa đơn";
-            // 
-            // txtMaHoaDon
-            // 
-            this.txtMaHoaDon.BackColor = System.Drawing.Color.MintCream;
-            this.txtMaHoaDon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHoaDon.Location = new System.Drawing.Point(257, 25);
-            this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(559, 66);
-            this.txtMaHoaDon.TabIndex = 15;
             // 
             // hoaDonChiTiet
             // 

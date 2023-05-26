@@ -213,7 +213,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("select MaSanPham as 'Mã sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -237,9 +237,9 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into ChiTietNhapHang(MaNhapHang, TenSanPham, SoLuong) values (@MaNhapHang, @TenSanPham, @SoLuong)", conn);
+                SqlCommand cmd = new SqlCommand("insert into ChiTietNhapHang(MaNhapHang, MaSanPham, SoLuong) values (@MaNhapHang, @MaSanPham, @SoLuong)", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
-                cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0)
@@ -268,6 +268,35 @@ namespace DALQLNS
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
 
                 if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool UpdateChiTietNhapHang(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE ChiTietNhapHang SET MaSanPham = @MaSanPham, SoLuong = @SoLuong WHERE MaSanPham = @MaSanPham AND MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
                 {
                     cmd.Dispose();
                     conn.Close();
