@@ -20,7 +20,7 @@ namespace kthp
         DTOChiTietHoaDon sp2 = null;
 
         private string maHoaDon;
-        private string tenKhachHang;
+        private string maKhachHang;
         private string ngayHoaDon;
         private string gioHoaDon;
         private int donGia;
@@ -33,7 +33,7 @@ namespace kthp
         public void ConfigureSP()
         {
             dgwHoaDon.Columns[0].HeaderText = "Mã hoá đơn";
-            dgwHoaDon.Columns[1].HeaderText = "Tên khách hàng";
+            dgwHoaDon.Columns[1].HeaderText = "Mã khách hàng";
             dgwHoaDon.Columns[2].HeaderText = "Ngày lập hoá đơn";
             dgwHoaDon.Columns[3].HeaderText = "Giờ lập hóa đơn";
             dgwHoaDon.Columns[4].HeaderText = "Đơn giá";
@@ -56,7 +56,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
-                             select new {hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};   
+                             select new {hoadon.MaHoaDon, hoadon.MaKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};   
             
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();
@@ -78,7 +78,7 @@ namespace kthp
             {
                 dcKTHPDataContext data = new dcKTHPDataContext();
 
-                var query = data.HoaDons.Where(s => s.TenKhachHang.Contains(txtTimKiem.Text));
+                var query = data.HoaDons.Where(s => s.MaKhachHang.Contains(txtTimKiem.Text));
                 dgwHoaDon.DataSource = query;
                 dgwHoaDon.Refresh();
                 ConfigureSP();
@@ -120,7 +120,7 @@ namespace kthp
 
                     // Neu tach ten ra thi cuc lam 
                     var query = from hd in data.HoaDons
-                                orderby hd.TenKhachHang ascending
+                                orderby hd.MaKhachHang ascending
                                 select hd;
 
                     dgwHoaDon.DataSource = query;
@@ -161,7 +161,7 @@ namespace kthp
                 dcKTHPDataContext data = new dcKTHPDataContext();
 
                 var listHoaDon = from hoadon in data.HoaDons
-                                 select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
+                                 select new { hoadon.MaHoaDon, hoadon.MaKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
 
                 dgwHoaDon.DataSource = listHoaDon;
                 ConfigureSP();
@@ -176,7 +176,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
-                             select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};
+                             select new { hoadon.MaHoaDon, hoadon.MaKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia};
 
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();
@@ -197,18 +197,18 @@ namespace kthp
             int rowIndex = this.dgwHoaDon.CurrentCell.RowIndex;
 
             maHoaDon = dgwHoaDon.Rows[rowIndex].Cells[0].Value.ToString().Trim();
-            tenKhachHang = dgwHoaDon.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            maKhachHang = dgwHoaDon.Rows[rowIndex].Cells[1].Value.ToString().Trim();
             ngayHoaDon = dgwHoaDon.Rows[rowIndex].Cells[2].Value.ToString().Trim();
             gioHoaDon = dgwHoaDon.Rows[rowIndex].Cells[3].Value.ToString().Trim();
             donGia = int.Parse(dgwHoaDon.Rows[rowIndex].Cells[4].Value.ToString().Trim());
 
-            hoaDonCapNhat frmHoaDonCapNhat = new hoaDonCapNhat(maHoaDon, tenKhachHang, ngayHoaDon, gioHoaDon, donGia);
+            hoaDonCapNhat frmHoaDonCapNhat = new hoaDonCapNhat(maHoaDon, maKhachHang, ngayHoaDon, gioHoaDon, donGia);
             frmHoaDonCapNhat.ShowDialog();
 
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listHoaDon = from hoadon in data.HoaDons
-                             select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
+                             select new { hoadon.MaHoaDon, hoadon.MaKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
 
             dgwHoaDon.DataSource = listHoaDon;
             ConfigureSP();
@@ -233,14 +233,14 @@ namespace kthp
                     dcKTHPDataContext data = new dcKTHPDataContext();
 
                     var listHoaDon = from hoadon in data.HoaDons
-                                     select new { hoadon.MaHoaDon, hoadon.TenKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
+                                     select new { hoadon.MaHoaDon, hoadon.MaKhachHang, hoadon.NgayHoaDon, hoadon.GioHoaDon, hoadon.DonGia };
 
                     dgwHoaDon.DataSource = listHoaDon;
                     ConfigureSP();
                 }
                 else
                 {
-                    var res3 = MessageBox.Show("Xóa thông tin hóa đơn thất bại?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    var res3 = MessageBox.Show("Xóa thông tin hóa đơn thất bại, vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 }
             }

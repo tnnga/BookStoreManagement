@@ -38,5 +38,9 @@ namespace BLLQLNS
         {
             return dALHoaDon.DeleteHoaDon(sp);
         }
+        public bool UpdateChiTietHoaDon(DTOChiTietHoaDon sp)
+        {
+            return dALHoaDon.UpdateChiTietHoaDon(sp);
+        }
     }
 }

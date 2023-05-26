@@ -17,88 +17,36 @@ namespace kthp
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOChiTietHoaDon dTOChiTietHoaDon = null;
         private string maHoaDon;
+        private string maSanPham;
+        private int soLuong;
 
-        public hoaDonCapNhatChiTiet(string maHoaDon)
+        public hoaDonCapNhatChiTiet(string maHoaDon, string maSanPham, int soLuong)
         {
             InitializeComponent();
             this.maHoaDon = maHoaDon;
+            this.maSanPham = maSanPham;
+            this.soLuong = soLuong;
         }
 
         private void hoaDonCapNhatChiTiet_Load(object sender, EventArgs e)
         {
             txtMaHoaDon.Text = maHoaDon;
-        }
-
-        private void txtTenSanPham_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
-            {
-                errorProvider1.SetError(txtTenSanPham, "Vui lòng nhập thông tin!");
-                txtTenSanPham.Focus();
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-        }
-
-        private void txtSoLuong_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtSoLuong.Text))
-            {
-                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập thông tin!");
-                txtSoLuong.Focus();
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            txtTenSanPham.Text = maSanPham;
+            txtSoLuong.Text = soLuong.ToString();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", 0);
+            dTOChiTietHoaDon = new DTOChiTietHoaDon(txtMaHoaDon.Text, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
 
-            if (bLLHoaDon.DeleteChiTietHoaDon(dTOChiTietHoaDon))
+            if (bLLHoaDon.UpdateChiTietHoaDon(dTOChiTietHoaDon))
             {
-                if (errorProvider1.GetError(txtTenSanPham) == "" &&
-                errorProvider1.GetError(txtSoLuong) == "" &&
-                txtTenSanPham.Text != "" &&
-                txtSoLuong.Text != "")
-                {
-                    if (txtTenSanPham1.Text != "" && txtSoLuong1.Text != "")
-                    {
-                        dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham1.Text, int.Parse(txtSoLuong1.Text));
-                        bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
-                    }
-                    if (txtTenSanPham2.Text != "" && txtSoLuong2.Text != "")
-                    {
-                        dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham2.Text, int.Parse(txtSoLuong2.Text));
-                        bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
-                    }
-                    if (txtTenSanPham3.Text != "" && txtSoLuong3.Text != "")
-                    {
-                        dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham3.Text, int.Parse(txtSoLuong3.Text));
-                        bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
-                    }
-                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
-                    if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
-                    {
-                        MessageBox.Show("Bạn đã cập nhật thông tin hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
-                    else
-                        MessageBox.Show("Cập nhật không thành công, vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Vui lòng nhập đủ thông tin cần thiết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                this.Close();
+                MessageBox.Show("Bạn đã cập nhật chi tiết hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             else
             {
-                MessageBox.Show("Cập nhật thông tin sản phẩm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật thông tin chi tiết hóa đơn thất bại, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

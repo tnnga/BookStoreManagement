@@ -16,9 +16,9 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into HoaDon(MaHoaDon, TenKhachHang, NgayHoaDon, GioHoaDon, DonGia) values (@MaHoaDon, @TenKhachHang, @NgayHoaDon, @GioHoaDon, @DonGia)", conn);
+                SqlCommand cmd = new SqlCommand("insert into HoaDon(MaHoaDon, MaKhachHang, NgayHoaDon, GioHoaDon, DonGia) values (@MaHoaDon, @MaKhachHang, @NgayHoaDon, @GioHoaDon, @DonGia)", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
-                cmd.Parameters.AddWithValue("@TenKhachHang", sp.TenKhachHang);
+                cmd.Parameters.AddWithValue("@MaKhachHang", sp.MaKhachHang);
                 cmd.Parameters.AddWithValue("@NgayHoaDon", sp.NgayHoaDon);
                 cmd.Parameters.AddWithValue("@GioHoaDon", sp.GioHoaDon);
                 cmd.Parameters.AddWithValue("@DonGia", sp.DonGia);
@@ -46,9 +46,9 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into ChiTietHoaDon(MaHoaDon, TenSanPham, SoLuong) values (@MaHoaDon, @TenSanPham, @SoLuong)", conn);
+                SqlCommand cmd = new SqlCommand("insert into ChiTietHoaDon(MaHoaDon, MaSanPham, SoLuong) values (@MaHoaDon, @MaSanPham, @SoLuong)", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
-                cmd.Parameters.AddWithValue("@TenSanPham", sp.TenSanPham);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0)
@@ -68,12 +68,13 @@ namespace DALQLNS
             }
             return false;
         }
+
         public DataTable SelectChiTietHoaDon(DTOChiTietHoaDon sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select TenSanPham as 'Tên sản phẩm', SoLuong as 'Số lượng' from ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon", conn);
+                SqlCommand cmd = new SqlCommand("select MaSanPham as 'Mã sản phẩm', SoLuong as 'Số lượng' from ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -97,8 +98,8 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon", conn);
-                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietHoaDon WHERE MaSanPham = @MaSanPham", conn);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -122,12 +123,41 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE HoaDon SET MaHoaDon = @MaHoaDon, TenKhachHang = @TenKhachHang, NgayHoaDon = @NgayHoaDon, GioHoaDon =  @GioHoaDon, DonGia = @DonGia WHERE MaHoaDon = @MaHoaDon", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE HoaDon SET MaHoaDon = @MaHoaDon, MaKhachHang = @MaKhachHang, NgayHoaDon = @NgayHoaDon, GioHoaDon =  @GioHoaDon, DonGia = @DonGia WHERE MaHoaDon = @MaHoaDon", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
-                cmd.Parameters.AddWithValue("@TenKhachHang", sp.TenKhachHang);
+                cmd.Parameters.AddWithValue("@MaKhachHang", sp.MaKhachHang);
                 cmd.Parameters.AddWithValue("@NgayHoaDon", sp.NgayHoaDon);
                 cmd.Parameters.AddWithValue("@GioHoaDon", sp.GioHoaDon);
                 cmd.Parameters.AddWithValue("@DonGia", sp.DonGia);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool UpdateChiTietHoaDon(DTOChiTietHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE ChiTietHoaDon SET MaSanPham = @MaSanPham, SoLuong = @SoLuong WHERE MaSanPham = @MaSanPham AND MaHoaDon = @MaHoaDon", conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", sp.MaHoaDon);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
 
                 var kq = cmd.ExecuteNonQuery();
 
