@@ -127,5 +127,10 @@ namespace kthp
                 e.Cancel = true;
             }
         }
+
+        private void frmHoaDonThemMoi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ()
+        }
     }
 }

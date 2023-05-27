@@ -205,6 +205,7 @@
             this.Name = "frmHoaDonThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonThemMoi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHoaDonThemMoi_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
