@@ -38,7 +38,7 @@ namespace kthp
         {
             lblMaHoaDon.Text = maHoaDon;
 
-            sp = new DTOChiTietHoaDon(maHoaDon, "", 0);
+            sp = new DTOChiTietHoaDon(maHoaDon, "", "", 0);
             dgwHoaDonThemChiTiet.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }
@@ -49,7 +49,7 @@ namespace kthp
             HoaDonThemMoiChiTiet hoaDonThemMoiChiTiet = new HoaDonThemMoiChiTiet(maHoaDon);
             hoaDonThemMoiChiTiet.ShowDialog();
 
-            sp = new DTOChiTietHoaDon(maHoaDon, "", 0);
+            sp = new DTOChiTietHoaDon(maHoaDon, "", "", 0);
             dgwHoaDonThemChiTiet.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }

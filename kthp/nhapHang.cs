@@ -125,8 +125,8 @@ namespace kthp
             if (res == DialogResult.Yes)
             {
                 sp = new DTONhapHang(maNhapHang,"","","",0);
-                sp2 = new DTOChiTietNhapHang(maNhapHang, "", 0);
-                if (bLLNhapHang.DeleteNhapHang(sp) && bLLNhapHang.DeleteChiTietNhapHangAll(sp2))
+                sp2 = new DTOChiTietNhapHang(maNhapHang, "", "", 0);
+                if (bLLNhapHang.DeleteChiTietNhapHangAll(sp2) && bLLNhapHang.DeleteNhapHang(sp))
                 {
                     var res1 = MessageBox.Show("Xóa thông tin nhập hàng thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 

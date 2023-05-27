@@ -213,7 +213,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select MaSanPham as 'Mã sản phẩm', SoLuong as 'Số lượng' from ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("select SP.MaSach, SP.TenSach as 'Tên sản phẩm', CTNH.SoLuong as 'Số lượng' from ChiTietNhapHang CTNH INNER JOIN SanPham SP ON CTNH.MaSanPham = SP.MaSach WHERE CTNH.MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -264,7 +264,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaSanPham = @MaSanPham && MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaSanPham = @MaSanPham AND MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
 
@@ -290,10 +290,11 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE ChiTietNhapHang SET MaSanPham = @MaSanPham, SoLuong = @SoLuong WHERE MaSanPham = @MaSanPham AND MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE ChiTietNhapHang SET MaSanPham = @MaSanPham, SoLuong = @SoLuong WHERE MaSanPham = @MaSanPhamOld AND MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@SoLuong", sp.SoLuong);
+                cmd.Parameters.AddWithValue("@MaSanPhamOld", sp.MaSanPhamOld);
 
                 var kq = cmd.ExecuteNonQuery();
 

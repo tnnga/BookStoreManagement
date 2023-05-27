@@ -86,9 +86,9 @@ namespace kthp
                 ConfigureSP();
             }
             if ((cbTimKiem.Text == "" && cbLoaiSach.Text == "") ||
-                (cbTimKiem.SelectedIndex == 0 && cbLoaiSach.Text == "") ||
-                (cbLoaiSach.SelectedIndex == 0 && cbTimKiem.Text == "") ||
-                (cbTimKiem.SelectedIndex == 0 && cbLoaiSach.Text == "(Lựa chọn)"))
+                (cbTimKiem.SelectedIndex == -1 && cbLoaiSach.Text == "") ||
+                (cbLoaiSach.SelectedIndex == -1 && cbTimKiem.Text == "") ||
+                (cbTimKiem.SelectedIndex == -1 && cbLoaiSach.Text == "(Lựa chọn)"))
             {
                 dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
                 ConfigureSP();

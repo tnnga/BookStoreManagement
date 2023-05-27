@@ -56,18 +56,21 @@ namespace DTOQLNS
     public class DTOChiTietNhapHang
     {
         private string _MaNhapHang;
+        private string _MaSanPhamOld;
         private string _MaSanPham;
         private int _SoLuong;
 
         public string MaNhapHang { get => _MaNhapHang; set => _MaNhapHang = value; }
         public string MaSanPham { get => _MaSanPham; set => _MaSanPham = value; }
         public int SoLuong { get => _SoLuong; set => _SoLuong = value; }
+        public string MaSanPhamOld { get => _MaSanPhamOld; set => _MaSanPhamOld = value; }
 
-        public DTOChiTietNhapHang(string maNhapHang, string maSanPham, int soLuong)
+        public DTOChiTietNhapHang(string maNhapHang, string maSanPhamOld, string maSanPham, int soLuong)
         {
             _MaNhapHang = maNhapHang;
             _MaSanPham = maSanPham;
             _SoLuong = soLuong;
+            _MaSanPhamOld = maSanPhamOld;
         }
     }
 }

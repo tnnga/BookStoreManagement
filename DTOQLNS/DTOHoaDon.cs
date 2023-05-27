@@ -24,6 +24,14 @@ namespace DTOQLNS
 
         public DTOHoaDon() { }
 
+        public DTOHoaDon(string maHoaDon, string maKhachHang, string ngayHoaDon, string gioHoaDon)
+        {
+            _MaHoaDon = maHoaDon;
+            _MaKhachHang = maKhachHang;
+            _NgayHoaDon = ngayHoaDon;
+            _GioHoaDon = gioHoaDon;
+        }
+
         public DTOHoaDon(string maHoaDon, string maKhachHang, string ngayHoaDon, string gioHoaDon, float donGia)
         {
             _MaHoaDon = maHoaDon;
@@ -37,17 +45,20 @@ namespace DTOQLNS
     public class DTOChiTietHoaDon
     {
         private string _MaHoaDon;
+        private string _MaSanPhamOld;
         private string _MaSanPham;
         private int _SoLuong;
 
         public string MaHoaDon { get => _MaHoaDon; set => _MaHoaDon = value; }
         public string MaSanPham { get => _MaSanPham; set => _MaSanPham = value; }
         public int SoLuong { get => _SoLuong; set => _SoLuong = value; }
+        public string MaSanPhamOld { get => _MaSanPhamOld; set => _MaSanPhamOld = value; }
 
-        public DTOChiTietHoaDon(string maHoaDon, string maSanPham, int SoLuong)
+        public DTOChiTietHoaDon(string maHoaDon, string maSanPhamOld, string maSanPham, int SoLuong)
         {
             _MaHoaDon = maHoaDon;
             _MaSanPham = maSanPham;
+            _MaSanPhamOld = maSanPhamOld;
             _SoLuong = SoLuong;
         }
     }

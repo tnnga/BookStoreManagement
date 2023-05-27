@@ -36,7 +36,7 @@ namespace kthp
         private void nhapHangChiTiet_Load(object sender, EventArgs e)
         {
             txtMaNhapHang.Text = maNhapHang;
-            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", 0);
+            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
             dgwChiTietNhapHang.DataSource = bLLNhapHang.SelectChiTietNhapHang(sp);
             ConfigureSP();
         }

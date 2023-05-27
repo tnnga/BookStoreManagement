@@ -225,8 +225,8 @@ namespace kthp
             if (res == DialogResult.Yes)
             {
                 sp = new DTOHoaDon(maHoaDon, "", "", "", 0);
-                sp2 = new DTOChiTietHoaDon(maHoaDon, "", 0);
-                if (bLLHoaDon.DeleteHoaDon(sp) && bLLHoaDon.DeleteChiTietHoaDonAll(sp2))
+                sp2 = new DTOChiTietHoaDon(maHoaDon, "", "", 0);
+                if (bLLHoaDon.DeleteChiTietHoaDonAll(sp2) && bLLHoaDon.DeleteHoaDon(sp))
                 {
                     var res1 = MessageBox.Show("Xóa thông tin hóa đơn thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
