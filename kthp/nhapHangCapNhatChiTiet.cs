@@ -16,6 +16,7 @@ namespace kthp
     {
         BLLNhapHang bLLNhapHang = new BLLNhapHang();
         DTOChiTietNhapHang dTOChiTietNhapHang = null;
+
         private string maNhapHang;
         private string maSanPham;
         private int soLuong;
@@ -30,7 +31,7 @@ namespace kthp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            dTOChiTietNhapHang = new DTOChiTietNhapHang(txtMaNhapHang.Text, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+            dTOChiTietNhapHang = new DTOChiTietNhapHang(txtMaNhapHang.Text, maSanPham, txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
 
             if (bLLNhapHang.UpdateChiTietNhapHang(dTOChiTietNhapHang))
             {
@@ -46,7 +47,7 @@ namespace kthp
         private void nhapHangCapNhatChiTiet_Load(object sender, EventArgs e)
         {
             txtMaNhapHang.Text = maNhapHang;
-            txtTenSanPham.Text = maSanPham;
+            txtMaSanPham.Text = maSanPham;
             txtSoLuong.Text = soLuong.ToString();
         }
     }

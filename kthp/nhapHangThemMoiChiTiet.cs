@@ -28,7 +28,7 @@ namespace kthp
         {
             if (txtTenSanPham.Text != "" && txtSoLuong.Text != "")
             {
-                dTOChiTietNhapHang = new DTOChiTietNhapHang(maNhapHang, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+                dTOChiTietNhapHang = new DTOChiTietNhapHang(maNhapHang, "", txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
 
                 if (bLLNhapHang.InsertChiTietNhapHang(dTOChiTietNhapHang))
                 {

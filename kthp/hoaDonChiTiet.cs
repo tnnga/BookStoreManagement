@@ -35,7 +35,7 @@ namespace kthp
         private void hoaDonChiTiet_Load(object sender, EventArgs e)
         {
             txtMaHoaDon.Text = maHoaDon;
-            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
             dgwChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }

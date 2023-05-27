@@ -69,7 +69,7 @@ namespace kthp
             txtGioHoaDon.Text = gioHoaDon;
             txtDonGia.Text = donGia.ToString();
 
-            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
             dgwCapNhatChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }
@@ -79,12 +79,12 @@ namespace kthp
             int rowIndex = this.dgwCapNhatChiTietHoaDon.CurrentCell.RowIndex;
 
             maSanPham = dgwCapNhatChiTietHoaDon.Rows[rowIndex].Cells[0].Value.ToString().Trim();
-            soLuong = int.Parse(dgwCapNhatChiTietHoaDon.Rows[rowIndex].Cells[1].Value.ToString().Trim());
+            soLuong = int.Parse(dgwCapNhatChiTietHoaDon.Rows[rowIndex].Cells[2].Value.ToString().Trim());
 
             hoaDonCapNhatChiTiet frmHoaDonCapNhatChiTiet = new hoaDonCapNhatChiTiet(maHoaDon, maSanPham, soLuong);
             frmHoaDonCapNhatChiTiet.ShowDialog();
 
-            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
             dgwCapNhatChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }
@@ -99,7 +99,7 @@ namespace kthp
 
             if (res == DialogResult.Yes)
             {
-                sp = new DTOChiTietHoaDon("", maSanPham, 0);
+                sp = new DTOChiTietHoaDon(maHoaDon, "", maSanPham, 0);
                 if (bLLHoaDon.DeleteChiTietHoaDon(sp))
                 {
                     var res1 = MessageBox.Show("Xóa thông tin chi tiết hóa đơn thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -111,7 +111,7 @@ namespace kthp
                 }
             }
 
-            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
             dgwCapNhatChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }
@@ -121,9 +121,14 @@ namespace kthp
             HoaDonThemMoiChiTiet hoaDonThemMoiChiTiet = new HoaDonThemMoiChiTiet(maHoaDon);
             hoaDonThemMoiChiTiet.ShowDialog();
 
-            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
             dgwCapNhatChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
+        }
+
+        private void dgwCapNhatChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

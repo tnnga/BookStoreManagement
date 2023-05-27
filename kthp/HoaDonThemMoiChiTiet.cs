@@ -17,6 +17,7 @@ namespace kthp
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOChiTietHoaDon dTOChiTietHoaDon = null;
         private string maHoaDon;
+        public int tongDonGia;
 
         public HoaDonThemMoiChiTiet(string maHoaDon)
         {
@@ -28,7 +29,7 @@ namespace kthp
         {
             if (txtTenSanPham.Text != "" && txtSoLuong.Text != "")
             {
-                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
 
                 if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
                 {

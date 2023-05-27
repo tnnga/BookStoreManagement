@@ -16,6 +16,7 @@ namespace kthp
     {
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOChiTietHoaDon dTOChiTietHoaDon = null;
+
         private string maHoaDon;
         private string maSanPham;
         private int soLuong;
@@ -31,13 +32,13 @@ namespace kthp
         private void hoaDonCapNhatChiTiet_Load(object sender, EventArgs e)
         {
             txtMaHoaDon.Text = maHoaDon;
-            txtTenSanPham.Text = maSanPham;
+            txtMaSanPham.Text = maSanPham;
             txtSoLuong.Text = soLuong.ToString();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            dTOChiTietHoaDon = new DTOChiTietHoaDon(txtMaHoaDon.Text, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+            dTOChiTietHoaDon = new DTOChiTietHoaDon(txtMaHoaDon.Text, maSanPham, txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
 
             if (bLLHoaDon.UpdateChiTietHoaDon(dTOChiTietHoaDon))
             {

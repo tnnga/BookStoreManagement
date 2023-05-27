@@ -47,5 +47,14 @@ namespace BLLQLNS
             return dALHoaDon.DeleteChiTietHoaDonAll(sp);
 
         }
+        public DataTable TongThanhTien(DTOChiTietHoaDon sp)
+        {
+            DataTable dt = dALHoaDon.TongThanhTien(sp);
+            return dt;
+        }
+        public bool InsertDonGiaHoaDon(DTOHoaDon dTOHoaDon)
+        {
+            return dALHoaDon.InsertDonGiaHoaDon(dTOHoaDon);
+        }
     }
 }
