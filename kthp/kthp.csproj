@@ -186,6 +186,12 @@
     <Compile Include="nhapHangThemMoi.Designer.cs">
       <DependentUpon>nhapHangThemMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhapHangThemMoiChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhapHangThemMoiChiTiet.Designer.cs">
+      <DependentUpon>nhapHangThemMoiChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhapLaiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nhapHangThemMoi.resx">
       <DependentUpon>nhapHangThemMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhapHangThemMoiChiTiet.resx">
+      <DependentUpon>nhapHangThemMoiChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhapLaiMatKhau.resx">
       <DependentUpon>nhapLaiMatKhau.cs</DependentUpon>

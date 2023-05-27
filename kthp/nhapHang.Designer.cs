@@ -151,6 +151,7 @@
             this.btnTaoNhapHang.TabIndex = 30;
             this.btnTaoNhapHang.Text = "Tạo";
             this.btnTaoNhapHang.UseVisualStyleBackColor = true;
+            this.btnTaoNhapHang.Click += new System.EventHandler(this.btnTaoNhapHang_Click);
             // 
             // panel2
             // 

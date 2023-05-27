@@ -41,7 +41,19 @@ namespace kthp
                 {
                     frmHoaDonThemChiTiet frmHoaDonThemChiTiet = new frmHoaDonThemChiTiet(txtMaHoaDon.Text);
                     frmHoaDonThemChiTiet.ShowDialog();
-                    Close();
+
+                    DialogResult resquest = MessageBox.Show("Thêm hóa đơn thành công, bạn có muốn in hoá đơn hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resquest == DialogResult.Yes)
+                    {
+                        reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
+                        reportHoaDon.Show();
+
+                    }
+                    else
+                    {
+                        Close();
+                    }
                 }
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -115,31 +127,6 @@ namespace kthp
             else
             {
                 errorProvider1.Clear();
-            }
-        }
-        
-        private void frmHoaDonThemMoi_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn muốn hủy thêm sản phẩm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                DialogResult resquest = MessageBox.Show("Bạn có muốn in hoá đơn hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resquest == DialogResult.Yes)
-                {
-                    reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
-                    reportHoaDon.Show();
-
-                }
-                else
-                {
-                    e.Cancel = false;
-                }
-            }
-            else
-            {
-                e.Cancel = true;
             }
         }
     }

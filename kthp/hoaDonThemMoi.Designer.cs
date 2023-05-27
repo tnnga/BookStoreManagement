@@ -52,7 +52,7 @@
             this.lblDienThongTin.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.lblDienThongTin.Location = new System.Drawing.Point(0, 0);
             this.lblDienThongTin.Name = "lblDienThongTin";
-            this.lblDienThongTin.Size = new System.Drawing.Size(662, 62);
+            this.lblDienThongTin.Size = new System.Drawing.Size(745, 78);
             this.lblDienThongTin.TabIndex = 38;
             this.lblDienThongTin.Text = "Vui lòng điền thông tin";
             this.lblDienThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,10 +62,11 @@
             this.txtDonGia.BackColor = System.Drawing.Color.LightSeaGreen;
             this.txtDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonGia.ForeColor = System.Drawing.Color.White;
-            this.txtDonGia.Location = new System.Drawing.Point(225, 415);
+            this.txtDonGia.Location = new System.Drawing.Point(253, 519);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDonGia.Multiline = true;
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(395, 41);
+            this.txtDonGia.Size = new System.Drawing.Size(444, 50);
             this.txtDonGia.TabIndex = 28;
             this.txtDonGia.Leave += new System.EventHandler(this.txtDonGia_Leave);
             // 
@@ -73,9 +74,9 @@
             // 
             this.lblDonGia.AutoSize = true;
             this.lblDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDonGia.Location = new System.Drawing.Point(23, 404);
+            this.lblDonGia.Location = new System.Drawing.Point(26, 505);
             this.lblDonGia.Name = "lblDonGia";
-            this.lblDonGia.Size = new System.Drawing.Size(91, 23);
+            this.lblDonGia.Size = new System.Drawing.Size(105, 27);
             this.lblDonGia.TabIndex = 36;
             this.lblDonGia.Text = "Đơn giá:";
             // 
@@ -84,10 +85,11 @@
             this.txtGioLapHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
             this.txtGioLapHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGioLapHoaDon.ForeColor = System.Drawing.Color.White;
-            this.txtGioLapHoaDon.Location = new System.Drawing.Point(225, 330);
+            this.txtGioLapHoaDon.Location = new System.Drawing.Point(253, 412);
+            this.txtGioLapHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGioLapHoaDon.Multiline = true;
             this.txtGioLapHoaDon.Name = "txtGioLapHoaDon";
-            this.txtGioLapHoaDon.Size = new System.Drawing.Size(395, 41);
+            this.txtGioLapHoaDon.Size = new System.Drawing.Size(444, 50);
             this.txtGioLapHoaDon.TabIndex = 27;
             this.txtGioLapHoaDon.Leave += new System.EventHandler(this.txtGioLapHoaDon_Leave);
             // 
@@ -95,9 +97,9 @@
             // 
             this.lblGioHoaDon.AutoSize = true;
             this.lblGioHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGioHoaDon.Location = new System.Drawing.Point(23, 333);
+            this.lblGioHoaDon.Location = new System.Drawing.Point(26, 416);
             this.lblGioHoaDon.Name = "lblGioHoaDon";
-            this.lblGioHoaDon.Size = new System.Drawing.Size(167, 23);
+            this.lblGioHoaDon.Size = new System.Drawing.Size(192, 27);
             this.lblGioHoaDon.TabIndex = 37;
             this.lblGioHoaDon.Text = "Giờ lập hoá đơn:";
             // 
@@ -106,10 +108,11 @@
             this.txtNgayHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
             this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgayHoaDon.ForeColor = System.Drawing.Color.White;
-            this.txtNgayHoaDon.Location = new System.Drawing.Point(225, 248);
+            this.txtNgayHoaDon.Location = new System.Drawing.Point(253, 310);
+            this.txtNgayHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNgayHoaDon.Multiline = true;
             this.txtNgayHoaDon.Name = "txtNgayHoaDon";
-            this.txtNgayHoaDon.Size = new System.Drawing.Size(395, 41);
+            this.txtNgayHoaDon.Size = new System.Drawing.Size(444, 50);
             this.txtNgayHoaDon.TabIndex = 26;
             this.txtNgayHoaDon.Leave += new System.EventHandler(this.txtNgayHoaDon_Leave);
             // 
@@ -117,9 +120,9 @@
             // 
             this.lblNgayHoaDon.AutoSize = true;
             this.lblNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHoaDon.Location = new System.Drawing.Point(23, 251);
+            this.lblNgayHoaDon.Location = new System.Drawing.Point(26, 314);
             this.lblNgayHoaDon.Name = "lblNgayHoaDon";
-            this.lblNgayHoaDon.Size = new System.Drawing.Size(184, 23);
+            this.lblNgayHoaDon.Size = new System.Drawing.Size(212, 27);
             this.lblNgayHoaDon.TabIndex = 34;
             this.lblNgayHoaDon.Text = "Ngày lập hoá đơn:";
             // 
@@ -128,10 +131,11 @@
             this.txtMaKhachHang.BackColor = System.Drawing.Color.LightSeaGreen;
             this.txtMaKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtMaKhachHang.Location = new System.Drawing.Point(225, 163);
+            this.txtMaKhachHang.Location = new System.Drawing.Point(253, 204);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaKhachHang.Multiline = true;
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(395, 41);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(444, 50);
             this.txtMaKhachHang.TabIndex = 25;
             this.txtMaKhachHang.Leave += new System.EventHandler(this.txtTenKhachHang_Leave);
             // 
@@ -139,9 +143,9 @@
             // 
             this.lblMaKhachHang.AutoSize = true;
             this.lblMaKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaKhachHang.Location = new System.Drawing.Point(23, 166);
+            this.lblMaKhachHang.Location = new System.Drawing.Point(26, 208);
             this.lblMaKhachHang.Name = "lblMaKhachHang";
-            this.lblMaKhachHang.Size = new System.Drawing.Size(160, 23);
+            this.lblMaKhachHang.Size = new System.Drawing.Size(186, 27);
             this.lblMaKhachHang.TabIndex = 33;
             this.lblMaKhachHang.Text = "Mã khách hàng:";
             // 
@@ -150,10 +154,11 @@
             this.txtMaHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
             this.txtMaHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHoaDon.ForeColor = System.Drawing.Color.White;
-            this.txtMaHoaDon.Location = new System.Drawing.Point(225, 85);
+            this.txtMaHoaDon.Location = new System.Drawing.Point(253, 106);
+            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaHoaDon.Multiline = true;
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(395, 41);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(444, 50);
             this.txtMaHoaDon.TabIndex = 24;
             this.txtMaHoaDon.Leave += new System.EventHandler(this.txtMaHoaDon_Leave);
             // 
@@ -161,20 +166,21 @@
             // 
             this.lblMaHoaDon.AutoSize = true;
             this.lblMaHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaHoaDon.Location = new System.Drawing.Point(27, 88);
+            this.lblMaHoaDon.Location = new System.Drawing.Point(30, 110);
             this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(128, 23);
+            this.lblMaHoaDon.Size = new System.Drawing.Size(148, 27);
             this.lblMaHoaDon.TabIndex = 32;
             this.lblMaHoaDon.Text = "Mã hoá đơn:";
             // 
             // btnThemHoaDon
             // 
             this.btnThemHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(348, 490);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(499, 612);
+            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(272, 50);
+            this.btnThemHoaDon.Size = new System.Drawing.Size(199, 62);
             this.btnThemHoaDon.TabIndex = 39;
             this.btnThemHoaDon.Text = "THÊM CHI TIẾT";
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
@@ -186,10 +192,10 @@
             // 
             // frmHoaDonThemMoi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(662, 567);
+            this.ClientSize = new System.Drawing.Size(745, 709);
             this.Controls.Add(this.btnThemHoaDon);
             this.Controls.Add(this.lblDienThongTin);
             this.Controls.Add(this.txtDonGia);
@@ -202,10 +208,10 @@
             this.Controls.Add(this.lblMaKhachHang);
             this.Controls.Add(this.txtMaHoaDon);
             this.Controls.Add(this.lblMaHoaDon);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmHoaDonThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonThemMoi";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHoaDonThemMoi_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

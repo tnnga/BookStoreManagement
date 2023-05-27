@@ -264,7 +264,8 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaSanPham = @MaSanPham && MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSanPham);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
 
                 if (cmd.ExecuteNonQuery() > 0)
@@ -297,6 +298,31 @@ namespace DALQLNS
                 var kq = cmd.ExecuteNonQuery();
 
                 if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool DeleteChiTietNhapHangAll(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM ChiTietNhapHang WHERE MaNhapHang = @MaNhapHang", conn);
+                cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
+
+                if (cmd.ExecuteNonQuery() > 0)
                 {
                     cmd.Dispose();
                     conn.Close();

@@ -54,7 +54,6 @@ namespace kthp
             {
                 MessageBox.Show("Bạn đã cập nhật thông tin hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
-                this.Close();
             }
             else
             {
@@ -119,9 +118,6 @@ namespace kthp
 
         private void themToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int rowIndex = this.dgwCapNhatChiTietHoaDon.CurrentCell.RowIndex;
-
- 
             HoaDonThemMoiChiTiet hoaDonThemMoiChiTiet = new HoaDonThemMoiChiTiet(maHoaDon);
             hoaDonThemMoiChiTiet.ShowDialog();
 

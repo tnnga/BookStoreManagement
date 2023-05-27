@@ -201,12 +201,12 @@
             // btnThemHoaDon
             // 
             this.btnThemHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(396, 588);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(481, 588);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(306, 62);
+            this.btnThemHoaDon.Size = new System.Drawing.Size(221, 62);
             this.btnThemHoaDon.TabIndex = 51;
             this.btnThemHoaDon.Text = "THÊM CHI TIẾT";
             this.btnThemHoaDon.UseVisualStyleBackColor = false;

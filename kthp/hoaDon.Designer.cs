@@ -188,7 +188,7 @@
             this.chỉnhSửaThôngTinHóaĐơnToolStripMenuItem,
             this.xóaThôngTinHóaĐơnToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(313, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(313, 133);
             // 
             // chiTiếtHóaĐơnToolStripMenuItem
             // 

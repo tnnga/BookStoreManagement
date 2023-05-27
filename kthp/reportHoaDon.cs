@@ -29,7 +29,7 @@ namespace kthp
         private void crw_HoaDon_Load(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection(@"Data Source=MSI\MS_SQLSERVER;Initial Catalog=KTHP;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-FJ1OSTG\MSSQLSERVER02;Initial Catalog=KTHP;Integrated Security=True");
             conn.Open();
 
             SqlCommand cmd = new SqlCommand("SELECT HoaDon.NgayHoaDon, HoaDon.GioHoaDon, HoaDon.DonGia, ChiTietHoaDon.MaHoaDon, ChiTietHoaDon.MaSanPham, ChiTietHoaDon.SoLuong, SanPham.TenSach, KhachHang.TenKhachHang, SanPham.GiaTien FROM ChiTietHoaDon INNER JOIN HoaDon ON ChiTietHoaDon.MaHoaDon = HoaDon.MaHoaDon INNER JOIN KhachHang ON HoaDon.MaKhachHang = KhachHang.MaKhachHang INNER JOIN SanPham ON ChiTietHoaDon.MaSanPham = SanPham.MaSach WHERE ChiTietHoaDon.MaHoaDon = @MaHoaDon", conn);

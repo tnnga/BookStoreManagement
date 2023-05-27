@@ -101,7 +101,7 @@ namespace kthp
 
             if (res == DialogResult.Yes)
             {
-                sp = new DTOChiTietNhapHang("", maSanPham, 0);
+                sp = new DTOChiTietNhapHang(maNhapHang, maSanPham, 0);
                 if (bLLNhapHang.DeleteChiTietNhapHang(sp))
                 {
                     var res1 = MessageBox.Show("Xóa thông tin chi tiết nhập hàng thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -120,7 +120,12 @@ namespace kthp
 
         private void themToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            nhapHangThemMoiChiTiet nhapHangThemMoiChiTiet = new nhapHangThemMoiChiTiet(maNhapHang);
+            nhapHangThemMoiChiTiet.ShowDialog();
 
+            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", 0);
+            dgwCapNhatChiTietNhapHang.DataSource = bLLNhapHang.SelectChiTietNhapHang(sp);
+            ConfigureSP();
         }
     }
 }
