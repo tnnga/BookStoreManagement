@@ -16,7 +16,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update HoaDon set DonGia = @DonGia WHERE MaHoaDon = @MaHoaDon", conn);
+                SqlCommand cmd = new SqlCommand("update HoaDon set DonGia =@DonGia WHERE MaHoaDon = @MaHoaDon", conn);
                 cmd.Parameters.AddWithValue("@MaHoaDon", dTOHoaDon.MaHoaDon);
                 cmd.Parameters.AddWithValue("@DonGia", dTOHoaDon.DonGia);
 
