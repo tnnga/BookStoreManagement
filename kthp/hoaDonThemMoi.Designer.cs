@@ -36,8 +36,8 @@
             this.lblGioHoaDon = new System.Windows.Forms.Label();
             this.txtNgayHoaDon = new System.Windows.Forms.TextBox();
             this.lblNgayHoaDon = new System.Windows.Forms.Label();
-            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
-            this.lblTenKhachHang = new System.Windows.Forms.Label();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
+            this.lblMaKhachHang = new System.Windows.Forms.Label();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
@@ -123,27 +123,27 @@
             this.lblNgayHoaDon.TabIndex = 34;
             this.lblNgayHoaDon.Text = "Ngày lập hoá đơn:";
             // 
-            // txtTenKhachHang
+            // txtMaKhachHang
             // 
-            this.txtTenKhachHang.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtTenKhachHang.Location = new System.Drawing.Point(225, 163);
-            this.txtTenKhachHang.Multiline = true;
-            this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(395, 41);
-            this.txtTenKhachHang.TabIndex = 25;
-            this.txtTenKhachHang.Leave += new System.EventHandler(this.txtTenKhachHang_Leave);
+            this.txtMaKhachHang.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtMaKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhachHang.ForeColor = System.Drawing.Color.White;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(225, 163);
+            this.txtMaKhachHang.Multiline = true;
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(395, 41);
+            this.txtMaKhachHang.TabIndex = 25;
+            this.txtMaKhachHang.Leave += new System.EventHandler(this.txtTenKhachHang_Leave);
             // 
-            // lblTenKhachHang
+            // lblMaKhachHang
             // 
-            this.lblTenKhachHang.AutoSize = true;
-            this.lblTenKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenKhachHang.Location = new System.Drawing.Point(23, 166);
-            this.lblTenKhachHang.Name = "lblTenKhachHang";
-            this.lblTenKhachHang.Size = new System.Drawing.Size(167, 23);
-            this.lblTenKhachHang.TabIndex = 33;
-            this.lblTenKhachHang.Text = "Tên khách hàng:";
+            this.lblMaKhachHang.AutoSize = true;
+            this.lblMaKhachHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaKhachHang.Location = new System.Drawing.Point(23, 166);
+            this.lblMaKhachHang.Name = "lblMaKhachHang";
+            this.lblMaKhachHang.Size = new System.Drawing.Size(160, 23);
+            this.lblMaKhachHang.TabIndex = 33;
+            this.lblMaKhachHang.Text = "Mã khách hàng:";
             // 
             // txtMaHoaDon
             // 
@@ -198,8 +198,8 @@
             this.Controls.Add(this.lblGioHoaDon);
             this.Controls.Add(this.txtNgayHoaDon);
             this.Controls.Add(this.lblNgayHoaDon);
-            this.Controls.Add(this.txtTenKhachHang);
-            this.Controls.Add(this.lblTenKhachHang);
+            this.Controls.Add(this.txtMaKhachHang);
+            this.Controls.Add(this.lblMaKhachHang);
             this.Controls.Add(this.txtMaHoaDon);
             this.Controls.Add(this.lblMaHoaDon);
             this.Name = "frmHoaDonThemMoi";
@@ -221,8 +221,8 @@
         private System.Windows.Forms.Label lblGioHoaDon;
         private System.Windows.Forms.TextBox txtNgayHoaDon;
         private System.Windows.Forms.Label lblNgayHoaDon;
-        private System.Windows.Forms.TextBox txtTenKhachHang;
-        private System.Windows.Forms.Label lblTenKhachHang;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
+        private System.Windows.Forms.Label lblMaKhachHang;
         private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.Label lblMaHoaDon;
         private System.Windows.Forms.Button btnThemHoaDon;

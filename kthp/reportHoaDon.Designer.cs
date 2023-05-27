@@ -34,15 +34,15 @@
             // 
             // crw_HoaDon
             // 
-            this.crw_HoaDon.ActiveViewIndex = 0;
+            this.crw_HoaDon.ActiveViewIndex = -1;
             this.crw_HoaDon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crw_HoaDon.Cursor = System.Windows.Forms.Cursors.Default;
             this.crw_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crw_HoaDon.Location = new System.Drawing.Point(0, 0);
             this.crw_HoaDon.Name = "crw_HoaDon";
-            this.crw_HoaDon.ReportSource = this.crHoaDon1;
             this.crw_HoaDon.Size = new System.Drawing.Size(1079, 890);
             this.crw_HoaDon.TabIndex = 0;
+            this.crw_HoaDon.Load += new System.EventHandler(this.crw_HoaDon_Load);
             // 
             // reportHoaDon
             // 

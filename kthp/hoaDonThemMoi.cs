@@ -26,17 +26,17 @@ namespace kthp
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (errorProvider1.GetError(txtMaHoaDon) == "" &&
-                errorProvider1.GetError(txtTenKhachHang) == "" &&
+                errorProvider1.GetError(txtMaKhachHang) == "" &&
                 errorProvider1.GetError(txtNgayHoaDon) == "" &&
                 errorProvider1.GetError(txtGioLapHoaDon) == "" &&
                 errorProvider1.GetError(txtDonGia) == "" &&
                 txtMaHoaDon.Text != "" &&
-                txtTenKhachHang.Text != "" &&
+                txtMaKhachHang.Text != "" &&
                 txtNgayHoaDon.Text != "" &&
                 txtGioLapHoaDon.Text != "" &&
                 txtDonGia.Text != "")
             {
-                dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, txtTenKhachHang.Text, txtNgayHoaDon.Text, txtGioLapHoaDon.Text, float.Parse(txtDonGia.Text));
+                dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, txtMaKhachHang.Text, txtNgayHoaDon.Text, txtGioLapHoaDon.Text, float.Parse(txtDonGia.Text));
                 if (bLLHoaDon.InsertHoaDon(dTOHoaDon))
                 {
                     frmHoaDonThemChiTiet frmHoaDonThemChiTiet = new frmHoaDonThemChiTiet(txtMaHoaDon.Text);
@@ -68,10 +68,10 @@ namespace kthp
 
         private void txtTenKhachHang_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenKhachHang.Text))
+            if (string.IsNullOrWhiteSpace(txtMaKhachHang.Text))
             {
-                errorProvider1.SetError(txtTenKhachHang, "Vui lòng nhập thông tin!");
-                txtTenKhachHang.Focus();
+                errorProvider1.SetError(txtMaKhachHang, "Vui lòng nhập thông tin!");
+                txtMaKhachHang.Focus();
             }
             else
             {
@@ -118,19 +118,29 @@ namespace kthp
             }
         }
         
-        private void frmSanPhamThemMoi_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmHoaDonThemMoi_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn muốn hủy thêm sản phẩm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
+            if (result == DialogResult.Yes)
+            {
+                DialogResult resquest = MessageBox.Show("Bạn có muốn in hoá đơn hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resquest == DialogResult.Yes)
+                {
+                    reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
+                    reportHoaDon.Show();
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            }
+            else
             {
                 e.Cancel = true;
             }
-        }
-
-        private void frmHoaDonThemMoi_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if ()
         }
     }
 }
