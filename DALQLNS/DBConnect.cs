@@ -9,6 +9,6 @@ namespace DALQLNS
 {
     public class DBConnect
     {
-        protected SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-FJ1OSTG\MSSQLSERVER02;Initial Catalog=KTHP;Integrated Security=True");
+        protected SqlConnection conn = new SqlConnection(@"Data Source=MSI\MS_SQLSERVER;Initial Catalog=KTHP;Integrated Security=True");
     }
 }

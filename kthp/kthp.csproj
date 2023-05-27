@@ -59,6 +59,12 @@
     <Compile Include="caiDat.Designer.cs">
       <DependentUpon>caiDat.cs</DependentUpon>
     </Compile>
+    <Compile Include="crHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dcKTHP.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="dsHoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHoaDon.xsd</DependentUpon>
     </Compile>
     <Compile Include="hoaDon.cs">
       <SubType>Form</SubType>
@@ -192,6 +203,12 @@
     <Compile Include="manHinhChinh.Designer.cs">
       <DependentUpon>manHinhChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportHoaDon.Designer.cs">
+      <DependentUpon>reportHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="sanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +241,10 @@
     </Compile>
     <EmbeddedResource Include="caiDat.resx">
       <DependentUpon>caiDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="dangKy.resx">
       <DependentUpon>dangKy.cs</DependentUpon>
@@ -297,6 +318,9 @@
     <EmbeddedResource Include="manHinhChinh.resx">
       <DependentUpon>manHinhChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportHoaDon.resx">
+      <DependentUpon>reportHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sanPham.resx">
       <DependentUpon>sanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +343,17 @@
     </None>
     <None Include="dcKTHP.dbml.layout">
       <DependentUpon>dcKTHP.dbml</DependentUpon>
+    </None>
+    <None Include="dsHoaDon.xsc">
+      <DependentUpon>dsHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="dsHoaDon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHoaDon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsHoaDon.xss">
+      <DependentUpon>dsHoaDon.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -345,6 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
