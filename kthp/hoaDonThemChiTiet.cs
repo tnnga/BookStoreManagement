@@ -25,27 +25,27 @@ namespace kthp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (errorProvider1.GetError(txtTenSanPham) == "" &&
+            if (errorProvider1.GetError(txtMaSanPham) == "" &&
                 errorProvider1.GetError(txtSoLuong) == "" &&
-                txtTenSanPham.Text != "" &&
+                txtMaSanPham.Text != "" &&
                 txtSoLuong.Text != "")
             {
-                if(txtTenSanPham1.Text != "" && txtSoLuong1.Text != "")
+                if(txtMaSanPham1.Text != "" && txtSoLuong1.Text != "")
                 {
-                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham1.Text, int.Parse(txtSoLuong1.Text));
+                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtMaSanPham1.Text, int.Parse(txtSoLuong1.Text));
                     bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
                 }
-                if (txtTenSanPham2.Text != "" && txtSoLuong2.Text != "")
+                if (txtMaSanPham2.Text != "" && txtSoLuong2.Text != "")
                 {
-                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham2.Text, int.Parse(txtSoLuong2.Text));
+                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtMaSanPham2.Text, int.Parse(txtSoLuong2.Text));
                     bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
                 }
-                if (txtTenSanPham3.Text != "" && txtSoLuong3.Text != "")
+                if (txtMaSanPham3.Text != "" && txtSoLuong3.Text != "")
                 {
-                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham3.Text, int.Parse(txtSoLuong3.Text));
+                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtMaSanPham3.Text, int.Parse(txtSoLuong3.Text));
                     bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon);
                 }
-                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
                 if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
                 {
                     MessageBox.Show("Bạn đã thêm dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,10 +62,10 @@ namespace kthp
 
         private void txtTenDangNhap_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
+            if (string.IsNullOrWhiteSpace(txtMaSanPham.Text))
             {
-                errorProvider1.SetError(txtTenSanPham, "Vui lòng nhập thông tin!");
-                txtTenSanPham.Focus();
+                errorProvider1.SetError(txtMaSanPham, "Vui lòng nhập thông tin!");
+                txtMaSanPham.Focus();
             }
             else
             {

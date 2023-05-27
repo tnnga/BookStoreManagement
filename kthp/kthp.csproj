@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dcKTHP.dbml</DependentUpon>
     </Compile>
+    <Compile Include="dsHoaDon.cs">
+      <DependentUpon>dsHoaDon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsHoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

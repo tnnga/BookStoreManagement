@@ -6,95 +6,14 @@
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="KTHPConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="KTHPConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.kthp.Properties.Settings.GlobalReference.Default.KTHPConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
-        <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HoaDonTableAdapter" GeneratorDataComponentClassName="HoaDonTableAdapter" Name="HoaDon" UserDataComponentName="HoaDonTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="KTHPConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT HoaDon.MaHoaDon, KhachHang.TenKhachHang, HoaDon.NgayHoaDon, HoaDon.GioHoaDon, ChiTietHoaDon.MaSanPham, SanPham.TenSach, SanPham.GiaTien, ChiTietHoaDon.SoLuong, HoaDon.DonGia
-FROM     ChiTietHoaDon INNER JOIN
-                  HoaDon ON ChiTietHoaDon.MaHoaDon = HoaDon.MaHoaDon INNER JOIN
-                  KhachHang ON HoaDon.MaKhachHang = KhachHang.MaKhachHang INNER JOIN
-                  SanPham ON ChiTietHoaDon.MaSanPham = SanPham.MaSach</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="MaHoaDon" DataSetColumn="MaHoaDon" />
-              <Mapping SourceColumn="TenKhachHang" DataSetColumn="TenKhachHang" />
-              <Mapping SourceColumn="NgayHoaDon" DataSetColumn="NgayHoaDon" />
-              <Mapping SourceColumn="GioHoaDon" DataSetColumn="GioHoaDon" />
-              <Mapping SourceColumn="MaSanPham" DataSetColumn="MaSanPham" />
-              <Mapping SourceColumn="TenSach" DataSetColumn="TenSach" />
-              <Mapping SourceColumn="GiaTien" DataSetColumn="GiaTien" />
-              <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
-              <Mapping SourceColumn="DonGia" DataSetColumn="DonGia" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-        </Tables>
+        <Tables />
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsHoaDon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsHoaDon" msprop:Generator_DataSetName="dsHoaDon">
+  <xs:element name="dsHoaDon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsHoaDon" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsHoaDon">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="HoaDon" msprop:Generator_RowEvHandlerName="HoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="HoaDonRowDeleted" msprop:Generator_RowDeletingName="HoaDonRowDeleting" msprop:Generator_RowEvArgName="HoaDonRowChangeEvent" msprop:Generator_TablePropName="HoaDon" msprop:Generator_RowChangedName="HoaDonRowChanged" msprop:Generator_RowChangingName="HoaDonRowChanging" msprop:Generator_TableClassName="HoaDonDataTable" msprop:Generator_RowClassName="HoaDonRow" msprop:Generator_TableVarName="tableHoaDon" msprop:Generator_UserTableName="HoaDon">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MaHoaDon" msprop:Generator_ColumnPropNameInRow="MaHoaDon" msprop:Generator_ColumnPropNameInTable="MaHoaDonColumn" msprop:Generator_ColumnVarNameInTable="columnMaHoaDon" msprop:Generator_UserColumnName="MaHoaDon">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TenKhachHang" msprop:Generator_ColumnPropNameInRow="TenKhachHang" msprop:Generator_ColumnPropNameInTable="TenKhachHangColumn" msprop:Generator_ColumnVarNameInTable="columnTenKhachHang" msprop:Generator_UserColumnName="TenKhachHang" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NgayHoaDon" msprop:Generator_ColumnPropNameInRow="NgayHoaDon" msprop:Generator_ColumnPropNameInTable="NgayHoaDonColumn" msprop:Generator_ColumnVarNameInTable="columnNgayHoaDon" msprop:Generator_UserColumnName="NgayHoaDon" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="GioHoaDon" msprop:Generator_ColumnPropNameInRow="GioHoaDon" msprop:Generator_ColumnPropNameInTable="GioHoaDonColumn" msprop:Generator_ColumnVarNameInTable="columnGioHoaDon" msprop:Generator_UserColumnName="GioHoaDon" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MaSanPham" msprop:Generator_ColumnPropNameInRow="MaSanPham" msprop:Generator_ColumnPropNameInTable="MaSanPhamColumn" msprop:Generator_ColumnVarNameInTable="columnMaSanPham" msprop:Generator_UserColumnName="MaSanPham">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TenSach" msprop:Generator_ColumnPropNameInRow="TenSach" msprop:Generator_ColumnPropNameInTable="TenSachColumn" msprop:Generator_ColumnVarNameInTable="columnTenSach" msprop:Generator_UserColumnName="TenSach" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="GiaTien" msprop:Generator_ColumnPropNameInRow="GiaTien" msprop:Generator_ColumnPropNameInTable="GiaTienColumn" msprop:Generator_ColumnVarNameInTable="columnGiaTien" msprop:Generator_UserColumnName="GiaTien" type="xs:int" minOccurs="0" />
-              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
-              <xs:element name="DonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_UserColumnName="DonGia" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded" />
     </xs:complexType>
   </xs:element>
 </xs:schema>
