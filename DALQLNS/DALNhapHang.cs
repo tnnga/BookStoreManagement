@@ -213,7 +213,7 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select SP.MaSach, SP.TenSach as 'Tên sản phẩm', CTNH.SoLuong as 'Số lượng' from ChiTietNhapHang CTNH INNER JOIN SanPham SP ON CTNH.MaSanPham = SP.MaSach WHERE CTNH.MaNhapHang = @MaNhapHang", conn);
+                SqlCommand cmd = new SqlCommand("select SP.MaSach as 'Mã sản phẩm', SP.TenSach as 'Tên sản phẩm', CTNH.SoLuong as 'Số lượng' from ChiTietNhapHang CTNH INNER JOIN SanPham SP ON CTNH.MaSanPham = SP.MaSach WHERE CTNH.MaNhapHang = @MaNhapHang", conn);
                 cmd.Parameters.AddWithValue("@MaNhapHang", sp.MaNhapHang);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

@@ -12,6 +12,7 @@ namespace DTOQLNS
         private string _TenSach;
         private int _SoLuongTon;
         private int _GiaTien;
+        private int _GiaNhap;
         private string _LoaiSach;
         private string _NoiDungChinh;
 
@@ -34,7 +35,8 @@ namespace DTOQLNS
         public int GiaTien { get => _GiaTien; set => _GiaTien = value; }
         public string LoaiSach { get => _LoaiSach; set => _LoaiSach = value; }
         public string NoiDungChinh { get => _NoiDungChinh; set => _NoiDungChinh = value; }
-        
+        public int GiaNhap { get => _GiaNhap; set => _GiaNhap = value; }
+
         public DTOSanPham()
         {
 

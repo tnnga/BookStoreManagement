@@ -44,5 +44,24 @@ namespace BLLQLNS
         {
             return dALSanPham.DeleteSanPham(sp);
         }
+
+        public bool UpdateTangSoLuongSanPham(DTOChiTietNhapHang dTOChiTietNhapHang)
+        {
+            return dALSanPham.UpdateTangSoLuongSanPham(dTOChiTietNhapHang);
+        }
+        public bool UpdateGiamSoLuongSanPhamTang(DTOChiTietNhapHang dTOChiTietNhapHang)
+        {
+            return dALSanPham.UpdateGiamSoLuongSanPhamTang(dTOChiTietNhapHang);
+        }
+
+        public bool UpdateGiamSoLuongSanPham(DTOChiTietHoaDon dTOChiTietHoaDon)
+        {
+            return dALSanPham.UpdateGiamSoLuongSanPham(dTOChiTietHoaDon);
+        }
+        public bool UpdateTangSoLuongSanPhamGiam(DTOChiTietHoaDon dTOChiTietHoaDon)
+        {
+            return dALSanPham.UpdateTangSoLuongSanPhamGiam(dTOChiTietHoaDon);
+        }
+
     }
 }

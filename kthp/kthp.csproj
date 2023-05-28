@@ -65,6 +65,12 @@
       <DependentUpon>crHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="crNhapHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crNhapHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsHoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsNhapHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNhapHang.xsd</DependentUpon>
     </Compile>
     <Compile Include="hoaDon.cs">
       <SubType>Form</SubType>
@@ -218,6 +229,12 @@
     <Compile Include="reportHoaDon.Designer.cs">
       <DependentUpon>reportHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportNhapHang.Designer.cs">
+      <DependentUpon>reportNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="sanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +271,10 @@
     <EmbeddedResource Include="crHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crNhapHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crNhapHang.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="dangKy.resx">
       <DependentUpon>dangKy.cs</DependentUpon>
@@ -333,6 +354,9 @@
     <EmbeddedResource Include="reportHoaDon.resx">
       <DependentUpon>reportHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportNhapHang.resx">
+      <DependentUpon>reportNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sanPham.resx">
       <DependentUpon>sanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +390,17 @@
     </None>
     <None Include="dsHoaDon.xss">
       <DependentUpon>dsHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="dsNhapHang.xsc">
+      <DependentUpon>dsNhapHang.xsd</DependentUpon>
+    </None>
+    <None Include="dsNhapHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNhapHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsNhapHang.xss">
+      <DependentUpon>dsNhapHang.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

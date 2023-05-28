@@ -44,6 +44,15 @@ namespace DTOQLNS
         public DTONhapHang()
         {
         }
+
+        public DTONhapHang(string maNhapHang, string tenNhanVien, string ngayNhap, string gioNhap)
+        {
+            _MaNhapHang = maNhapHang;
+            _TenNhanVien = tenNhanVien;
+            _NgayNhap = ngayNhap;
+            _GioNhap = gioNhap;
+        }
+
         public DTONhapHang(string maNhapHang, string tenNhanVien, string ngayNhap, string gioNhap, float donGia)
         {
             _MaNhapHang= maNhapHang;

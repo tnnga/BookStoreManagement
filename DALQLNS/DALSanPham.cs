@@ -11,6 +11,121 @@ namespace DALQLNS
 {
     public class DALSanPham : DBConnect
     {
+        public bool UpdateTangSoLuongSanPham(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET SoLuongTon = SoLuongTon + @SoLuongNhap WHERE MaSach = @MaSach", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuongNhap", sp.SoLuong);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool UpdateGiamSoLuongSanPhamTang(DTOChiTietNhapHang sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongNhap WHERE MaSach = @MaSach", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuongNhap", sp.SoLuong);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
+        public bool UpdateGiamSoLuongSanPham(DTOChiTietHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongBan WHERE MaSach = @MaSach", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuongBan", sp.SoLuong);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
+        public bool UpdateTangSoLuongSanPhamGiam(DTOChiTietHoaDon sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE SanPham SET SoLuongTon = SoLuongTon + @SoLuongBan WHERE MaSach = @MaSach", conn);
+                cmd.Parameters.AddWithValue("@MaSach", sp.MaSanPham);
+                cmd.Parameters.AddWithValue("@SoLuongBan", sp.SoLuong);
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
         public DataTable SelectSanPham()
         {
             try

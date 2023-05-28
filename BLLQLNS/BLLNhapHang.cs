@@ -56,7 +56,6 @@ namespace BLLQLNS
         public bool DeleteChiTietNhapHang(DTOChiTietNhapHang sp)
         {
             return dALNhapHang.DeleteChiTietNhapHang(sp);
-
         }
         public bool UpdateChiTietNhapHang(DTOChiTietNhapHang sp)
         {
@@ -65,7 +64,6 @@ namespace BLLQLNS
         public bool DeleteChiTietNhapHangAll(DTOChiTietNhapHang sp)
         {
             return dALNhapHang.DeleteChiTietNhapHangAll(sp);
-
         }
     }
 }

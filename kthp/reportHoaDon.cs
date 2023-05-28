@@ -28,7 +28,6 @@ namespace kthp
 
         private void crw_HoaDon_Load(object sender, EventArgs e)
         {
-
             SqlConnection conn = new SqlConnection(@"Data Source=MSI\MS_SQLSERVER;Initial Catalog=KTHP;Integrated Security=True");
             conn.Open();
 
@@ -42,8 +41,6 @@ namespace kthp
             crHoaDon rpHoaDon = new crHoaDon();
             rpHoaDon.SetDataSource(ds.Tables[0]);
             crw_HoaDon.ReportSource = rpHoaDon;
-
-            
         }
     }
 }

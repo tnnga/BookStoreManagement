@@ -16,9 +16,25 @@ namespace kthp
     {
         BLLNhapHang bLLNhapHang = new BLLNhapHang();
         DTONhapHang dTONhapHang = null;
+        DTOChiTietNhapHang sp = null;
+
+        BLLSanPham bLLSanPham = new BLLSanPham();
+        DTOSanPham dTOSanPham = null;
+        
+
         public frmNhapHangThemMoi()
         {
             InitializeComponent();
+        }
+
+        private void ConfigureSP()
+        {
+            dgwNhapHangThemChiTiet.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgwNhapHangThemChiTiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgwNhapHangThemChiTiet.Columns[0].Width = 150;
+            dgwNhapHangThemChiTiet.Columns[1].Width = 150;
+            dgwNhapHangThemChiTiet.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgwNhapHangThemChiTiet.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btnThemNhapHang_Click(object sender, EventArgs e)
@@ -34,12 +50,13 @@ namespace kthp
                 txtGioNhapHang.Text != "" &&
                 txtDonGia.Text != "")
             {
-                dTONhapHang = new DTONhapHang(txtMaNhapHang.Text, txtTenNhanVien.Text, txtNgayNhapHang.Text, txtGioNhapHang.Text, float.Parse(txtDonGia.Text));
+                dTONhapHang = new DTONhapHang(txtMaNhapHang.Text, txtTenNhanVien.Text, txtNgayNhapHang.Text, txtGioNhapHang.Text, int.Parse(txtDonGia.Text));
                 if (bLLNhapHang.InSertNhapHang(dTONhapHang))
                 {
-                    frmNhapHangThemChiTiet frmNhapHangThemChiTiet = new frmNhapHangThemChiTiet(txtMaNhapHang.Text);
-                    frmNhapHangThemChiTiet.ShowDialog();
-                    Close();
+                    lblMaNhapHangChiTiet.Text = txtMaNhapHang.Text;
+
+                    MessageBox.Show("Thêm thông tin thành công!\nVui lòng thêm chi tiết nhập hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -102,17 +119,53 @@ namespace kthp
             }
         }
 
-        private void txtDonGia_Leave(object sender, EventArgs e)
+        private void frmNhapHangThemMoi_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDonGia.Text))
+            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
+            dgwNhapHangThemChiTiet.DataSource = bLLNhapHang.SelectChiTietNhapHang(sp);
+            ConfigureSP();
+        }
+
+        private void btnThemChiTiet_Click(object sender, EventArgs e)
+        {
+            nhapHangThemMoiChiTiet hoaDonThemMoiChiTiet = new nhapHangThemMoiChiTiet(txtMaNhapHang.Text);
+            hoaDonThemMoiChiTiet.ShowDialog();
+
+            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
+            dgwNhapHangThemChiTiet.DataSource = bLLNhapHang.SelectChiTietNhapHang(sp);
+            ConfigureSP();
+        }
+
+        private void btnHoanTatThemNhapHang_Click(object sender, EventArgs e)
+        {                   
+
+            DialogResult resquest = MessageBox.Show("Hoàn tất thêm nhập hàng, bạn có muốn in phiếu nhập hàng hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resquest == DialogResult.Yes)
             {
-                errorProvider1.SetError(txtDonGia, "Vui lòng nhập thông tin!");
-                txtDonGia.Focus();
+                reportNhapHang reportNhapHang = new reportNhapHang(txtMaNhapHang.Text);
+                reportNhapHang.Show();
+
+                Close();
             }
             else
             {
-                errorProvider1.Clear();
+                Close();
             }
+        }
+
+        private void btnHuyThemNhapHang_Click(object sender, EventArgs e)
+        {
+            
+            dTONhapHang = new DTONhapHang(txtMaNhapHang.Text, "", "", "", 0);
+            sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
+            
+            if (bLLNhapHang.DeleteChiTietNhapHangAll(sp) && bLLNhapHang.DeleteNhapHang(dTONhapHang))
+            {
+                MessageBox.Show("Thêm thông tin thành công!\nVui lòng thêm chi tiết nhập hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -50,6 +50,8 @@ namespace kthp
                 dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, txtMaKhachHang.Text, txtNgayHoaDon.Text, txtGioLapHoaDon.Text);
                 if (bLLHoaDon.InsertHoaDon(dTOHoaDon))
                 {
+                    lblMaHoaDonChiTiet.Text = txtMaHoaDon.Text;
+
                     DialogResult resquest = MessageBox.Show("Vui lòng thêm chi tiết hoá đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -162,6 +164,8 @@ namespace kthp
             {
                 reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
                 reportHoaDon.Show();
+
+                Close();
             }
             else
             {
