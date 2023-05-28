@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLLQLNS;
+using DTOQLNS;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +17,8 @@ namespace kthp
 {
     public partial class frmDangNhap : Form
     {
-        public List<string> tenDangNhap = new List<string>();
-        public List<string> matKhau = new List<string>();
-        public List<string> email = new List<string>();
-
-        public bool kiemTra = false;
+        DTOTaiKhoan dTOTaiKhoan = null;
+        BLLTaiKhoan bLLTaiKhoan = new BLLTaiKhoan();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -64,20 +63,7 @@ namespace kthp
         private void lblDangKy_Click(object sender, EventArgs e)
         {
             frmDangKy dangKy = new frmDangKy();
-            dangKy.FormClosed += new FormClosedEventHandler(dangKy_FormClosed);
             dangKy.ShowDialog();
-            kiemTra = true;
-        }
-        private void dangKy_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmDangKy form2 = (frmDangKy)sender;
-            string valueTenDangNhap = form2.tenDangNhap;
-            string valueMatKhau = form2.matKhau;
-            string valueEmail = form2.email;
-
-            tenDangNhap.Add(valueTenDangNhap);
-            matKhau.Add(valueMatKhau);
-            email.Add(valueEmail);
         }
 
         private void lblDangKy_MouseEnter(object sender, EventArgs e)
@@ -110,27 +96,10 @@ namespace kthp
 
         private void lblQuenMatKhau_Click(object sender, EventArgs e)
         {
-            Form quenMatKhau = new frmQuenMatKhau(tenDangNhap, email);
-            quenMatKhau.FormClosed += new FormClosedEventHandler(quenMatKhau_FormClosed);
+            Form quenMatKhau = new frmQuenMatKhau();
             quenMatKhau.ShowDialog();
             
         }
-        private void quenMatKhau_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmQuenMatKhau layMKMoi = (frmQuenMatKhau)sender;
-            string valueMatKhauMoi = layMKMoi.matKhauMoi;
-            string valueTenDangNhap = layMKMoi.tenDangNhapMK;
-
-            for(int i = 0; i < tenDangNhap.Count; i++)
-            {
-                if(tenDangNhap[i] == valueTenDangNhap)
-                {
-                    matKhau.Remove(matKhau[i]);
-                    matKhau.Insert(i, valueMatKhauMoi);
-                }
-            }
-        }
-
         private void lblQuenMatKhau_MouseEnter(object sender, EventArgs e)
         {
             lblQuenMatKhau.ForeColor = Color.LightSeaGreen;
@@ -147,38 +116,24 @@ namespace kthp
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (kiemTra == false)
+            dTOTaiKhoan = new DTOTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, "", "", "", "", "", "");
+            if (bLLTaiKhoan.LoginTaiKhoan(dTOTaiKhoan))
             {
-                DialogResult result = MessageBox.Show("Bạn chưa đăng kí tài khoản, vui lòng đăng kí!", "Nhắc nhờ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmManHinhChinh frmManHinhChinh = new frmManHinhChinh();
+                frmManHinhChinh.ShowDialog();
             }
             else
             {
-                for (int i = 0; i < tenDangNhap.Count; i++)
-                {
-                    if (txtTenDangNhap.Text == tenDangNhap[i] && txtMatKhau.Text == matKhau[i])
-                    {
-                        this.Hide();
-
-                        frmManHinhChinh trangChu = new frmManHinhChinh();
-                        trangChu.ShowDialog();
-
-                        this.Show();
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("Không tim thấy tài khoản, vui lòng kiểm tra lại!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    }
-                }
+                MessageBox.Show("Đăng nhập thất bại, vui lòng kiểm tra lại");
             }
         }
-        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát chương trình không?", "Xác nhận thoát chương trình", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true; 
-            }
+        private void chkAnHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAnHienMatKhau.Checked == true)
+                txtMatKhau.PasswordChar = '\0';
+            else
+                txtMatKhau.PasswordChar = '*';
         }
     }
 }

@@ -39,20 +39,23 @@
             this.crw_HoaDon.Cursor = System.Windows.Forms.Cursors.Default;
             this.crw_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crw_HoaDon.Location = new System.Drawing.Point(0, 0);
+            this.crw_HoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.crw_HoaDon.Name = "crw_HoaDon";
-            this.crw_HoaDon.Size = new System.Drawing.Size(1430, 1055);
+            this.crw_HoaDon.Size = new System.Drawing.Size(1609, 1050);
             this.crw_HoaDon.TabIndex = 0;
+            this.crw_HoaDon.ToolPanelWidth = 225;
             this.crw_HoaDon.Load += new System.EventHandler(this.crw_HoaDon_Load);
             // 
             // reportHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1430, 1055);
+            this.ClientSize = new System.Drawing.Size(1609, 1050);
             this.Controls.Add(this.crw_HoaDon);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reportHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "reportHoaDon";
+            this.Text = "Phần mềm quản lý thư viện";
             this.ResumeLayout(false);
 
         }

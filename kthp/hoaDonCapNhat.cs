@@ -125,10 +125,5 @@ namespace kthp
             dgwCapNhatChiTietHoaDon.DataSource = bLLHoaDon.SelectChiTietHoaDon(sp);
             ConfigureSP();
         }
-
-        private void dgwCapNhatChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

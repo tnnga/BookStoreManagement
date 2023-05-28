@@ -27,12 +27,12 @@ namespace DTOQLNS
         public string Email { get => _Email; set => _Email = value; }
         public string DiaChi { get => _DiaChi; set => _DiaChi = value; }
 
-        public DTOTaiKhoan(string tenDangNhap, string matKhau, int hoTen, int gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
+        public DTOTaiKhoan(string tenDangNhap, string matKhau, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
             _TenDangNhap = tenDangNhap;
             _MatKhau = matKhau;
-            _HoTen = HoTen;
-            _GioiTinh = GioiTinh;
+            _HoTen = hoTen;
+            _GioiTinh = gioiTinh;
             _NgaySinh = ngaySinh;
             _SoDienThoai = soDienThoai;
             _Email = email;

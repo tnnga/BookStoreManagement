@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLLQLNS;
+using DTOQLNS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,51 +15,45 @@ namespace kthp
 {
     public partial class frmQuenMatKhau : Form
     {
-        public List<string> tenDangNhap = new List<string>();
-        public List<string> email = new List<string>();
-
-        public string tenDangNhapMK;
-        public string matKhauMoi;
-
+        DTOTaiKhoan dTOTaiKhoan = null;
+        BLLTaiKhoan bLLTaiKhoan = new BLLTaiKhoan();
         public frmQuenMatKhau()
         {
             InitializeComponent();
         }
-        public frmQuenMatKhau(List<string> tenDangNhap, List<string> email)
-        {
-            InitializeComponent();
-            this.tenDangNhap = tenDangNhap;
-            this.email = email;
-        }
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < tenDangNhap.Count; i++)
+            dTOTaiKhoan = new DTOTaiKhoan(txtTenDangNhap.Text, "", "", "", "", "", txtEmail.Text, "");
+            if (bLLTaiKhoan.DoiMatKhau(dTOTaiKhoan))
             {
-                if (txtTenDangNhap.Text == tenDangNhap[i] && txtEmail.Text == email[i])
-                {
-                    frmNhapLaiMatKhau nhapLaiMatKhau = new frmNhapLaiMatKhau();
-                    nhapLaiMatKhau.FormClosed += new FormClosedEventHandler(nhapLaiMatKhau_FormClosed);
-                    nhapLaiMatKhau.ShowDialog();
-                    tenDangNhapMK = tenDangNhap[i];
-                    Close();
-                }
-                else if(txtTenDangNhap.Text == "" || txtEmail.Text == "")
-                {
-                    DialogResult result = MessageBox.Show("Vui lòng điền đủ thông tin!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-                else 
-                {
-                    DialogResult result = MessageBox.Show("Không tim thấy tài khoản, vui lòng kiểm tra lại!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-
+                MessageBox.Show("Thông tin trùng khớp, vui lòng nhập mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panel1.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Thông tin không trùng khớp, vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void nhapLaiMatKhau_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmNhapLaiMatKhau nhapLai = (frmNhapLaiMatKhau)sender;
-            string valueMatKhauMoi = nhapLai.matKhauMoi;
 
-            matKhauMoi = valueMatKhauMoi;
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if(txtMatKhau1.Text == txtMatKhau2.Text)
+            {
+                dTOTaiKhoan = new DTOTaiKhoan(txtTenDangNhap.Text, txtMatKhau1.Text, "", "", "", "", "","");
+                if (bLLTaiKhoan.UpdateTaiKhoan(dTOTaiKhoan))
+                {
+                    MessageBox.Show("Cập nhật mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại, mật khẩu chưa được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp, vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

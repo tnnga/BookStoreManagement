@@ -31,10 +31,12 @@ namespace kthp
         {
             dgwHoaDonThemChiTiet.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwHoaDonThemChiTiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgwHoaDonThemChiTiet.Columns[0].Width = 150;
-            dgwHoaDonThemChiTiet.Columns[1].Width = 150;
+            dgwHoaDonThemChiTiet.Columns[0].Width = 120;
+            dgwHoaDonThemChiTiet.Columns[1].Width = 200;
+            dgwHoaDonThemChiTiet.Columns[2].Width = 100;
+            dgwHoaDonThemChiTiet.Columns[3].Width = 120;
             dgwHoaDonThemChiTiet.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwHoaDonThemChiTiet.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwHoaDonThemChiTiet.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -53,8 +55,8 @@ namespace kthp
                 {
                     lblMaHoaDonChiTiet.Text = txtMaHoaDon.Text;
 
-                    DialogResult resquest = MessageBox.Show("Vui lòng thêm chi tiết hoá đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    DialogResult resquest = MessageBox.Show("Thêm thông tin thành công!\nVui lòng thêm chi tiết hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnThemChiTiet.Enabled = true;
                 }
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,7 +175,7 @@ namespace kthp
             for (int i = 0; i < dgwHoaDonThemChiTiet.RowCount - 1; i++)
             {
                 string maSanPham = dgwHoaDonThemChiTiet.Rows[i].Cells[0].Value.ToString().Trim();
-                string soLuong = dgwHoaDonThemChiTiet.Rows[i].Cells[2].Value.ToString().Trim();
+                string soLuong = dgwHoaDonThemChiTiet.Rows[i].Cells[3].Value.ToString().Trim();
                 sp = new DTOChiTietHoaDon("", "", maSanPham, int.Parse(soLuong));
                 bLLSanPham.UpdateTangSoLuongSanPhamGiam(sp);
             }

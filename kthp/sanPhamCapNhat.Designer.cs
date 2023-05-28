@@ -227,7 +227,8 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmSanPhamCapNhat";
-            this.Text = "sanPhamCapNhat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.frmSanPhamCapNhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

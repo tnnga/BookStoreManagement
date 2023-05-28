@@ -241,7 +241,7 @@
             this.mtbSoDienThoai.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbSoDienThoai.ForeColor = System.Drawing.Color.White;
             this.mtbSoDienThoai.Location = new System.Drawing.Point(394, 321);
-            this.mtbSoDienThoai.Mask = "000-0000000";
+            this.mtbSoDienThoai.Mask = "0000000000";
             this.mtbSoDienThoai.Name = "mtbSoDienThoai";
             this.mtbSoDienThoai.Size = new System.Drawing.Size(298, 34);
             this.mtbSoDienThoai.TabIndex = 6;
@@ -253,7 +253,7 @@
             this.mtbNgaySinh.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbNgaySinh.ForeColor = System.Drawing.Color.White;
             this.mtbNgaySinh.Location = new System.Drawing.Point(44, 321);
-            this.mtbNgaySinh.Mask = "00/00/00";
+            this.mtbNgaySinh.Mask = "00-00-0000";
             this.mtbNgaySinh.Name = "mtbNgaySinh";
             this.mtbNgaySinh.Size = new System.Drawing.Size(298, 34);
             this.mtbNgaySinh.TabIndex = 5;
@@ -288,7 +288,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "dangKy";
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.dangKy_Load);
             this.Shown += new System.EventHandler(this.frmDangKy_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

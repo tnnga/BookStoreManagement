@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTOQLNS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,18 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BLLQLNS;
 
 namespace kthp
 {
     public partial class frmDangKy : Form
     {
+        DTOTaiKhoan dTOTaiKhoan = null;
+        BLLTaiKhoan bLLTaiKhoan = new BLLTaiKhoan();
         public frmDangKy()
         {
             InitializeComponent();
         }
-        public string tenDangNhap;
-        public string matKhau;
-        public string email;
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (errorProvider1.GetError(txtTenDangNhap) == "" &&
@@ -30,7 +31,7 @@ namespace kthp
                 errorProvider1.GetError(txtDiaChi) == "" &&
                 errorProvider1.GetError(cboGioiTinh) == "" &&
                 errorProvider1.GetError(mtbNgaySinh) == "" &&
-                errorProvider1.GetError(mtbSoDienThoai) == ""&&
+                errorProvider1.GetError(mtbSoDienThoai) == "" &&
                 txtTenDangNhap.Text != "" &&
                 txtDiaChi.Text != "" &&
                 txtEmail.Text != "" &&
@@ -38,14 +39,19 @@ namespace kthp
                 txtMatKhau.Text != "" &&
                 cboGioiTinh.Text != "" &&
                 mtbNgaySinh.Text != "" &&
-                mtbSoDienThoai.Text != "") 
+                mtbSoDienThoai.Text != "")
             {
-                tenDangNhap = txtTenDangNhap.Text;
-                matKhau = txtMatKhau.Text;
-                email = txtEmail.Text;
 
-                DialogResult result = MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                dTOTaiKhoan = new DTOTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, txtHoTen.Text, cboGioiTinh.Text, mtbNgaySinh.Text, mtbSoDienThoai.Text, txtEmail.Text, txtDiaChi.Text);
+                if (bLLTaiKhoan.InSertTaiKhoan(dTOTaiKhoan))
+                {
+                    DialogResult result = MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Thất bại, đăng kí chưa được thực hiện", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {

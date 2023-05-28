@@ -38,6 +38,7 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.lblLoiChao = new System.Windows.Forms.Label();
+            this.chkAnHienMatKhau = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Black;
+            this.splitContainer1.Panel2.Controls.Add(this.chkAnHienMatKhau);
             this.splitContainer1.Panel2.Controls.Add(this.lblQuenMatKhau);
             this.splitContainer1.Panel2.Controls.Add(this.lblDangKy);
             this.splitContainer1.Panel2.Controls.Add(this.btnDangNhap);
@@ -142,6 +144,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(49, 279);
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(317, 61);
             this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.Text = "MẬT KHẨU";
@@ -171,6 +174,19 @@
             this.lblLoiChao.TabIndex = 0;
             this.lblLoiChao.Text = "CHÀO BẠN            MỪNG TRỞ LẠI";
             // 
+            // chkAnHienMatKhau
+            // 
+            this.chkAnHienMatKhau.AutoSize = true;
+            this.chkAnHienMatKhau.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAnHienMatKhau.ForeColor = System.Drawing.Color.White;
+            this.chkAnHienMatKhau.Location = new System.Drawing.Point(212, 362);
+            this.chkAnHienMatKhau.Name = "chkAnHienMatKhau";
+            this.chkAnHienMatKhau.Size = new System.Drawing.Size(154, 23);
+            this.chkAnHienMatKhau.TabIndex = 4;
+            this.chkAnHienMatKhau.Text = "Hiện mật khẩu";
+            this.chkAnHienMatKhau.UseVisualStyleBackColor = true;
+            this.chkAnHienMatKhau.CheckedChanged += new System.EventHandler(this.chkAnHienMatKhau_CheckedChanged);
+            // 
             // frmDangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -185,7 +201,6 @@
             this.Padding = new System.Windows.Forms.Padding(15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý thư viện";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -207,6 +222,7 @@
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label lblDangKy;
         private System.Windows.Forms.Label lblQuenMatKhau;
+        private System.Windows.Forms.CheckBox chkAnHienMatKhau;
     }
 }
 

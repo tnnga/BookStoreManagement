@@ -35,12 +35,12 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.lblGiaTien = new System.Windows.Forms.Label();
-            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
+            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtSoDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -82,12 +82,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtSoDienThoai);
+            this.panel2.Controls.Add(this.txtGioiTinh);
             this.panel2.Controls.Add(this.txtTenKhachHang);
             this.panel2.Controls.Add(this.lblDiaChi);
             this.panel2.Controls.Add(this.lblSDT);
-            this.panel2.Controls.Add(this.txtGioiTinh);
             this.panel2.Controls.Add(this.lblGiaTien);
-            this.panel2.Controls.Add(this.txtSoDienThoai);
             this.panel2.Controls.Add(this.lblTenKhachHang);
             this.panel2.Controls.Add(this.txtDiaChi);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,21 +124,11 @@
             this.lblSDT.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lblSDT.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.ForeColor = System.Drawing.Color.MintCream;
-            this.lblSDT.Location = new System.Drawing.Point(14, 224);
+            this.lblSDT.Location = new System.Drawing.Point(13, 212);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(209, 34);
             this.lblSDT.TabIndex = 31;
             this.lblSDT.Text = "Số điện thoại:";
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(266, 101);
-            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGioiTinh.Multiline = true;
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(544, 62);
-            this.txtGioiTinh.TabIndex = 27;
             // 
             // lblGiaTien
             // 
@@ -151,16 +141,6 @@
             this.lblGiaTien.Size = new System.Drawing.Size(144, 34);
             this.lblGiaTien.TabIndex = 32;
             this.lblGiaTien.Text = "Giới tính:";
-            // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(266, 194);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSoDienThoai.Multiline = true;
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(544, 62);
-            this.txtSoDienThoai.TabIndex = 26;
             // 
             // lblTenKhachHang
             // 
@@ -199,6 +179,28 @@
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.txtGioiTinh.Location = new System.Drawing.Point(266, 121);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(544, 42);
+            this.txtGioiTinh.TabIndex = 33;
+            this.txtGioiTinh.Text = "(Lựa chọn)";
+            // 
+            // txtSoDienThoai
+            // 
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.Location = new System.Drawing.Point(266, 205);
+            this.txtSoDienThoai.Mask = "0000000000";
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(544, 41);
+            this.txtSoDienThoai.TabIndex = 34;
+            // 
             // khachHangCapNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -210,7 +212,8 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "khachHangCapNhat";
-            this.Text = "khachHangChiTiet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.khachHangCapNhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -229,11 +232,11 @@
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.Label lblSDT;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label lblGiaTien;
-        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label lblTenKhachHang;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.MaskedTextBox txtSoDienThoai;
+        private System.Windows.Forms.ComboBox txtGioiTinh;
     }
 }

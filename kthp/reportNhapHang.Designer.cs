@@ -38,19 +38,23 @@
             this.crwNhapHang.Cursor = System.Windows.Forms.Cursors.Default;
             this.crwNhapHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crwNhapHang.Location = new System.Drawing.Point(0, 0);
+            this.crwNhapHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.crwNhapHang.Name = "crwNhapHang";
-            this.crwNhapHang.Size = new System.Drawing.Size(1605, 1055);
+            this.crwNhapHang.Size = new System.Drawing.Size(1806, 1050);
             this.crwNhapHang.TabIndex = 0;
+            this.crwNhapHang.ToolPanelWidth = 225;
             this.crwNhapHang.Load += new System.EventHandler(this.crwNhapHang_Load);
             // 
             // reportNhapHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1605, 1055);
+            this.ClientSize = new System.Drawing.Size(1806, 1050);
             this.Controls.Add(this.crwNhapHang);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reportNhapHang";
-            this.Text = "reportNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phần mềm quản lý thư viện";
             this.ResumeLayout(false);
 
         }

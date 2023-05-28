@@ -1,4 +1,5 @@
-﻿using DTOQLNS;
+﻿using DALQLNS;
+using DTOQLNS;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,8 +9,24 @@ using System.Threading.Tasks;
 
 namespace BLLQLNS
 {
-    internal class BLLTaiKhoan
+    public class BLLTaiKhoan
     {
-        
+        DALTaiKhoan dALTaiKhoan = new DALTaiKhoan();
+        public bool InSertTaiKhoan(DTOTaiKhoan sp)
+        {
+            return dALTaiKhoan.InSertTaiKhoan(sp);
+        }
+        public bool LoginTaiKhoan(DTOTaiKhoan sp)
+        {
+            return dALTaiKhoan.LoginTaiKhoan(sp);
+        }
+        public bool DoiMatKhau(DTOTaiKhoan sp)
+        {
+            return dALTaiKhoan.DoiMatKhau(sp);
+        }
+        public bool UpdateTaiKhoan(DTOTaiKhoan sp)
+        {
+            return dALTaiKhoan.UpdateTaiKhoan(sp);
+        }
     }
 }

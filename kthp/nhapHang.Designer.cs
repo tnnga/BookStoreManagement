@@ -86,10 +86,10 @@
             this.panel1.Controls.Add(this.lblTimKiemTheo);
             this.panel1.Controls.Add(this.btnTaoNhapHang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1161, 94);
+            this.panel1.Size = new System.Drawing.Size(1141, 94);
             this.panel1.TabIndex = 30;
             // 
             // btnTim
@@ -157,10 +157,10 @@
             // 
             this.panel2.Controls.Add(this.dgwNhapHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 94);
+            this.panel2.Location = new System.Drawing.Point(10, 104);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1161, 582);
+            this.panel2.Size = new System.Drawing.Size(1141, 562);
             this.panel2.TabIndex = 31;
             // 
             // dgwNhapHang
@@ -174,7 +174,7 @@
             this.dgwNhapHang.Name = "dgwNhapHang";
             this.dgwNhapHang.RowHeadersWidth = 62;
             this.dgwNhapHang.RowTemplate.Height = 28;
-            this.dgwNhapHang.Size = new System.Drawing.Size(1161, 582);
+            this.dgwNhapHang.Size = new System.Drawing.Size(1141, 562);
             this.dgwNhapHang.TabIndex = 31;
             // 
             // nhapHang
@@ -188,7 +188,9 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "nhapHang";
-            this.Text = "nhapHang";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.nhapHang_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
