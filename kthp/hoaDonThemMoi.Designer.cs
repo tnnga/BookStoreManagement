@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgwThanhTien = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnHoanTatThemHoaDon = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtGioLapHoaDon = new System.Windows.Forms.TextBox();
             this.lblGioHoaDon = new System.Windows.Forms.Label();
@@ -54,13 +53,13 @@
             this.btnHoanTat = new System.Windows.Forms.Button();
             this.btnThemChiTiet = new System.Windows.Forms.Button();
             this.dgwHoaDonThemChiTiet = new System.Windows.Forms.DataGridView();
+            this.btnHuyThemHoaDon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwThanhTien)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwHoaDonThemChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +75,6 @@
             this.lblDienThongTin.TabIndex = 0;
             this.lblDienThongTin.Text = "VUI LÒNG ĐIỀN THÔNG TIN HOÁ ĐƠN";
             this.lblDienThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDienThongTin.Click += new System.EventHandler(this.lblDienThongTin_Click);
             // 
             // txtDonGia
             // 
@@ -105,11 +103,11 @@
             this.btnThemHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(380, 345);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(22, 345);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(220, 57);
             this.btnThemHoaDon.TabIndex = 8;
-            this.btnThemHoaDon.Text = "THÊM CHI TIẾT";
+            this.btnThemHoaDon.Text = "THÊM HOÁ ĐƠN";
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -142,30 +140,18 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnHoanTatThemHoaDon);
+            this.panel5.Controls.Add(this.btnHuyThemHoaDon);
+            this.panel5.Controls.Add(this.btnHoanTat);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(873, 0);
+            this.panel5.Location = new System.Drawing.Point(647, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(494, 160);
+            this.panel5.Size = new System.Drawing.Size(720, 160);
             this.panel5.TabIndex = 2;
-            // 
-            // btnHoanTatThemHoaDon
-            // 
-            this.btnHoanTatThemHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnHoanTatThemHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoanTatThemHoaDon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHoanTatThemHoaDon.Location = new System.Drawing.Point(73, 47);
-            this.btnHoanTatThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHoanTatThemHoaDon.Name = "btnHoanTatThemHoaDon";
-            this.btnHoanTatThemHoaDon.Size = new System.Drawing.Size(399, 85);
-            this.btnHoanTatThemHoaDon.TabIndex = 1;
-            this.btnHoanTatThemHoaDon.Text = "HOÀN TẤT THÊM HOÁ ĐƠN";
-            this.btnHoanTatThemHoaDon.UseVisualStyleBackColor = false;
-            this.btnHoanTatThemHoaDon.Click += new System.EventHandler(this.btnHoanTatThemHoaDon_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtGioLapHoaDon);
+            this.panel2.Controls.Add(this.btnThemChiTiet);
             this.panel2.Controls.Add(this.lblGioHoaDon);
             this.panel2.Controls.Add(this.btnThemHoaDon);
             this.panel2.Controls.Add(this.txtNgayHoaDon);
@@ -305,8 +291,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnHoanTat);
-            this.panel3.Controls.Add(this.btnThemChiTiet);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(644, 453);
             this.panel3.Name = "panel3";
@@ -316,28 +300,27 @@
             // btnHoanTat
             // 
             this.btnHoanTat.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnHoanTat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHoanTat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnHoanTat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoanTat.ForeColor = System.Drawing.Color.White;
-            this.btnHoanTat.Location = new System.Drawing.Point(228, 0);
+            this.btnHoanTat.Location = new System.Drawing.Point(372, 0);
             this.btnHoanTat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoanTat.Name = "btnHoanTat";
-            this.btnHoanTat.Size = new System.Drawing.Size(495, 90);
+            this.btnHoanTat.Size = new System.Drawing.Size(348, 160);
             this.btnHoanTat.TabIndex = 1;
-            this.btnHoanTat.Text = "HOÀN THÀNH THÊM CHI TIẾT";
+            this.btnHoanTat.Text = "HOÀN THÀNH THÊM HOÁ ĐƠN";
             this.btnHoanTat.UseVisualStyleBackColor = false;
             this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
             // 
             // btnThemChiTiet
             // 
             this.btnThemChiTiet.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnThemChiTiet.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnThemChiTiet.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemChiTiet.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemChiTiet.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnThemChiTiet.Location = new System.Drawing.Point(0, 0);
+            this.btnThemChiTiet.Location = new System.Drawing.Point(326, 341);
             this.btnThemChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemChiTiet.Name = "btnThemChiTiet";
-            this.btnThemChiTiet.Size = new System.Drawing.Size(228, 90);
+            this.btnThemChiTiet.Size = new System.Drawing.Size(283, 61);
             this.btnThemChiTiet.TabIndex = 0;
             this.btnThemChiTiet.Text = "THÊM";
             this.btnThemChiTiet.UseVisualStyleBackColor = false;
@@ -356,6 +339,21 @@
             this.dgwHoaDonThemChiTiet.Size = new System.Drawing.Size(723, 254);
             this.dgwHoaDonThemChiTiet.TabIndex = 2;
             this.dgwHoaDonThemChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwHoaDonThemChiTiet_CellContentClick);
+            // 
+            // btnHuyThemHoaDon
+            // 
+            this.btnHuyThemHoaDon.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnHuyThemHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHuyThemHoaDon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyThemHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnHuyThemHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.btnHuyThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHuyThemHoaDon.Name = "btnHuyThemHoaDon";
+            this.btnHuyThemHoaDon.Size = new System.Drawing.Size(372, 160);
+            this.btnHuyThemHoaDon.TabIndex = 2;
+            this.btnHuyThemHoaDon.Text = "HUỶ THÊM HOÁ ĐƠN";
+            this.btnHuyThemHoaDon.UseVisualStyleBackColor = false;
+            this.btnHuyThemHoaDon.Click += new System.EventHandler(this.btnHuyThemHoaDon_Click);
             // 
             // frmHoaDonThemMoi
             // 
@@ -381,7 +379,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwHoaDonThemChiTiet)).EndInit();
             this.ResumeLayout(false);
 
@@ -412,7 +409,7 @@
         private System.Windows.Forms.Button btnHoanTat;
         private System.Windows.Forms.Button btnThemChiTiet;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnHoanTatThemHoaDon;
         private System.Windows.Forms.DataGridView dgwThanhTien;
+        private System.Windows.Forms.Button btnHuyThemHoaDon;
     }
 }

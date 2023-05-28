@@ -125,12 +125,6 @@
     <Compile Include="hoaDonChiTiet.Designer.cs">
       <DependentUpon>hoaDonChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="hoaDonThemChiTiet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="hoaDonThemChiTiet.Designer.cs">
-      <DependentUpon>hoaDonThemChiTiet.cs</DependentUpon>
-    </Compile>
     <Compile Include="hoaDonThemMoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +178,6 @@
     </Compile>
     <Compile Include="nhapHangChiTiet.Designer.cs">
       <DependentUpon>nhapHangChiTiet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nhapHangThemChiTiet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhapHangThemChiTiet.Designer.cs">
-      <DependentUpon>nhapHangThemChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="nhapHangThemMoi.cs">
       <SubType>Form</SubType>
@@ -294,9 +282,6 @@
     <EmbeddedResource Include="hoaDonChiTiet.resx">
       <DependentUpon>hoaDonChiTiet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hoaDonThemChiTiet.resx">
-      <DependentUpon>hoaDonThemChiTiet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="hoaDonThemMoi.resx">
       <DependentUpon>hoaDonThemMoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nhapHangChiTiet.resx">
       <DependentUpon>nhapHangChiTiet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nhapHangThemChiTiet.resx">
-      <DependentUpon>nhapHangThemChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhapHangThemMoi.resx">
       <DependentUpon>nhapHangThemMoi.cs</DependentUpon>
