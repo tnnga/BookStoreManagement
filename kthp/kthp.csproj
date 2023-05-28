@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chiTietTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chiTietTaiKhoan.Designer.cs">
+      <DependentUpon>chiTietTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="crHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -241,6 +247,9 @@
     <Compile Include="trangChu.Designer.cs">
       <DependentUpon>trangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="chiTietTaiKhoan.resx">
+      <DependentUpon>chiTietTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="crHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHoaDon.cs</LastGenOutput>

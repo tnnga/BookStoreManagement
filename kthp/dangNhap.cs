@@ -19,6 +19,7 @@ namespace kthp
     {
         DTOTaiKhoan dTOTaiKhoan = null;
         BLLTaiKhoan bLLTaiKhoan = new BLLTaiKhoan();
+        public string tenDangNhap;
         public frmDangNhap()
         {
             InitializeComponent();
@@ -121,6 +122,7 @@ namespace kthp
             {
                 frmManHinhChinh frmManHinhChinh = new frmManHinhChinh();
                 frmManHinhChinh.ShowDialog();
+                tenDangNhap = txtTenDangNhap.Text;
             }
             else
             {

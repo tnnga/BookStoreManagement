@@ -198,6 +198,7 @@
             this.Name = "frmManHinhChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý thư viện";
+            this.Load += new System.EventHandler(this.frmManHinhChinh_Load);
             this.pnlDanhMuc.ResumeLayout(false);
             this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
