@@ -35,7 +35,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lblSoLuong = new System.Windows.Forms.Label();
-            this.txtTenSanPham = new System.Windows.Forms.TextBox();
+            this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.lblTenSanPham = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,7 +82,7 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.txtSoLuong);
             this.panel2.Controls.Add(this.lblSoLuong);
-            this.panel2.Controls.Add(this.txtTenSanPham);
+            this.panel2.Controls.Add(this.txtMaSanPham);
             this.panel2.Controls.Add(this.lblTenSanPham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 80);
@@ -129,17 +129,17 @@
             this.lblSoLuong.TabIndex = 64;
             this.lblSoLuong.Text = "Số lượng";
             // 
-            // txtTenSanPham
+            // txtMaSanPham
             // 
-            this.txtTenSanPham.BackColor = System.Drawing.Color.MintCream;
-            this.txtTenSanPham.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
-            this.txtTenSanPham.Location = new System.Drawing.Point(28, 37);
-            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTenSanPham.Multiline = true;
-            this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(420, 44);
-            this.txtTenSanPham.TabIndex = 62;
+            this.txtMaSanPham.BackColor = System.Drawing.Color.MintCream;
+            this.txtMaSanPham.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSanPham.ForeColor = System.Drawing.Color.Black;
+            this.txtMaSanPham.Location = new System.Drawing.Point(28, 37);
+            this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaSanPham.Multiline = true;
+            this.txtMaSanPham.Name = "txtMaSanPham";
+            this.txtMaSanPham.Size = new System.Drawing.Size(420, 44);
+            this.txtMaSanPham.TabIndex = 62;
             // 
             // lblTenSanPham
             // 
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Button btnThem;
         public System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label lblSoLuong;
-        public System.Windows.Forms.TextBox txtTenSanPham;
+        public System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.Label lblTenSanPham;
     }
 }

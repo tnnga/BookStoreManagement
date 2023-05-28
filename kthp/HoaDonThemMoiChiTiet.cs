@@ -14,10 +14,17 @@ namespace kthp
 {
     public partial class HoaDonThemMoiChiTiet : Form
     {
+        BLLSanPham bLLSanPham = new BLLSanPham();
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOChiTietHoaDon dTOChiTietHoaDon = null;
         private string maHoaDon;
         public int tongDonGia;
+
+        public void UpdateSoLuongTonSanPham()
+        {
+            dTOChiTietHoaDon = new DTOChiTietHoaDon("", "", txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
+            bLLSanPham.UpdateGiamSoLuongSanPham(dTOChiTietHoaDon);
+        }
 
         public HoaDonThemMoiChiTiet(string maHoaDon)
         {
@@ -27,12 +34,14 @@ namespace kthp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtTenSanPham.Text != "" && txtSoLuong.Text != "")
+            if (txtMaSanPham.Text != "" && txtSoLuong.Text != "")
             {
-                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtTenSanPham.Text, int.Parse(txtSoLuong.Text));
+                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
 
                 if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
                 {
+                    UpdateSoLuongTonSanPham();
+
                     MessageBox.Show("Bạn đã thêm thông tin chi tiết hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
