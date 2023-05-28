@@ -11,6 +11,28 @@ namespace DALQLNS
 {
     public class DALTaiKhoan : DBConnect
     {
+        public DataTable SelecttaiKhoan()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select TenDangNhap, MatKhau, HoTen, GioiTinh, NgaySinh, SDT, Email, DiaChi from TaiKhoan", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                da.Dispose();
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public bool InSertTaiKhoan(DTOTaiKhoan sp)
         {

@@ -33,10 +33,16 @@
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgwThanhTien = new System.Windows.Forms.DataGridView();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.lblDonGia = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnHuyThemHoaDon = new System.Windows.Forms.Button();
             this.btnHoanTat = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtGioLapHoaDon = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayHoaDon = new System.Windows.Forms.MaskedTextBox();
             this.btnThemChiTiet = new System.Windows.Forms.Button();
             this.lblGioHoaDon = new System.Windows.Forms.Label();
             this.lblNgayHoaDon = new System.Windows.Forms.Label();
@@ -49,20 +55,14 @@
             this.lblChiTietHoaDon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgwHoaDonThemChiTiet = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dgwThanhTien = new System.Windows.Forms.DataGridView();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.lblDonGia = new System.Windows.Forms.Label();
-            this.txtNgayHoaDon = new System.Windows.Forms.MaskedTextBox();
-            this.txtGioLapHoaDon = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwThanhTien)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwHoaDonThemChiTiet)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwThanhTien)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDienThongTin
@@ -106,6 +106,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1538, 122);
             this.panel1.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dgwThanhTien);
+            this.panel6.Controls.Add(this.txtDonGia);
+            this.panel6.Controls.Add(this.lblDonGia);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(728, 122);
+            this.panel6.TabIndex = 3;
+            // 
+            // dgwThanhTien
+            // 
+            this.dgwThanhTien.BackgroundColor = System.Drawing.Color.LightSeaGreen;
+            this.dgwThanhTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwThanhTien.GridColor = System.Drawing.Color.LightSeaGreen;
+            this.dgwThanhTien.Location = new System.Drawing.Point(681, 54);
+            this.dgwThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgwThanhTien.Name = "dgwThanhTien";
+            this.dgwThanhTien.RowHeadersWidth = 51;
+            this.dgwThanhTien.RowTemplate.Height = 24;
+            this.dgwThanhTien.Size = new System.Drawing.Size(1, 1);
+            this.dgwThanhTien.TabIndex = 50;
+            this.dgwThanhTien.Visible = false;
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.BackColor = System.Drawing.Color.White;
+            this.txtDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.ForeColor = System.Drawing.Color.Black;
+            this.txtDonGia.Location = new System.Drawing.Point(194, 34);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDonGia.Multiline = true;
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(444, 54);
+            this.txtDonGia.TabIndex = 49;
+            // 
+            // lblDonGia
+            // 
+            this.lblDonGia.AutoSize = true;
+            this.lblDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDonGia.ForeColor = System.Drawing.Color.White;
+            this.lblDonGia.Location = new System.Drawing.Point(37, 38);
+            this.lblDonGia.Name = "lblDonGia";
+            this.lblDonGia.Size = new System.Drawing.Size(137, 27);
+            this.lblDonGia.TabIndex = 48;
+            this.lblDonGia.Text = "Thành tiền:";
             // 
             // panel5
             // 
@@ -166,6 +214,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(724, 518);
             this.panel2.TabIndex = 1;
+            // 
+            // txtGioLapHoaDon
+            // 
+            this.txtGioLapHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioLapHoaDon.Location = new System.Drawing.Point(241, 345);
+            this.txtGioLapHoaDon.Mask = "00:00";
+            this.txtGioLapHoaDon.Name = "txtGioLapHoaDon";
+            this.txtGioLapHoaDon.Size = new System.Drawing.Size(444, 34);
+            this.txtGioLapHoaDon.TabIndex = 10;
+            this.txtGioLapHoaDon.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayHoaDon
+            // 
+            this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayHoaDon.Location = new System.Drawing.Point(241, 239);
+            this.txtNgayHoaDon.Mask = "00-00-00";
+            this.txtNgayHoaDon.Name = "txtNgayHoaDon";
+            this.txtNgayHoaDon.Size = new System.Drawing.Size(444, 34);
+            this.txtNgayHoaDon.TabIndex = 9;
             // 
             // btnThemChiTiet
             // 
@@ -309,71 +376,6 @@
             this.dgwHoaDonThemChiTiet.TabIndex = 2;
             this.dgwHoaDonThemChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwHoaDonThemChiTiet_CellContentClick);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dgwThanhTien);
-            this.panel6.Controls.Add(this.txtDonGia);
-            this.panel6.Controls.Add(this.lblDonGia);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(728, 122);
-            this.panel6.TabIndex = 3;
-            // 
-            // dgwThanhTien
-            // 
-            this.dgwThanhTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwThanhTien.Location = new System.Drawing.Point(681, 54);
-            this.dgwThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgwThanhTien.Name = "dgwThanhTien";
-            this.dgwThanhTien.RowHeadersWidth = 51;
-            this.dgwThanhTien.RowTemplate.Height = 24;
-            this.dgwThanhTien.Size = new System.Drawing.Size(11, 12);
-            this.dgwThanhTien.TabIndex = 50;
-            this.dgwThanhTien.Visible = false;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.BackColor = System.Drawing.Color.White;
-            this.txtDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.ForeColor = System.Drawing.Color.Black;
-            this.txtDonGia.Location = new System.Drawing.Point(194, 34);
-            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDonGia.Multiline = true;
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(444, 54);
-            this.txtDonGia.TabIndex = 49;
-            // 
-            // lblDonGia
-            // 
-            this.lblDonGia.AutoSize = true;
-            this.lblDonGia.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDonGia.ForeColor = System.Drawing.Color.White;
-            this.lblDonGia.Location = new System.Drawing.Point(37, 38);
-            this.lblDonGia.Name = "lblDonGia";
-            this.lblDonGia.Size = new System.Drawing.Size(137, 27);
-            this.lblDonGia.TabIndex = 48;
-            this.lblDonGia.Text = "Thành tiền:";
-            // 
-            // txtNgayHoaDon
-            // 
-            this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayHoaDon.Location = new System.Drawing.Point(241, 239);
-            this.txtNgayHoaDon.Mask = "00-00-00";
-            this.txtNgayHoaDon.Name = "txtNgayHoaDon";
-            this.txtNgayHoaDon.Size = new System.Drawing.Size(444, 34);
-            this.txtNgayHoaDon.TabIndex = 9;
-            // 
-            // txtGioLapHoaDon
-            // 
-            this.txtGioLapHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioLapHoaDon.Location = new System.Drawing.Point(241, 345);
-            this.txtGioLapHoaDon.Mask = "00:00";
-            this.txtGioLapHoaDon.Name = "txtGioLapHoaDon";
-            this.txtGioLapHoaDon.Size = new System.Drawing.Size(444, 34);
-            this.txtGioLapHoaDon.TabIndex = 10;
-            this.txtGioLapHoaDon.ValidatingType = typeof(System.DateTime);
-            // 
             // frmHoaDonThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -393,14 +395,14 @@
             this.Load += new System.EventHandler(this.frmHoaDonThemMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwThanhTien)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwHoaDonThemChiTiet)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwThanhTien)).EndInit();
             this.ResumeLayout(false);
 
         }
