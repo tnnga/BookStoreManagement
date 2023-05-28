@@ -62,6 +62,5 @@ namespace BLLQLNS
         {
             return dALSanPham.UpdateTangSoLuongSanPhamGiam(dTOChiTietHoaDon);
         }
-
     }
 }
