@@ -30,7 +30,6 @@
         {
             this.pnlDanhMuc = new System.Windows.Forms.Panel();
             this.lblDangXuat = new System.Windows.Forms.Label();
-            this.lblCaiDat = new System.Windows.Forms.Label();
             this.lblKhachHang = new System.Windows.Forms.Label();
             this.lblNhapHang = new System.Windows.Forms.Label();
             this.lblHoaDon = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             // 
             this.pnlDanhMuc.BackColor = System.Drawing.Color.Black;
             this.pnlDanhMuc.Controls.Add(this.lblDangXuat);
-            this.pnlDanhMuc.Controls.Add(this.lblCaiDat);
             this.pnlDanhMuc.Controls.Add(this.lblKhachHang);
             this.pnlDanhMuc.Controls.Add(this.lblNhapHang);
             this.pnlDanhMuc.Controls.Add(this.lblHoaDon);
@@ -78,77 +76,75 @@
             this.lblDangXuat.MouseEnter += new System.EventHandler(this.lblDangXuat_MouseEnter);
             this.lblDangXuat.MouseLeave += new System.EventHandler(this.lblDangXuat_MouseLeave);
             // 
-            // lblCaiDat
-            // 
-            this.lblCaiDat.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaiDat.ForeColor = System.Drawing.Color.White;
-            this.lblCaiDat.Location = new System.Drawing.Point(9, 495);
-            this.lblCaiDat.Name = "lblCaiDat";
-            this.lblCaiDat.Size = new System.Drawing.Size(230, 54);
-            this.lblCaiDat.TabIndex = 0;
-            this.lblCaiDat.Text = "Cài đặt";
-            this.lblCaiDat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCaiDat.Click += new System.EventHandler(this.lblCaiDat_Click);
-            // 
             // lblKhachHang
             // 
             this.lblKhachHang.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHang.ForeColor = System.Drawing.Color.White;
-            this.lblKhachHang.Location = new System.Drawing.Point(0, 430);
+            this.lblKhachHang.Location = new System.Drawing.Point(0, 470);
             this.lblKhachHang.Name = "lblKhachHang";
-            this.lblKhachHang.Size = new System.Drawing.Size(230, 54);
+            this.lblKhachHang.Size = new System.Drawing.Size(238, 71);
             this.lblKhachHang.TabIndex = 0;
             this.lblKhachHang.Text = "Khách hàng";
             this.lblKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblKhachHang.Click += new System.EventHandler(this.lblKhachHang_Click);
+            this.lblKhachHang.MouseEnter += new System.EventHandler(this.lblKhachHang_MouseEnter);
+            this.lblKhachHang.MouseLeave += new System.EventHandler(this.lblKhachHang_MouseLeave);
             // 
             // lblNhapHang
             // 
             this.lblNhapHang.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhapHang.ForeColor = System.Drawing.Color.White;
-            this.lblNhapHang.Location = new System.Drawing.Point(3, 361);
+            this.lblNhapHang.Location = new System.Drawing.Point(0, 401);
             this.lblNhapHang.Name = "lblNhapHang";
-            this.lblNhapHang.Size = new System.Drawing.Size(230, 54);
+            this.lblNhapHang.Size = new System.Drawing.Size(238, 71);
             this.lblNhapHang.TabIndex = 0;
             this.lblNhapHang.Text = "Nhập hàng";
             this.lblNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNhapHang.Click += new System.EventHandler(this.lblNhapHang_Click);
+            this.lblNhapHang.MouseEnter += new System.EventHandler(this.lblNhapHang_MouseEnter);
+            this.lblNhapHang.MouseLeave += new System.EventHandler(this.lblNhapHang_MouseLeave);
             // 
             // lblHoaDon
             // 
             this.lblHoaDon.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lblHoaDon.Location = new System.Drawing.Point(3, 291);
+            this.lblHoaDon.Location = new System.Drawing.Point(0, 331);
             this.lblHoaDon.Name = "lblHoaDon";
-            this.lblHoaDon.Size = new System.Drawing.Size(230, 54);
+            this.lblHoaDon.Size = new System.Drawing.Size(238, 71);
             this.lblHoaDon.TabIndex = 0;
             this.lblHoaDon.Text = "Hóa đơn";
             this.lblHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblHoaDon.Click += new System.EventHandler(this.lblHoaDon_Click);
+            this.lblHoaDon.MouseEnter += new System.EventHandler(this.lblHoaDon_MouseEnter);
+            this.lblHoaDon.MouseLeave += new System.EventHandler(this.lblHoaDon_MouseLeave);
             // 
             // lblSanPham
             // 
             this.lblSanPham.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSanPham.ForeColor = System.Drawing.Color.White;
-            this.lblSanPham.Location = new System.Drawing.Point(3, 220);
+            this.lblSanPham.Location = new System.Drawing.Point(0, 260);
             this.lblSanPham.Name = "lblSanPham";
-            this.lblSanPham.Size = new System.Drawing.Size(230, 54);
+            this.lblSanPham.Size = new System.Drawing.Size(238, 71);
             this.lblSanPham.TabIndex = 0;
             this.lblSanPham.Text = "Sản phẩm";
             this.lblSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSanPham.Click += new System.EventHandler(this.lblSanPham_Click);
+            this.lblSanPham.MouseEnter += new System.EventHandler(this.lblSanPham_MouseEnter);
+            this.lblSanPham.MouseLeave += new System.EventHandler(this.lblSanPham_MouseLeave);
             // 
             // lblTrangChu
             // 
             this.lblTrangChu.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrangChu.ForeColor = System.Drawing.Color.White;
-            this.lblTrangChu.Location = new System.Drawing.Point(3, 149);
+            this.lblTrangChu.Location = new System.Drawing.Point(0, 189);
             this.lblTrangChu.Name = "lblTrangChu";
-            this.lblTrangChu.Size = new System.Drawing.Size(230, 54);
+            this.lblTrangChu.Size = new System.Drawing.Size(238, 71);
             this.lblTrangChu.TabIndex = 0;
             this.lblTrangChu.Text = "Trang chủ";
             this.lblTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTrangChu.Click += new System.EventHandler(this.lblTrangChu_Click);
+            this.lblTrangChu.MouseEnter += new System.EventHandler(this.lblTrangChu_MouseEnter);
+            this.lblTrangChu.MouseLeave += new System.EventHandler(this.lblTrangChu_MouseLeave);
             // 
             // lblTieuDe
             // 
@@ -201,7 +197,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmManHinhChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Màn hình chính";
+            this.Text = "Phần mềm quản lý thư viện";
             this.pnlDanhMuc.ResumeLayout(false);
             this.pnlTieuDe.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -219,7 +215,6 @@
         private System.Windows.Forms.Label lblSanPham;
         private System.Windows.Forms.Label lblTrangChu;
         private System.Windows.Forms.Label lblDangXuat;
-        private System.Windows.Forms.Label lblCaiDat;
         private System.Windows.Forms.Label lblMucLon;
         private System.Windows.Forms.Label lblKhachHang;
     }

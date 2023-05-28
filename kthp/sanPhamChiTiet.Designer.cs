@@ -159,7 +159,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSanPhamChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "sanPhamChiTiet";
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.frmSanPhamChiTiet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

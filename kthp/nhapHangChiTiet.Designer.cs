@@ -100,7 +100,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "nhapHangChiTiet";
-            this.Text = "nhapHangChiTiet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.nhapHangChiTiet_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

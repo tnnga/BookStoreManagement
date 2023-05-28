@@ -79,16 +79,70 @@ namespace kthp
             lblMucLon.Text = lblNhapHang.Text.ToUpper();
         }
 
-        private void lblCaiDat_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new caiDat());
-            lblMucLon.Text = lblCaiDat.Text.ToUpper();
-        }
-
         private void lblKhachHang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new khachHang());
             lblMucLon.Text = lblKhachHang.Text.ToUpper();
+        }
+
+        private void lblTrangChu_MouseEnter(object sender, EventArgs e)
+        {
+            lblTrangChu.BackColor = Color.LightSeaGreen;
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblTrangChu_MouseLeave(object sender, EventArgs e)
+        {
+            lblTrangChu.BackColor = Color.Black;
+            Cursor = Cursors.Default;
+        }
+
+        private void lblSanPham_MouseEnter(object sender, EventArgs e)
+        {
+            lblSanPham.BackColor = Color.LightSeaGreen;
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblSanPham_MouseLeave(object sender, EventArgs e)
+        {
+            lblSanPham.BackColor = Color.Black;
+            Cursor = Cursors.Default;
+        }
+
+        private void lblHoaDon_MouseEnter(object sender, EventArgs e)
+        {
+            lblHoaDon.BackColor = Color.LightSeaGreen;
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblHoaDon_MouseLeave(object sender, EventArgs e)
+        {
+            lblHoaDon.BackColor = Color.Black;
+            Cursor = Cursors.Default;
+        }
+
+        private void lblNhapHang_MouseEnter(object sender, EventArgs e)
+        {
+            lblNhapHang.BackColor = Color.LightSeaGreen;
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblNhapHang_MouseLeave(object sender, EventArgs e)
+        {
+            lblNhapHang.BackColor = Color.Black;
+            Cursor = Cursors.Default;
+        }
+
+        private void lblKhachHang_MouseEnter(object sender, EventArgs e)
+        {
+            lblKhachHang.BackColor = Color.LightSeaGreen;
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblKhachHang_MouseLeave(object sender, EventArgs e)
+        {
+            lblKhachHang.BackColor = Color.Black;
+            Cursor = Cursors.Default;
         }
     }
 }

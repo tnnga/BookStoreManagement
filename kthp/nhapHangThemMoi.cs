@@ -32,9 +32,10 @@ namespace kthp
             dgwNhapHangThemChiTiet.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgwNhapHangThemChiTiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwNhapHangThemChiTiet.Columns[0].Width = 150;
-            dgwNhapHangThemChiTiet.Columns[1].Width = 150;
+            dgwNhapHangThemChiTiet.Columns[1].Width = 200;
+            dgwNhapHangThemChiTiet.Columns[2].Width = 150;
             dgwNhapHangThemChiTiet.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgwNhapHangThemChiTiet.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgwNhapHangThemChiTiet.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btnThemNhapHang_Click(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace kthp
                     lblMaNhapHangChiTiet.Text = txtMaNhapHang.Text;
 
                     MessageBox.Show("Thêm thông tin thành công!\nVui lòng thêm chi tiết nhập hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    btnThemChiTiet.Enabled = true;
                 }
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

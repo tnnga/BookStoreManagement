@@ -212,7 +212,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "khachHang";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "KhachHang";
+            this.Text = "Phần mềm quản lý thư viện";
             this.Load += new System.EventHandler(this.khachHang_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwKhachHang)).EndInit();

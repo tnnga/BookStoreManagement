@@ -32,9 +32,7 @@
             this.lblDienThongTin = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.lblDiaChi = new System.Windows.Forms.Label();
-            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.lblSoDienThoai = new System.Windows.Forms.Label();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblTenKhachHang = new System.Windows.Forms.Label();
@@ -42,6 +40,8 @@
             this.lblMaKhachHang = new System.Windows.Forms.Label();
             this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtSoDienThoai = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,19 +80,6 @@
             this.lblDiaChi.TabIndex = 47;
             this.lblDiaChi.Text = "Địa chỉ:";
             // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.ForeColor = System.Drawing.Color.White;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(274, 455);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSoDienThoai.Multiline = true;
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(444, 50);
-            this.txtSoDienThoai.TabIndex = 42;
-            this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
-            // 
             // lblSoDienThoai
             // 
             this.lblSoDienThoai.AutoSize = true;
@@ -102,19 +89,6 @@
             this.lblSoDienThoai.Size = new System.Drawing.Size(165, 27);
             this.lblSoDienThoai.TabIndex = 48;
             this.lblSoDienThoai.Text = "Số điện thoại:";
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.ForeColor = System.Drawing.Color.White;
-            this.txtGioiTinh.Location = new System.Drawing.Point(274, 352);
-            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGioiTinh.Multiline = true;
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(444, 50);
-            this.txtGioiTinh.TabIndex = 41;
-            this.txtGioiTinh.Leave += new System.EventHandler(this.txtGioiTinh_Leave);
             // 
             // lblGioiTinh
             // 
@@ -190,18 +164,44 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.ForeColor = System.Drawing.Color.White;
+            this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.txtGioiTinh.Location = new System.Drawing.Point(274, 356);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(444, 35);
+            this.txtGioiTinh.TabIndex = 51;
+            this.txtGioiTinh.Text = "(Lựa chọn)";
+            // 
+            // txtSoDienThoai
+            // 
+            this.txtSoDienThoai.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.ForeColor = System.Drawing.Color.White;
+            this.txtSoDienThoai.Location = new System.Drawing.Point(274, 462);
+            this.txtSoDienThoai.Mask = "0000000000";
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(444, 34);
+            this.txtSoDienThoai.TabIndex = 52;
+            // 
             // frmKhachHangThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 752);
+            this.Controls.Add(this.txtSoDienThoai);
+            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.btnThemKhachHang);
             this.Controls.Add(this.lblDienThongTin);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.lblDiaChi);
-            this.Controls.Add(this.txtSoDienThoai);
             this.Controls.Add(this.lblSoDienThoai);
-            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.lblGioiTinh);
             this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.lblTenKhachHang);
@@ -210,7 +210,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmKhachHangThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "khachHangThemMoi";
+            this.Text = "Phần mềm quản lý thư viện";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,9 +222,7 @@
         private System.Windows.Forms.Label lblDienThongTin;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label lblDiaChi;
-        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label lblSoDienThoai;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label lblTenKhachHang;
@@ -232,5 +230,7 @@
         private System.Windows.Forms.Label lblMaKhachHang;
         private System.Windows.Forms.Button btnThemKhachHang;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox txtSoDienThoai;
+        private System.Windows.Forms.ComboBox txtGioiTinh;
     }
 }
