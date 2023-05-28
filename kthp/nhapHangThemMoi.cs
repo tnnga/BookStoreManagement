@@ -156,16 +156,24 @@ namespace kthp
 
         private void btnHuyThemNhapHang_Click(object sender, EventArgs e)
         {
-            
+            for (int i = 0; i < dgwNhapHangThemChiTiet.RowCount - 1; i++)
+            {
+                string maSanPham = dgwNhapHangThemChiTiet.Rows[i].Cells[0].Value.ToString().Trim();
+                string soLuong = dgwNhapHangThemChiTiet.Rows[i].Cells[2].Value.ToString().Trim();
+                sp = new DTOChiTietNhapHang("", "", maSanPham, int.Parse(soLuong));
+                bLLSanPham.UpdateGiamSoLuongSanPhamTang(sp);
+            }
+
             dTONhapHang = new DTONhapHang(txtMaNhapHang.Text, "", "", "", 0);
             sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
             
             if (bLLNhapHang.DeleteChiTietNhapHangAll(sp) && bLLNhapHang.DeleteNhapHang(dTONhapHang))
             {
-                MessageBox.Show("Thêm thông tin thành công!\nVui lòng thêm chi tiết nhập hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Huỷ thêm thông tin nhập hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             else
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Huỷ không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

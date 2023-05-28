@@ -20,6 +20,7 @@ namespace kthp
             InitializeComponent();
         }
 
+        BLLSanPham bLLSanPham = new BLLSanPham();
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOHoaDon dTOHoaDon = null;
         DTOChiTietHoaDon sp = null;
@@ -141,14 +142,25 @@ namespace kthp
 
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
-
             dgwThanhTien.DataSource = bLLHoaDon.TongThanhTien(sp);
             txtDonGia.Text = dgwThanhTien.Rows[0].Cells[0].Value.ToString().Trim();
 
             dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, "", "", "", int.Parse(txtDonGia.Text));
             if (bLLHoaDon.InsertDonGiaHoaDon(dTOHoaDon))
             {
-                MessageBox.Show("Hoàn tất thêm chi tiết hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult resquest = MessageBox.Show("Hoàn tất thêm hóa đơn, bạn có muốn in hoá đơn hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resquest == DialogResult.Yes)
+                {
+                    reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
+                    reportHoaDon.Show();
+
+                    Close();
+                }
+                else
+                {
+                    Close();
+                }
             }
             else
             {
@@ -156,26 +168,26 @@ namespace kthp
             }
         }
 
-        private void btnHoanTatThemHoaDon_Click(object sender, EventArgs e)
+        private void btnHuyThemHoaDon_Click(object sender, EventArgs e)
         {
-            DialogResult resquest = MessageBox.Show("Hoàn tất thêm hóa đơn, bạn có muốn in hoá đơn hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resquest == DialogResult.Yes)
+            for (int i = 0; i < dgwHoaDonThemChiTiet.RowCount - 1; i++)
             {
-                reportHoaDon reportHoaDon = new reportHoaDon(txtMaHoaDon.Text);
-                reportHoaDon.Show();
+                string maSanPham = dgwHoaDonThemChiTiet.Rows[i].Cells[0].Value.ToString().Trim();
+                string soLuong = dgwHoaDonThemChiTiet.Rows[i].Cells[2].Value.ToString().Trim();
+                sp = new DTOChiTietHoaDon("", "", maSanPham, int.Parse(soLuong));
+                bLLSanPham.UpdateTangSoLuongSanPhamGiam(sp);
+            }
 
+            dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, "", "", "", 0);
+            sp = new DTOChiTietHoaDon(txtMaHoaDon.Text, "", "", 0);
+
+            if (bLLHoaDon.DeleteChiTietHoaDonAll(sp) && bLLHoaDon.DeleteHoaDon(dTOHoaDon))
+            {
+                MessageBox.Show("Huỷ thêm thông tin hoá đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             else
-            {
-                Close();
-            }
-        }
-
-        private void lblDienThongTin_Click(object sender, EventArgs e)
-        {
-
+                MessageBox.Show("Huỷ không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
