@@ -38,8 +38,12 @@ namespace kthp
             if (txtMaSanPham.Text != "" && txtSoLuong.Text != "")
             {
                 dTOSanPham = new DTOSanPham(txtMaSanPham.Text, "", 0, 0, "", "");
-                
-                if (bLLSanPham.CheckSoLuongSanPhamConHang(dTOSanPham))
+
+                dgwSoLuongTonSanPham.DataSource = bLLSanPham.CheckSoLuongSanPham(dTOSanPham);
+
+                int soLuongTonSanPham = int.Parse(dgwSoLuongTonSanPham.Rows[0].Cells[0].Value.ToString().Trim());
+
+                if (soLuongTonSanPham > 0)
                 {
                     dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
 

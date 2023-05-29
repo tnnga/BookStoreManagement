@@ -19,7 +19,7 @@ namespace kthp
         DTOChiTietHoaDon sp = null;
 
         private string maHoaDon;
-        private string tenKhachHang;
+        private string maKhachHang;
         private string ngayHoaDon;
         private string gioHoaDon;
         private int donGia;
@@ -27,11 +27,11 @@ namespace kthp
         private string maSanPham;
         private int soLuong;
 
-        public hoaDonCapNhat(string maHoaDon, string tenKhachHang, string ngayHoaDon, string gioHoaDon, int donGia)
+        public hoaDonCapNhat(string maHoaDon, string maKhachHang, string ngayHoaDon, string gioHoaDon, int donGia)
         {
             InitializeComponent();
             this.maHoaDon = maHoaDon;
-            this.tenKhachHang = tenKhachHang;
+            this.maKhachHang = maKhachHang;
             this.ngayHoaDon = ngayHoaDon;
             this.gioHoaDon = gioHoaDon;
             this.donGia = donGia;
@@ -48,7 +48,7 @@ namespace kthp
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, txtTenKhachHang.Text, txtNgayHoaDon.Text, txtGioHoaDon.Text, int.Parse(txtDonGia.Text));
+            dTOHoaDon = new DTOHoaDon(txtMaHoaDon.Text, txtMaKhachHang.Text, txtNgayHoaDon.Text, txtGioHoaDon.Text, int.Parse(txtDonGia.Text));
 
             if (bLLHoaDon.UpdateHoaDon(dTOHoaDon))
             {
@@ -64,7 +64,7 @@ namespace kthp
         private void hoaDonCapNhat_Load(object sender, EventArgs e)
         {
             txtMaHoaDon.Text = maHoaDon;
-            txtTenKhachHang.Text = tenKhachHang;
+            txtMaKhachHang.Text = maKhachHang;
             txtNgayHoaDon.Text = ngayHoaDon;
             txtGioHoaDon.Text = gioHoaDon;
             txtDonGia.Text = donGia.ToString();

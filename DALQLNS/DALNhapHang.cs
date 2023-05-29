@@ -131,7 +131,7 @@ namespace DALQLNS
                     conn.Open();
                 }
                 SqlCommand cmd = new SqlCommand("select MaNhapHang as 'Mã nhập hàng',TenNhanVien as 'Tên nhân viên', NgayNhap as 'Ngày nhập hàng', GioNhap as 'Giờ nhập', DonGia as 'Đơn giá' from NhapHang WHERE NgayNhap LIKE @NgayNhap", conn);
-                cmd.Parameters.AddWithValue("@NgayNhap", sp.NgayNhap + "%");
+                cmd.Parameters.AddWithValue("@NgayNhap", "%" + sp.NgayNhap + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();

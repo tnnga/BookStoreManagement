@@ -333,30 +333,32 @@ namespace DALQLNS
             return false;
         }
 
-        public bool CheckSoLuongSanPhamConHang(DTOSanPham sp)
+        public DataTable CheckSoLuongSanPham(DTOSanPham sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT (CASE WHEN SoLuongTon > 0 THEN N'Còn hàng' ELSE N'Hết hàng' END) AS 'Kiểm tra số lượng sản phẩm' FROM SanPham WHERE MaSach = @MaSanPham", conn);
+                SqlCommand cmd = new SqlCommand("SELECT SoLuongTon FROM SanPham WHERE MaSach = @MaSanPham", conn);
                 cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSach);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    cmd.Dispose();
-                    conn.Close();
-                    return true;
-                }
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                da.Dispose();
+                return dt;
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
-            return false;
         }
     }
 }
