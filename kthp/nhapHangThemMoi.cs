@@ -19,7 +19,6 @@ namespace kthp
         DTOChiTietNhapHang sp = null;
 
         BLLSanPham bLLSanPham = new BLLSanPham();
-        DTOSanPham dTOSanPham = null;
         
 
         public frmNhapHangThemMoi()

@@ -140,9 +140,9 @@ namespace kthp
                 txtMatKhau.PasswordChar = '*';
         }
 
-        private void frmDangNhap_Load(object sender, EventArgs e)
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
-            
+            txtMatKhau.PasswordChar = '*';
         }
     }
 }
