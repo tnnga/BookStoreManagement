@@ -19,7 +19,8 @@ namespace kthp
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-
+            chiTietTaiKhoan chiTietTaiKhoan = new chiTietTaiKhoan();
+            chiTietTaiKhoan.Show();
         }
     }
 }

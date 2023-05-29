@@ -2,6 +2,7 @@
 using DTOQLNS;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,11 @@ namespace BLLQLNS
         public bool UpdateTaiKhoan(DTOTaiKhoan sp)
         {
             return dALTaiKhoan.UpdateTaiKhoan(sp);
+        }
+        public DataTable SelectTaiKhoan(DTOTaiKhoan sp)
+        {
+            DataTable dt = dALTaiKhoan.SelectTaiKhoan(sp);
+            return dt;
         }
     }
 }

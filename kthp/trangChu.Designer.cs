@@ -30,9 +30,12 @@
         {
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblTieuDe = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.picManHinhChinh = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picManHinhChinh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTaiKhoan
@@ -40,9 +43,10 @@
             this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(903, 0);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(790, 0);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(226, 81);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(214, 65);
             this.btnTaiKhoan.TabIndex = 2;
             this.btnTaiKhoan.Text = "Tài khoản";
             this.btnTaiKhoan.UseVisualStyleBackColor = true;
@@ -56,17 +60,10 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 81);
+            this.panel1.Size = new System.Drawing.Size(1004, 65);
             this.panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 81);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 554);
-            this.panel2.TabIndex = 4;
             // 
             // lblTieuDe
             // 
@@ -75,17 +72,38 @@
             this.lblTieuDe.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(903, 81);
+            this.lblTieuDe.Size = new System.Drawing.Size(790, 65);
             this.lblTieuDe.TabIndex = 3;
             this.lblTieuDe.Text = "PHẦN MỀM QUẢN LÝ NHÀ SÁCH";
             this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.picManHinhChinh);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1004, 443);
+            this.panel2.TabIndex = 4;
+            // 
+            // picManHinhChinh
+            // 
+            this.picManHinhChinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picManHinhChinh.Image = global::kthp.Properties.Resources.Smiling_people_standing_in_line_to_book_store;
+            this.picManHinhChinh.Location = new System.Drawing.Point(0, 0);
+            this.picManHinhChinh.Name = "picManHinhChinh";
+            this.picManHinhChinh.Size = new System.Drawing.Size(1004, 443);
+            this.picManHinhChinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picManHinhChinh.TabIndex = 0;
+            this.picManHinhChinh.TabStop = false;
+            // 
             // trangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1129, 635);
+            this.ClientSize = new System.Drawing.Size(1004, 508);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -94,6 +112,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý thư viện";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picManHinhChinh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,5 +124,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTieuDe;
+        private System.Windows.Forms.PictureBox picManHinhChinh;
     }
 }
