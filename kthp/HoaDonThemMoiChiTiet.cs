@@ -17,6 +17,7 @@ namespace kthp
         BLLSanPham bLLSanPham = new BLLSanPham();
         BLLHoaDon bLLHoaDon = new BLLHoaDon();
         DTOChiTietHoaDon dTOChiTietHoaDon = null;
+        DTOSanPham dTOSanPham = null;
         private string maHoaDon;
         public int tongDonGia;
 
@@ -33,22 +34,35 @@ namespace kthp
         }
 
         private void btnThem_Click(object sender, EventArgs e)
-        {
+        {         
             if (txtMaSanPham.Text != "" && txtSoLuong.Text != "")
             {
-                dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
-
-                if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
+                dTOSanPham = new DTOSanPham(txtMaSanPham.Text, "", 0, 0, "", "");
+                
+                if (bLLSanPham.CheckSoLuongSanPhamConHang(dTOSanPham))
                 {
-                    UpdateSoLuongTonSanPham();
+                    dTOChiTietHoaDon = new DTOChiTietHoaDon(maHoaDon, "", txtMaSanPham.Text, int.Parse(txtSoLuong.Text));
 
-                    MessageBox.Show("Bạn đã thêm thông tin chi tiết hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
+                    if (bLLHoaDon.InsertChiTietHoaDon(dTOChiTietHoaDon))
+                    {
+                        UpdateSoLuongTonSanPham();
+
+                        MessageBox.Show("Bạn đã thêm thông tin chi tiết hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thông tin chi tiết hóa đơn thất bại, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }                       
+                }          
                 else
                 {
-                    MessageBox.Show("Thêm thông tin chi tiết hóa đơn thất bại, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Hết sản phẩm, không thể thêm vào hoá đơn!\nVui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền thông tin chi tiết hoá đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

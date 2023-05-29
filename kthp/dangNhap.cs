@@ -57,6 +57,7 @@ namespace kthp
             if (txtMatKhau.Text == "")
             {
                 txtMatKhau.Text = "MẬT KHẨU";
+                txtMatKhau.PasswordChar = '\0';
                 txtMatKhau.ForeColor = Color.DarkGray;
             }
         }
@@ -122,6 +123,7 @@ namespace kthp
             {
                 frmManHinhChinh frmManHinhChinh = new frmManHinhChinh();
                 frmManHinhChinh.ShowDialog();
+
                 tenDangNhap = txtTenDangNhap.Text;
             }
             else
@@ -136,6 +138,11 @@ namespace kthp
                 txtMatKhau.PasswordChar = '\0';
             else
                 txtMatKhau.PasswordChar = '*';
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
