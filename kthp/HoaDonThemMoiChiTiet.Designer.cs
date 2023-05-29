@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDonThemMoiChiTiet));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.lblCapNhatThongTinSach = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgwSoLuongTonSanPham = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.lblTenSanPham = new System.Windows.Forms.Label();
-            this.dgwSoLuongTonSanPham = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwSoLuongTonSanPham)).BeginInit();
@@ -93,6 +94,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(667, 174);
             this.panel2.TabIndex = 1;
+            // 
+            // dgwSoLuongTonSanPham
+            // 
+            this.dgwSoLuongTonSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwSoLuongTonSanPham.Location = new System.Drawing.Point(438, 11);
+            this.dgwSoLuongTonSanPham.Name = "dgwSoLuongTonSanPham";
+            this.dgwSoLuongTonSanPham.RowHeadersWidth = 51;
+            this.dgwSoLuongTonSanPham.RowTemplate.Height = 24;
+            this.dgwSoLuongTonSanPham.Size = new System.Drawing.Size(1, 1);
+            this.dgwSoLuongTonSanPham.TabIndex = 67;
+            this.dgwSoLuongTonSanPham.Visible = false;
             // 
             // btnThem
             // 
@@ -155,17 +167,6 @@
             this.lblTenSanPham.TabIndex = 65;
             this.lblTenSanPham.Text = "Mã Sản Phẩm";
             // 
-            // dgwSoLuongTonSanPham
-            // 
-            this.dgwSoLuongTonSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwSoLuongTonSanPham.Location = new System.Drawing.Point(438, 11);
-            this.dgwSoLuongTonSanPham.Name = "dgwSoLuongTonSanPham";
-            this.dgwSoLuongTonSanPham.RowHeadersWidth = 51;
-            this.dgwSoLuongTonSanPham.RowTemplate.Height = 24;
-            this.dgwSoLuongTonSanPham.Size = new System.Drawing.Size(1, 1);
-            this.dgwSoLuongTonSanPham.TabIndex = 67;
-            this.dgwSoLuongTonSanPham.Visible = false;
-            // 
             // HoaDonThemMoiChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,6 +175,7 @@
             this.ClientSize = new System.Drawing.Size(667, 254);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HoaDonThemMoiChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

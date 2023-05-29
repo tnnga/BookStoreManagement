@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPhamThemMoi));
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.lblMaSP = new System.Windows.Forms.Label();
             this.lblDienThongTin = new System.Windows.Forms.Label();
@@ -273,12 +274,13 @@
             this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.lblMaSP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSanPhamThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lý nhà sách";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPhamThemMoi_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

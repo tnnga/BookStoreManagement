@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nhapHangChiTiet));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMaNhapHang = new System.Windows.Forms.Label();
             this.txtMaNhapHang = new System.Windows.Forms.Label();
@@ -45,8 +46,9 @@
             this.panel1.Controls.Add(this.txtMaNhapHang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(711, 80);
             this.panel1.TabIndex = 0;
             // 
             // lblMaNhapHang
@@ -54,9 +56,9 @@
             this.lblMaNhapHang.AutoSize = true;
             this.lblMaNhapHang.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNhapHang.ForeColor = System.Drawing.Color.White;
-            this.lblMaNhapHang.Location = new System.Drawing.Point(3, 32);
+            this.lblMaNhapHang.Location = new System.Drawing.Point(3, 26);
             this.lblMaNhapHang.Name = "lblMaNhapHang";
-            this.lblMaNhapHang.Size = new System.Drawing.Size(215, 34);
+            this.lblMaNhapHang.Size = new System.Drawing.Size(180, 29);
             this.lblMaNhapHang.TabIndex = 14;
             this.lblMaNhapHang.Text = "Mã nhập hàng";
             // 
@@ -64,18 +66,19 @@
             // 
             this.txtMaNhapHang.BackColor = System.Drawing.Color.MintCream;
             this.txtMaNhapHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNhapHang.Location = new System.Drawing.Point(222, 17);
+            this.txtMaNhapHang.Location = new System.Drawing.Point(197, 14);
             this.txtMaNhapHang.Name = "txtMaNhapHang";
-            this.txtMaNhapHang.Size = new System.Drawing.Size(559, 66);
+            this.txtMaNhapHang.Size = new System.Drawing.Size(497, 53);
             this.txtMaNhapHang.TabIndex = 13;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgwChiTietNhapHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 350);
+            this.panel2.Size = new System.Drawing.Size(711, 280);
             this.panel2.TabIndex = 1;
             // 
             // dgwChiTietNhapHang
@@ -85,20 +88,23 @@
             this.dgwChiTietNhapHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwChiTietNhapHang.GridColor = System.Drawing.Color.LightSeaGreen;
             this.dgwChiTietNhapHang.Location = new System.Drawing.Point(0, 0);
+            this.dgwChiTietNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgwChiTietNhapHang.Name = "dgwChiTietNhapHang";
             this.dgwChiTietNhapHang.RowHeadersWidth = 62;
             this.dgwChiTietNhapHang.RowTemplate.Height = 28;
-            this.dgwChiTietNhapHang.Size = new System.Drawing.Size(800, 350);
+            this.dgwChiTietNhapHang.Size = new System.Drawing.Size(711, 280);
             this.dgwChiTietNhapHang.TabIndex = 0;
             // 
             // nhapHangChiTiet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "nhapHangChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lí nhà sách";

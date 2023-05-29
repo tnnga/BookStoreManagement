@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapHangThemMoi));
             this.lblDienThongTin = new System.Windows.Forms.Label();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
@@ -376,6 +377,7 @@
             this.Controls.Add(this.lblDienThongTin);
             this.Controls.Add(this.txtMaHoaDon);
             this.Controls.Add(this.lblMaHoaDon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNhapHangThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

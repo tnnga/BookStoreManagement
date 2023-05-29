@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hoaDonChiTiet));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.txtMaHoaDon = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 116);
+            this.panel1.Size = new System.Drawing.Size(773, 93);
             this.panel1.TabIndex = 0;
             // 
             // lblMaHoaDon
@@ -54,9 +55,9 @@
             this.lblMaHoaDon.AutoSize = true;
             this.lblMaHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lblMaHoaDon.Location = new System.Drawing.Point(164, 37);
+            this.lblMaHoaDon.Location = new System.Drawing.Point(146, 30);
             this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(288, 34);
+            this.lblMaHoaDon.Size = new System.Drawing.Size(247, 29);
             this.lblMaHoaDon.TabIndex = 16;
             this.lblMaHoaDon.Text = "CHI TIẾT HÓA ĐƠN";
             // 
@@ -64,19 +65,19 @@
             // 
             this.txtMaHoaDon.BackColor = System.Drawing.Color.MintCream;
             this.txtMaHoaDon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHoaDon.Location = new System.Drawing.Point(548, 20);
+            this.txtMaHoaDon.Location = new System.Drawing.Point(487, 16);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(197, 66);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(175, 53);
             this.txtMaHoaDon.TabIndex = 15;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgwChiTietHoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 116);
+            this.panel2.Location = new System.Drawing.Point(0, 93);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(870, 411);
+            this.panel2.Size = new System.Drawing.Size(773, 329);
             this.panel2.TabIndex = 1;
             // 
             // dgwChiTietHoaDon
@@ -90,17 +91,18 @@
             this.dgwChiTietHoaDon.Name = "dgwChiTietHoaDon";
             this.dgwChiTietHoaDon.RowHeadersWidth = 62;
             this.dgwChiTietHoaDon.RowTemplate.Height = 28;
-            this.dgwChiTietHoaDon.Size = new System.Drawing.Size(870, 411);
+            this.dgwChiTietHoaDon.Size = new System.Drawing.Size(773, 329);
             this.dgwChiTietHoaDon.TabIndex = 1;
             // 
             // hoaDonChiTiet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(870, 527);
+            this.ClientSize = new System.Drawing.Size(773, 422);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "hoaDonChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

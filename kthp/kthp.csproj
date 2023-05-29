@@ -415,5 +415,50 @@
   <ItemGroup>
     <None Include="Resources\Smiling people standing in line to book store.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_24x241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Archive_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites_256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chiTietTaiKhoan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -180,7 +181,7 @@
             this.dgwTaiKhoan.Name = "dgwTaiKhoan";
             this.dgwTaiKhoan.RowHeadersWidth = 51;
             this.dgwTaiKhoan.RowTemplate.Height = 24;
-            this.dgwTaiKhoan.Size = new System.Drawing.Size(10, 10);
+            this.dgwTaiKhoan.Size = new System.Drawing.Size(1, 1);
             this.dgwTaiKhoan.TabIndex = 22;
             this.dgwTaiKhoan.Visible = false;
             // 
@@ -340,6 +341,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "chiTietTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
