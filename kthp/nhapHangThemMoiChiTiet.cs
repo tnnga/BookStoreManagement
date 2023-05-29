@@ -55,10 +55,5 @@ namespace kthp
         {
             txtMaNhapHang.Text = maNhapHang;
         }
-
-        private void nhapHangThemMoiChiTiet_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
     }
 }

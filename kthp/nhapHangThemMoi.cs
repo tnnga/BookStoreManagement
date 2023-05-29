@@ -175,5 +175,18 @@ namespace kthp
             else
                 MessageBox.Show("Huỷ không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void txtDonGia_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDonGia.Text))
+            {
+                errorProvider1.SetError(txtDonGia, "Vui lòng nhập thông tin!");
+                txtDonGia.Focus();
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
     }
 }
