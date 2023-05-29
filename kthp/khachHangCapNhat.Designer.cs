@@ -32,6 +32,8 @@
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.lblCapNhatThongTinSach = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSoDienThoai = new System.Windows.Forms.MaskedTextBox();
+            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
-            this.txtSoDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(827, 445);
             this.panel2.TabIndex = 1;
+            // 
+            // txtSoDienThoai
+            // 
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.Location = new System.Drawing.Point(266, 205);
+            this.txtSoDienThoai.Mask = "0000000000";
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(544, 41);
+            this.txtSoDienThoai.TabIndex = 34;
+            // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.txtGioiTinh.Location = new System.Drawing.Point(266, 121);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(544, 42);
+            this.txtGioiTinh.TabIndex = 33;
+            this.txtGioiTinh.Text = "(Lựa chọn)";
             // 
             // txtTenKhachHang
             // 
@@ -179,28 +201,6 @@
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.FormattingEnabled = true;
-            this.txtGioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.txtGioiTinh.Location = new System.Drawing.Point(266, 121);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(544, 42);
-            this.txtGioiTinh.TabIndex = 33;
-            this.txtGioiTinh.Text = "(Lựa chọn)";
-            // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(266, 205);
-            this.txtSoDienThoai.Mask = "0000000000";
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(544, 41);
-            this.txtSoDienThoai.TabIndex = 34;
-            // 
             // khachHangCapNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -213,7 +213,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "khachHangCapNhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.khachHangCapNhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

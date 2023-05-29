@@ -99,6 +99,40 @@ namespace DALQLNS
             }
             return false;
         }
+        public bool UpdateTaiKhoanAll(DTOTaiKhoan sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("update TaiKhoan set HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, SDT = @SoDienThoai, Email = @Email, DiaChi = @DiaChi  where TenDangNhap = @TenDangNhap", conn);
+                cmd.Parameters.AddWithValue("@TenDangNhap", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@HoTen", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@GioiTinh", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@NgaySinh", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@SoDienThoai", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@Email", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@DiaChi", sp.TenDangNhap);
+
+
+                var kq = cmd.ExecuteNonQuery();
+
+                if (kq > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
         public bool LoginTaiKhoan(DTOTaiKhoan sp)
         {
             try

@@ -37,6 +37,8 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.lblDonGia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtGioNhapHang = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayNhapHang = new System.Windows.Forms.MaskedTextBox();
             this.btnThemNhapHang = new System.Windows.Forms.Button();
             this.btnThemChiTiet = new System.Windows.Forms.Button();
             this.lblGioNhapHang = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblMaNhapHangChiTiet = new System.Windows.Forms.Label();
             this.lblChiTietNhapHang = new System.Windows.Forms.Label();
-            this.txtNgayNhapHang = new System.Windows.Forms.MaskedTextBox();
-            this.txtGioNhapHang = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -157,6 +157,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(719, 723);
             this.panel2.TabIndex = 52;
+            // 
+            // txtGioNhapHang
+            // 
+            this.txtGioNhapHang.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtGioNhapHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioNhapHang.ForeColor = System.Drawing.Color.White;
+            this.txtGioNhapHang.Location = new System.Drawing.Point(256, 376);
+            this.txtGioNhapHang.Mask = "00:00";
+            this.txtGioNhapHang.Name = "txtGioNhapHang";
+            this.txtGioNhapHang.Size = new System.Drawing.Size(444, 34);
+            this.txtGioNhapHang.TabIndex = 63;
+            this.txtGioNhapHang.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayNhapHang
+            // 
+            this.txtNgayNhapHang.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtNgayNhapHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayNhapHang.ForeColor = System.Drawing.Color.White;
+            this.txtNgayNhapHang.Location = new System.Drawing.Point(255, 267);
+            this.txtNgayNhapHang.Mask = "00-00-0000";
+            this.txtNgayNhapHang.Name = "txtNgayNhapHang";
+            this.txtNgayNhapHang.Size = new System.Drawing.Size(444, 34);
+            this.txtNgayNhapHang.TabIndex = 63;
             // 
             // btnThemNhapHang
             // 
@@ -348,29 +371,6 @@
             this.lblChiTietNhapHang.Text = "CHI TIẾT NHẬP HÀNG";
             this.lblChiTietNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtNgayNhapHang
-            // 
-            this.txtNgayNhapHang.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.txtNgayNhapHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayNhapHang.ForeColor = System.Drawing.Color.White;
-            this.txtNgayNhapHang.Location = new System.Drawing.Point(255, 267);
-            this.txtNgayNhapHang.Mask = "00-00-00";
-            this.txtNgayNhapHang.Name = "txtNgayNhapHang";
-            this.txtNgayNhapHang.Size = new System.Drawing.Size(444, 34);
-            this.txtNgayNhapHang.TabIndex = 63;
-            // 
-            // txtGioNhapHang
-            // 
-            this.txtGioNhapHang.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.txtGioNhapHang.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioNhapHang.ForeColor = System.Drawing.Color.White;
-            this.txtGioNhapHang.Location = new System.Drawing.Point(256, 376);
-            this.txtGioNhapHang.Mask = "00:00";
-            this.txtGioNhapHang.Name = "txtGioNhapHang";
-            this.txtGioNhapHang.Size = new System.Drawing.Size(444, 34);
-            this.txtGioNhapHang.TabIndex = 63;
-            this.txtGioNhapHang.ValidatingType = typeof(System.DateTime);
-            // 
             // frmNhapHangThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -384,7 +384,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNhapHangThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.frmNhapHangThemMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel2.ResumeLayout(false);

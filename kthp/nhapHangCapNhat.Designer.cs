@@ -41,14 +41,14 @@
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNgayNhap = new System.Windows.Forms.MaskedTextBox();
+            this.txtGioNhap = new System.Windows.Forms.MaskedTextBox();
             this.lblGioNhap = new System.Windows.Forms.Label();
             this.lblNgayNhap = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTenNhanVien = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
-            this.txtGioNhap = new System.Windows.Forms.MaskedTextBox();
-            this.txtNgayNhap = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -188,6 +188,25 @@
             this.panel3.Size = new System.Drawing.Size(1048, 190);
             this.panel3.TabIndex = 0;
             // 
+            // txtNgayNhap
+            // 
+            this.txtNgayNhap.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayNhap.Location = new System.Drawing.Point(694, 123);
+            this.txtNgayNhap.Mask = "00-00-0000";
+            this.txtNgayNhap.Name = "txtNgayNhap";
+            this.txtNgayNhap.Size = new System.Drawing.Size(330, 41);
+            this.txtNgayNhap.TabIndex = 52;
+            // 
+            // txtGioNhap
+            // 
+            this.txtGioNhap.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioNhap.Location = new System.Drawing.Point(875, 33);
+            this.txtGioNhap.Mask = "00:00";
+            this.txtGioNhap.Name = "txtGioNhap";
+            this.txtGioNhap.Size = new System.Drawing.Size(149, 41);
+            this.txtGioNhap.TabIndex = 51;
+            this.txtGioNhap.ValidatingType = typeof(System.DateTime);
+            // 
             // lblGioNhap
             // 
             this.lblGioNhap.AutoSize = true;
@@ -256,25 +275,6 @@
             this.txtTenNhanVien.Size = new System.Drawing.Size(478, 53);
             this.txtTenNhanVien.TabIndex = 39;
             // 
-            // txtGioNhap
-            // 
-            this.txtGioNhap.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioNhap.Location = new System.Drawing.Point(875, 33);
-            this.txtGioNhap.Mask = "00:00";
-            this.txtGioNhap.Name = "txtGioNhap";
-            this.txtGioNhap.Size = new System.Drawing.Size(149, 41);
-            this.txtGioNhap.TabIndex = 51;
-            this.txtGioNhap.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtNgayNhap
-            // 
-            this.txtNgayNhap.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayNhap.Location = new System.Drawing.Point(694, 123);
-            this.txtNgayNhap.Mask = "00-00-00";
-            this.txtNgayNhap.Name = "txtNgayNhap";
-            this.txtNgayNhap.Size = new System.Drawing.Size(330, 41);
-            this.txtNgayNhap.TabIndex = 52;
-            // 
             // nhapHangCapNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -286,7 +286,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "nhapHangCapNhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.nhapHangCapNhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

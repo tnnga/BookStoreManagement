@@ -163,7 +163,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "nhapHangThemMoiChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.nhapHangThemMoiChiTiet_FormClosing);
             this.Load += new System.EventHandler(this.nhapHangThemMoiChiTiet_Load);
             this.panel1.ResumeLayout(false);
