@@ -45,6 +45,11 @@ namespace BLLQLNS
             return dALSanPham.DeleteSanPham(sp);
         }
 
+        public bool CheckSoLuongSanPhamConHang(DTOSanPham sp)
+        {
+            return dALSanPham.CheckSoLuongSanPhamConHang(sp);
+        }
+
         public bool UpdateTangSoLuongSanPham(DTOChiTietNhapHang dTOChiTietNhapHang)
         {
             return dALSanPham.UpdateTangSoLuongSanPham(dTOChiTietNhapHang);

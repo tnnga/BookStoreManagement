@@ -147,8 +147,7 @@ namespace kthp
 
         private void frmManHinhChinh_Load(object sender, EventArgs e)
         {
-            trangChu trangChu = new trangChu();
-            trangChu.ShowDialog();
+            
         }
     }
 }

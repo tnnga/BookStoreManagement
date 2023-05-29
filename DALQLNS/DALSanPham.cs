@@ -332,5 +332,31 @@ namespace DALQLNS
             }
             return false;
         }
+
+        public bool CheckSoLuongSanPhamConHang(DTOSanPham sp)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT (CASE WHEN SoLuongTon > 0 THEN N'Còn hàng' ELSE N'Hết hàng' END) AS 'Kiểm tra số lượng sản phẩm' FROM SanPham WHERE MaSach = @MaSanPham", conn);
+                cmd.Parameters.AddWithValue("@MaSanPham", sp.MaSach);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
     }
 }
