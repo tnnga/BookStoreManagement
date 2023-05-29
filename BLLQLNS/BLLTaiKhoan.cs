@@ -29,6 +29,10 @@ namespace BLLQLNS
         {
             return dALTaiKhoan.UpdateTaiKhoan(sp);
         }
+        public bool UpdateTaiKhoanAll(DTOTaiKhoan sp)
+        {
+            return dALTaiKhoan.UpdateTaiKhoanAll(sp);
+        }
         public DataTable SelectTaiKhoan(DTOTaiKhoan sp)
         {
             DataTable dt = dALTaiKhoan.SelectTaiKhoan(sp);

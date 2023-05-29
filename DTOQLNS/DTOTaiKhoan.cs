@@ -38,5 +38,15 @@ namespace DTOQLNS
             _Email = email;
             _DiaChi = diaChi;
         }
+        public DTOTaiKhoan(string tenDangNhap, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
+        {
+            _TenDangNhap = tenDangNhap;
+            _HoTen = hoTen;
+            _GioiTinh = gioiTinh;
+            _NgaySinh = ngaySinh;
+            _SoDienThoai = soDienThoai;
+            _Email = email;
+            _DiaChi = diaChi;
+        }
     }
 }

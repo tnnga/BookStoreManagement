@@ -54,19 +54,19 @@
             this.lblMaHoaDon.AutoSize = true;
             this.lblMaHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lblMaHoaDon.Location = new System.Drawing.Point(54, 46);
+            this.lblMaHoaDon.Location = new System.Drawing.Point(164, 37);
             this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(179, 34);
+            this.lblMaHoaDon.Size = new System.Drawing.Size(288, 34);
             this.lblMaHoaDon.TabIndex = 16;
-            this.lblMaHoaDon.Text = "Mã hóa đơn";
+            this.lblMaHoaDon.Text = "CHI TIẾT HÓA ĐƠN";
             // 
             // txtMaHoaDon
             // 
             this.txtMaHoaDon.BackColor = System.Drawing.Color.MintCream;
             this.txtMaHoaDon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHoaDon.Location = new System.Drawing.Point(257, 25);
+            this.txtMaHoaDon.Location = new System.Drawing.Point(548, 20);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(559, 66);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(197, 66);
             this.txtMaHoaDon.TabIndex = 15;
             // 
             // panel2
@@ -104,7 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "hoaDonChiTiet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.hoaDonChiTiet_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

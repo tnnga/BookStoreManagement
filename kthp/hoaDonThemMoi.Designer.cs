@@ -229,7 +229,7 @@
             // 
             this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgayHoaDon.Location = new System.Drawing.Point(241, 239);
-            this.txtNgayHoaDon.Mask = "00-00-00";
+            this.txtNgayHoaDon.Mask = "00-00-9999";
             this.txtNgayHoaDon.Name = "txtNgayHoaDon";
             this.txtNgayHoaDon.Size = new System.Drawing.Size(444, 34);
             this.txtNgayHoaDon.TabIndex = 9;
@@ -391,7 +391,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmHoaDonThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.frmHoaDonThemMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

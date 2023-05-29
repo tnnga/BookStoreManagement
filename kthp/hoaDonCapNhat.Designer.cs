@@ -40,6 +40,8 @@
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtGioHoaDon = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayHoaDon = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblGioHoaDon = new System.Windows.Forms.Label();
             this.lblNgayHoaDon = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.txtNgayHoaDon = new System.Windows.Forms.MaskedTextBox();
-            this.txtGioHoaDon = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -177,6 +177,26 @@
             this.panel3.Size = new System.Drawing.Size(1034, 212);
             this.panel3.TabIndex = 32;
             // 
+            // txtGioHoaDon
+            // 
+            this.txtGioHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioHoaDon.Location = new System.Drawing.Point(214, 139);
+            this.txtGioHoaDon.Mask = "00:00";
+            this.txtGioHoaDon.Name = "txtGioHoaDon";
+            this.txtGioHoaDon.Size = new System.Drawing.Size(295, 41);
+            this.txtGioHoaDon.TabIndex = 40;
+            this.txtGioHoaDon.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayHoaDon
+            // 
+            this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayHoaDon.Location = new System.Drawing.Point(711, 47);
+            this.txtNgayHoaDon.Mask = "00-00-0000";
+            this.txtNgayHoaDon.Name = "txtNgayHoaDon";
+            this.txtNgayHoaDon.Size = new System.Drawing.Size(295, 41);
+            this.txtNgayHoaDon.TabIndex = 39;
+            this.txtNgayHoaDon.ValidatingType = typeof(System.DateTime);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -254,32 +274,12 @@
             this.btnCapNhat.Location = new System.Drawing.Point(0, 514);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnCapNhat.Padding = new System.Windows.Forms.Padding(10);
             this.btnCapNhat.Size = new System.Drawing.Size(1034, 74);
             this.btnCapNhat.TabIndex = 31;
             this.btnCapNhat.Text = "CẬP NHẬT";
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
-            // txtNgayHoaDon
-            // 
-            this.txtNgayHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayHoaDon.Location = new System.Drawing.Point(711, 47);
-            this.txtNgayHoaDon.Mask = "00-00-0000";
-            this.txtNgayHoaDon.Name = "txtNgayHoaDon";
-            this.txtNgayHoaDon.Size = new System.Drawing.Size(295, 41);
-            this.txtNgayHoaDon.TabIndex = 39;
-            this.txtNgayHoaDon.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtGioHoaDon
-            // 
-            this.txtGioHoaDon.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioHoaDon.Location = new System.Drawing.Point(214, 139);
-            this.txtGioHoaDon.Mask = "00:00";
-            this.txtGioHoaDon.Name = "txtGioHoaDon";
-            this.txtGioHoaDon.Size = new System.Drawing.Size(295, 41);
-            this.txtGioHoaDon.TabIndex = 40;
-            this.txtGioHoaDon.ValidatingType = typeof(System.DateTime);
             // 
             // hoaDonCapNhat
             // 
@@ -291,9 +291,9 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "hoaDonCapNhat";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.hoaDonCapNhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

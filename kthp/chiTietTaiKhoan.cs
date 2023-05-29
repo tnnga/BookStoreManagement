@@ -28,8 +28,7 @@ namespace kthp
             InitializeComponent();
             _TenDangNhap = tenDangNhap;
         }
-
-        private void chiTietTaiKhoan_Load(object sender, EventArgs e)
+        public void AddThongTin()
         {
             dTOTaiKhoan = new DTOTaiKhoan(_TenDangNhap, "", "", "", "", "", "", "");
             dgwTaiKhoan.DataSource = bLLTaiKhoan.SelectTaiKhoan(dTOTaiKhoan);
@@ -40,6 +39,10 @@ namespace kthp
             mtbSoDienThoai.Text = dgwTaiKhoan.Rows[0].Cells[5].Value.ToString().Trim();
             txtEmail.Text = dgwTaiKhoan.Rows[0].Cells[6].Value.ToString().Trim();
             txtDiaChi.Text = dgwTaiKhoan.Rows[0].Cells[7].Value.ToString().Trim();
+        }
+        private void chiTietTaiKhoan_Load(object sender, EventArgs e)
+        {
+            AddThongTin();
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
@@ -68,8 +71,8 @@ namespace kthp
             frmDangNhap frmDangNhap = new frmDangNhap();
             _TenDangNhap = frmDangNhap.tenDangNhap;
 
-            dTOTaiKhoan = new DTOTaiKhoan(_TenDangNhap, "", "", "", "", "", "", "");
-            if (bLLTaiKhoan.UpdateTaiKhoan(dTOTaiKhoan))
+            dTOTaiKhoan = new DTOTaiKhoan(_TenDangNhap, txtHoTen.Text, cboGioiTinh.Text, mtbNgaySinh.Text, mtbSoDienThoai.Text, txtEmail.Text, txtDiaChi.Text);
+            if (bLLTaiKhoan.UpdateTaiKhoanAll(dTOTaiKhoan))
             {
                 MessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

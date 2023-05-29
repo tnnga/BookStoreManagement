@@ -288,7 +288,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thư viện";
+            this.Text = "Phần mềm quản lí nhà sách";
             this.Load += new System.EventHandler(this.dangKy_Load);
             this.Shown += new System.EventHandler(this.frmDangKy_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
