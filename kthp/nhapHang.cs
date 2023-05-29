@@ -46,9 +46,7 @@ namespace kthp
         }
 
         private void nhapHang_Load(object sender, EventArgs e)
-        {
-            
-
+        {       
             dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
             ConfigureSP();
         }
@@ -128,14 +126,14 @@ namespace kthp
                 sp2 = new DTOChiTietNhapHang(maNhapHang, "", "", 0);
                 if (bLLNhapHang.DeleteChiTietNhapHangAll(sp2) && bLLNhapHang.DeleteNhapHang(sp))
                 {
-                    var res1 = MessageBox.Show("Xóa thông tin nhập hàng thành công?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    var res1 = MessageBox.Show("Xóa thông tin nhập hàng thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                     dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
                     ConfigureSP();
                 }
                 else
                 {
-                    var res3 = MessageBox.Show("Xóa thông tin nhập hàng thất bại?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    var res3 = MessageBox.Show("Xóa thông tin nhập hàng thất bại.\nVui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 }
             }

@@ -28,7 +28,8 @@ namespace kthp
             InitializeComponent();
             _TenDangNhap = tenDangNhap;
         }
-        public void AddThongTin()
+        
+        private void chiTietTaiKhoan_Load(object sender, EventArgs e)
         {
             dTOTaiKhoan = new DTOTaiKhoan(_TenDangNhap, "", "", "", "", "", "", "");
             dgwTaiKhoan.DataSource = bLLTaiKhoan.SelectTaiKhoan(dTOTaiKhoan);
@@ -39,10 +40,6 @@ namespace kthp
             mtbSoDienThoai.Text = dgwTaiKhoan.Rows[0].Cells[5].Value.ToString().Trim();
             txtEmail.Text = dgwTaiKhoan.Rows[0].Cells[6].Value.ToString().Trim();
             txtDiaChi.Text = dgwTaiKhoan.Rows[0].Cells[7].Value.ToString().Trim();
-        }
-        private void chiTietTaiKhoan_Load(object sender, EventArgs e)
-        {
-            AddThongTin();
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

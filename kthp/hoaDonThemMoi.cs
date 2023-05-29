@@ -191,5 +191,11 @@ namespace kthp
             else
                 MessageBox.Show("Huỷ không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnThemKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHangThemMoi frmKhachHangThemMoi = new frmKhachHangThemMoi();
+            frmKhachHangThemMoi.ShowDialog();
+        }
     }
 }

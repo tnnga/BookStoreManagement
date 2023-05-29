@@ -104,14 +104,14 @@ namespace DALQLNS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update TaiKhoan set HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, SDT = @SoDienThoai, Email = @Email, DiaChi = @DiaChi  where TenDangNhap = @TenDangNhap", conn);
+                SqlCommand cmd = new SqlCommand("update TaiKhoan set HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, SDT = @SoDienThoai, Email = @Email, DiaChi = @DiaChi where TenDangNhap = @TenDangNhap", conn);
                 cmd.Parameters.AddWithValue("@TenDangNhap", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@HoTen", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@GioiTinh", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@NgaySinh", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@SoDienThoai", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@Email", sp.TenDangNhap);
-                cmd.Parameters.AddWithValue("@DiaChi", sp.TenDangNhap);
+                cmd.Parameters.AddWithValue("@HoTen", sp.HoTen);
+                cmd.Parameters.AddWithValue("@GioiTinh", sp.GioiTinh);
+                cmd.Parameters.AddWithValue("@NgaySinh", sp.NgaySinh);
+                cmd.Parameters.AddWithValue("@SoDienThoai", sp.SoDienThoai);
+                cmd.Parameters.AddWithValue("@Email", sp.Email);
+                cmd.Parameters.AddWithValue("@DiaChi", sp.DiaChi);
 
 
                 var kq = cmd.ExecuteNonQuery();

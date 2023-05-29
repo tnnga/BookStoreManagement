@@ -37,6 +37,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dgwTaiKhoan = new System.Windows.Forms.DataGridView();
             this.btnCapNhatTaiKhoan = new System.Windows.Forms.Button();
             this.mtbNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.mtbSoDienThoai = new System.Windows.Forms.MaskedTextBox();
@@ -50,7 +51,6 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
-            this.dgwTaiKhoan = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -172,6 +172,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(653, 414);
             this.panel3.TabIndex = 4;
+            // 
+            // dgwTaiKhoan
+            // 
+            this.dgwTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwTaiKhoan.Location = new System.Drawing.Point(489, 359);
+            this.dgwTaiKhoan.Name = "dgwTaiKhoan";
+            this.dgwTaiKhoan.RowHeadersWidth = 51;
+            this.dgwTaiKhoan.RowTemplate.Height = 24;
+            this.dgwTaiKhoan.Size = new System.Drawing.Size(10, 10);
+            this.dgwTaiKhoan.TabIndex = 22;
+            this.dgwTaiKhoan.Visible = false;
             // 
             // btnCapNhatTaiKhoan
             // 
@@ -319,17 +330,6 @@
             this.lblHoTen.Size = new System.Drawing.Size(74, 23);
             this.lblHoTen.TabIndex = 14;
             this.lblHoTen.Text = "Họ tên";
-            // 
-            // dgwTaiKhoan
-            // 
-            this.dgwTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwTaiKhoan.Location = new System.Drawing.Point(492, 362);
-            this.dgwTaiKhoan.Name = "dgwTaiKhoan";
-            this.dgwTaiKhoan.RowHeadersWidth = 51;
-            this.dgwTaiKhoan.RowTemplate.Height = 24;
-            this.dgwTaiKhoan.Size = new System.Drawing.Size(1, 1);
-            this.dgwTaiKhoan.TabIndex = 22;
-            this.dgwTaiKhoan.Visible = false;
             // 
             // chiTietTaiKhoan
             // 
