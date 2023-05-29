@@ -98,10 +98,10 @@
             this.btnTim.ForeColor = System.Drawing.Color.Black;
             this.btnTim.Image = global::kthp.Properties.Resources.Search_24x24;
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(773, 29);
+            this.btnTim.Location = new System.Drawing.Point(791, 24);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(89, 36);
+            this.btnTim.Size = new System.Drawing.Size(91, 41);
             this.btnTim.TabIndex = 34;
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,10 +148,10 @@
             this.btnTaoNhapHang.ForeColor = System.Drawing.Color.Black;
             this.btnTaoNhapHang.Image = global::kthp.Properties.Resources.Add_24x24;
             this.btnTaoNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoNhapHang.Location = new System.Drawing.Point(893, 29);
+            this.btnTaoNhapHang.Location = new System.Drawing.Point(906, 24);
             this.btnTaoNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaoNhapHang.Name = "btnTaoNhapHang";
-            this.btnTaoNhapHang.Size = new System.Drawing.Size(86, 36);
+            this.btnTaoNhapHang.Size = new System.Drawing.Size(88, 41);
             this.btnTaoNhapHang.TabIndex = 30;
             this.btnTaoNhapHang.Text = "Tạo";
             this.btnTaoNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

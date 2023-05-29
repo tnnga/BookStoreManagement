@@ -125,10 +125,10 @@
             this.btnTim.ForeColor = System.Drawing.Color.Black;
             this.btnTim.Image = global::kthp.Properties.Resources.Search_24x241;
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(786, 39);
+            this.btnTim.Location = new System.Drawing.Point(786, 32);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(99, 39);
+            this.btnTim.Size = new System.Drawing.Size(93, 46);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,10 +141,10 @@
             this.btnThemSanPham.ForeColor = System.Drawing.Color.Black;
             this.btnThemSanPham.Image = global::kthp.Properties.Resources.Add_24x242;
             this.btnThemSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSanPham.Location = new System.Drawing.Point(901, 39);
+            this.btnThemSanPham.Location = new System.Drawing.Point(897, 32);
             this.btnThemSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(97, 39);
+            this.btnThemSanPham.Size = new System.Drawing.Size(114, 46);
             this.btnThemSanPham.TabIndex = 19;
             this.btnThemSanPham.Text = "Thêm";
             this.btnThemSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

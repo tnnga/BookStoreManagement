@@ -36,14 +36,14 @@
             this.cbTimKiemTheo = new System.Windows.Forms.ComboBox();
             this.lblBoLoc = new System.Windows.Forms.Label();
             this.lblTimKiemTheo = new System.Windows.Forms.Label();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgwHoaDon = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chiTiếtHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chỉnhSửaThôngTinHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaThôngTinHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwHoaDon)).BeginInit();
@@ -72,7 +72,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(432, 47);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(299, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(333, 28);
             this.txtTimKiem.TabIndex = 29;
             // 
             // cbBoLoc
@@ -129,6 +129,38 @@
             this.lblTimKiemTheo.TabIndex = 26;
             this.lblTimKiemTheo.Text = "Tìm kiếm theo:";
             // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.Black;
+            this.btnTim.Image = global::kthp.Properties.Resources.Search_24x24;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(802, 29);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(84, 46);
+            this.btnTim.TabIndex = 23;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnThemHoaDon
+            // 
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btnThemHoaDon.Image = global::kthp.Properties.Resources.Add_24x24;
+            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHoaDon.Location = new System.Drawing.Point(905, 29);
+            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemHoaDon.Name = "btnThemHoaDon";
+            this.btnThemHoaDon.Size = new System.Drawing.Size(91, 46);
+            this.btnThemHoaDon.TabIndex = 24;
+            this.btnThemHoaDon.Text = "Tạo";
+            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHoaDon.UseVisualStyleBackColor = true;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgwHoaDon);
@@ -182,38 +214,6 @@
             this.xóaThôngTinHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
             this.xóaThôngTinHóaĐơnToolStripMenuItem.Text = "Xóa thông tin hóa đơn";
             this.xóaThôngTinHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.xoaThongTinHoaĐonToolStripMenuItem_Click);
-            // 
-            // btnTim
-            // 
-            this.btnTim.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Image = global::kthp.Properties.Resources.Search_24x24;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(758, 36);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(87, 39);
-            this.btnTim.TabIndex = 23;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.btnThemHoaDon.Image = global::kthp.Properties.Resources.Add_24x24;
-            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(864, 36);
-            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(88, 39);
-            this.btnThemHoaDon.TabIndex = 24;
-            this.btnThemHoaDon.Text = "Tạo";
-            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHoaDon.UseVisualStyleBackColor = true;
-            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
             // 
             // hoaDon
             // 
