@@ -21,7 +21,6 @@ namespace kthp
 
         private string maHoaDon;
         private string maKhachHang;
-        private string tenKhachHang;
         private string ngayHoaDon;
         private string gioHoaDon;
         private int donGia;
