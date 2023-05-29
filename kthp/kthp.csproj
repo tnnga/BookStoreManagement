@@ -317,6 +317,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="quenMatKhau.resx">
       <DependentUpon>quenMatKhau.cs</DependentUpon>
@@ -401,6 +402,18 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-business-male-icon-vector-png-image_916468.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visitors-bookstore-people-choose-books-260nw-2014100333.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\124729088-outdoor-view-on-bookstore-or-building-with-books-shop-or-store-with-literature-for-education-and.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smiling people standing in line to book store.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

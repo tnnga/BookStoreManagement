@@ -7,15 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTOQLNS;
+using BLLQLNS;
 
 namespace kthp
 {
     public partial class frmManHinhChinh : Form
     {
+        public static string tenDangNhap;
+
         public frmManHinhChinh()
         {
             InitializeComponent();
         }
+
+        public frmManHinhChinh(string _TenDangNhap)
+        {
+            InitializeComponent();
+            tenDangNhap = _TenDangNhap;
+        }
+
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
@@ -147,7 +158,11 @@ namespace kthp
 
         private void frmManHinhChinh_Load(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new trangChu());
+            lblMucLon.Text = lblTrangChu.Text.ToUpper();
+
+            lblNgayHienTaiValue.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            lblTenDangNhap.Text = tenDangNhap;       
         }
     }
 }

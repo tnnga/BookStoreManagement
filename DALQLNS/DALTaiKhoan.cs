@@ -11,12 +11,14 @@ namespace DALQLNS
 {
     public class DALTaiKhoan : DBConnect
     {
-        public DataTable SelecttaiKhoan()
+        public DataTable SelectTaiKhoan(DTOTaiKhoan sp)
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select TenDangNhap, MatKhau, HoTen, GioiTinh, NgaySinh, SDT, Email, DiaChi from TaiKhoan", conn);
+                SqlCommand cmd = new SqlCommand("select TenDangNhap, MatKhau, HoTen, GioiTinh, NgaySinh, SDT, Email, DiaChi from TaiKhoan WHERE TenDangNhap = @TenDangNhap", conn);
+                cmd.Parameters.AddWithValue("@TenDangNhap", sp.TenDangNhap);
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
