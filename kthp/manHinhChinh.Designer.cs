@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManHinhChinh));
             this.pnlDanhMuc = new System.Windows.Forms.Panel();
+            this.lblDangXuat = new System.Windows.Forms.Label();
+            this.lblKhachHang = new System.Windows.Forms.Label();
+            this.lblNhapHang = new System.Windows.Forms.Label();
+            this.lblHoaDon = new System.Windows.Forms.Label();
+            this.lblSanPham = new System.Windows.Forms.Label();
+            this.lblTrangChu = new System.Windows.Forms.Label();
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.pnlTieuDe = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -39,26 +45,22 @@
             this.lblNgayHienTaiValue = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
-            this.pnlManHinhChinh = new System.Windows.Forms.Panel();
             this.picIconNhanVien = new System.Windows.Forms.PictureBox();
-            this.lblDangXuat = new System.Windows.Forms.Label();
-            this.lblKhachHang = new System.Windows.Forms.Label();
-            this.lblNhapHang = new System.Windows.Forms.Label();
-            this.lblHoaDon = new System.Windows.Forms.Label();
-            this.lblSanPham = new System.Windows.Forms.Label();
-            this.lblTrangChu = new System.Windows.Forms.Label();
+            this.pnlManHinhChinh = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pnlDanhMuc.SuspendLayout();
             this.pnlTieuDe.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIconNhanVien)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDanhMuc
             // 
             this.pnlDanhMuc.BackColor = System.Drawing.Color.Black;
-            this.pnlDanhMuc.Controls.Add(this.lblDangXuat);
+            this.pnlDanhMuc.Controls.Add(this.panel4);
             this.pnlDanhMuc.Controls.Add(this.lblKhachHang);
             this.pnlDanhMuc.Controls.Add(this.lblNhapHang);
             this.pnlDanhMuc.Controls.Add(this.lblHoaDon);
@@ -73,121 +75,13 @@
             this.pnlDanhMuc.Size = new System.Drawing.Size(212, 614);
             this.pnlDanhMuc.TabIndex = 0;
             // 
-            // lblTieuDe
-            // 
-            this.lblTieuDe.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDe.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lblTieuDe.Location = new System.Drawing.Point(3, 27);
-            this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(204, 43);
-            this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "THIÊN AN";
-            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlTieuDe
-            // 
-            this.pnlTieuDe.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlTieuDe.Controls.Add(this.panel3);
-            this.pnlTieuDe.Controls.Add(this.panel2);
-            this.pnlTieuDe.Controls.Add(this.panel1);
-            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTieuDe.ForeColor = System.Drawing.Color.White;
-            this.pnlTieuDe.Location = new System.Drawing.Point(212, 0);
-            this.pnlTieuDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTieuDe.Name = "pnlTieuDe";
-            this.pnlTieuDe.Size = new System.Drawing.Size(1060, 85);
-            this.pnlTieuDe.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblMucLon);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(383, 85);
-            this.panel3.TabIndex = 7;
-            // 
-            // lblMucLon
-            // 
-            this.lblMucLon.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMucLon.Location = new System.Drawing.Point(11, 23);
-            this.lblMucLon.Name = "lblMucLon";
-            this.lblMucLon.Size = new System.Drawing.Size(365, 40);
-            this.lblMucLon.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblNgayHienTai);
-            this.panel2.Controls.Add(this.lblNgayHienTaiValue);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(383, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 85);
-            this.panel2.TabIndex = 6;
-            // 
-            // lblNgayHienTai
-            // 
-            this.lblNgayHienTai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHienTai.Location = new System.Drawing.Point(56, 9);
-            this.lblNgayHienTai.Name = "lblNgayHienTai";
-            this.lblNgayHienTai.Size = new System.Drawing.Size(210, 36);
-            this.lblNgayHienTai.TabIndex = 1;
-            this.lblNgayHienTai.Text = "Ngày hiện tại:";
-            // 
-            // lblNgayHienTaiValue
-            // 
-            this.lblNgayHienTaiValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHienTaiValue.Location = new System.Drawing.Point(56, 45);
-            this.lblNgayHienTaiValue.Name = "lblNgayHienTaiValue";
-            this.lblNgayHienTaiValue.Size = new System.Drawing.Size(158, 25);
-            this.lblNgayHienTaiValue.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblTenDangNhap);
-            this.panel1.Controls.Add(this.picIconNhanVien);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(701, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 85);
-            this.panel1.TabIndex = 5;
-            // 
-            // lblTenDangNhap
-            // 
-            this.lblTenDangNhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenDangNhap.Location = new System.Drawing.Point(135, 27);
-            this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(212, 27);
-            this.lblTenDangNhap.TabIndex = 2;
-            // 
-            // pnlManHinhChinh
-            // 
-            this.pnlManHinhChinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlManHinhChinh.Location = new System.Drawing.Point(212, 85);
-            this.pnlManHinhChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlManHinhChinh.Name = "pnlManHinhChinh";
-            this.pnlManHinhChinh.Size = new System.Drawing.Size(1060, 529);
-            this.pnlManHinhChinh.TabIndex = 2;
-            // 
-            // picIconNhanVien
-            // 
-            this.picIconNhanVien.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picIconNhanVien.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picIconNhanVien.Image = global::kthp.Properties.Resources.pngtree_business_male_icon_vector_png_image_916468;
-            this.picIconNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.picIconNhanVien.Name = "picIconNhanVien";
-            this.picIconNhanVien.Size = new System.Drawing.Size(115, 85);
-            this.picIconNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIconNhanVien.TabIndex = 4;
-            this.picIconNhanVien.TabStop = false;
-            // 
             // lblDangXuat
             // 
             this.lblDangXuat.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangXuat.ForeColor = System.Drawing.Color.White;
             this.lblDangXuat.Image = global::kthp.Properties.Resources.logout;
             this.lblDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDangXuat.Location = new System.Drawing.Point(3, 549);
+            this.lblDangXuat.Location = new System.Drawing.Point(3, 35);
             this.lblDangXuat.Name = "lblDangXuat";
             this.lblDangXuat.Size = new System.Drawing.Size(209, 56);
             this.lblDangXuat.TabIndex = 0;
@@ -277,6 +171,123 @@
             this.lblTrangChu.MouseEnter += new System.EventHandler(this.lblTrangChu_MouseEnter);
             this.lblTrangChu.MouseLeave += new System.EventHandler(this.lblTrangChu_MouseLeave);
             // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.lblTieuDe.Location = new System.Drawing.Point(3, 27);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(204, 43);
+            this.lblTieuDe.TabIndex = 0;
+            this.lblTieuDe.Text = "THIÊN AN";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlTieuDe
+            // 
+            this.pnlTieuDe.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlTieuDe.Controls.Add(this.panel3);
+            this.pnlTieuDe.Controls.Add(this.panel2);
+            this.pnlTieuDe.Controls.Add(this.panel1);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTieuDe.ForeColor = System.Drawing.Color.White;
+            this.pnlTieuDe.Location = new System.Drawing.Point(212, 0);
+            this.pnlTieuDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTieuDe.Name = "pnlTieuDe";
+            this.pnlTieuDe.Size = new System.Drawing.Size(1060, 85);
+            this.pnlTieuDe.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblMucLon);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(383, 85);
+            this.panel3.TabIndex = 7;
+            // 
+            // lblMucLon
+            // 
+            this.lblMucLon.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMucLon.Location = new System.Drawing.Point(11, 23);
+            this.lblMucLon.Name = "lblMucLon";
+            this.lblMucLon.Size = new System.Drawing.Size(365, 40);
+            this.lblMucLon.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblNgayHienTai);
+            this.panel2.Controls.Add(this.lblNgayHienTaiValue);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(383, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(318, 85);
+            this.panel2.TabIndex = 6;
+            // 
+            // lblNgayHienTai
+            // 
+            this.lblNgayHienTai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayHienTai.Location = new System.Drawing.Point(56, 9);
+            this.lblNgayHienTai.Name = "lblNgayHienTai";
+            this.lblNgayHienTai.Size = new System.Drawing.Size(210, 36);
+            this.lblNgayHienTai.TabIndex = 1;
+            this.lblNgayHienTai.Text = "Ngày hiện tại:";
+            // 
+            // lblNgayHienTaiValue
+            // 
+            this.lblNgayHienTaiValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayHienTaiValue.Location = new System.Drawing.Point(56, 45);
+            this.lblNgayHienTaiValue.Name = "lblNgayHienTaiValue";
+            this.lblNgayHienTaiValue.Size = new System.Drawing.Size(158, 25);
+            this.lblNgayHienTaiValue.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblTenDangNhap);
+            this.panel1.Controls.Add(this.picIconNhanVien);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(701, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 85);
+            this.panel1.TabIndex = 5;
+            // 
+            // lblTenDangNhap
+            // 
+            this.lblTenDangNhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenDangNhap.Location = new System.Drawing.Point(135, 27);
+            this.lblTenDangNhap.Name = "lblTenDangNhap";
+            this.lblTenDangNhap.Size = new System.Drawing.Size(212, 27);
+            this.lblTenDangNhap.TabIndex = 2;
+            // 
+            // picIconNhanVien
+            // 
+            this.picIconNhanVien.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picIconNhanVien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picIconNhanVien.Image = global::kthp.Properties.Resources.pngtree_business_male_icon_vector_png_image_916468;
+            this.picIconNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.picIconNhanVien.Name = "picIconNhanVien";
+            this.picIconNhanVien.Size = new System.Drawing.Size(115, 85);
+            this.picIconNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIconNhanVien.TabIndex = 4;
+            this.picIconNhanVien.TabStop = false;
+            // 
+            // pnlManHinhChinh
+            // 
+            this.pnlManHinhChinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlManHinhChinh.Location = new System.Drawing.Point(212, 85);
+            this.pnlManHinhChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlManHinhChinh.Name = "pnlManHinhChinh";
+            this.pnlManHinhChinh.Size = new System.Drawing.Size(1060, 529);
+            this.pnlManHinhChinh.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblDangXuat);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 514);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(212, 100);
+            this.panel4.TabIndex = 1;
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +308,7 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picIconNhanVien)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
