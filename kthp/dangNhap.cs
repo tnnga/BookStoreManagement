@@ -125,6 +125,7 @@ namespace kthp
                 frmManHinhChinh mHC = new frmManHinhChinh(tenDangNhap);
                 chiTietTaiKhoan cTTK = new chiTietTaiKhoan(tenDangNhap);
 
+                this.Hide();
                 frmManHinhChinh frmManHinhChinh = new frmManHinhChinh();
                 frmManHinhChinh.ShowDialog();
             }
@@ -145,6 +146,23 @@ namespace kthp
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
             txtMatKhau.PasswordChar = '*';
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi phần mềm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
+            {
+
+            }
+            else 
+                e.Cancel = true;
         }
     }
 }

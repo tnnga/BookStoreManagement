@@ -209,6 +209,8 @@
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lí nhà sách";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
