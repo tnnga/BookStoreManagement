@@ -56,5 +56,7 @@ namespace BLLQLNS
         {
             return dALHoaDon.InsertDonGiaHoaDon(dTOHoaDon);
         }
+
+
     }
 }
