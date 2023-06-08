@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALQLNS", "DALQLNS\DALQLNS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOQLNS", "DTOQLNS\DTOQLNS.csproj", "{ECDFB7B3-3C9E-47A2-AB97-CDC356C5F2A3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "KTHP_Desktop", "KTHP_Desktop\KTHP_Desktop.vdproj", "{158964A9-CF68-40A1-B56C-E7194EAAF397}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{ECDFB7B3-3C9E-47A2-AB97-CDC356C5F2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECDFB7B3-3C9E-47A2-AB97-CDC356C5F2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECDFB7B3-3C9E-47A2-AB97-CDC356C5F2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158964A9-CF68-40A1-B56C-E7194EAAF397}.Debug|Any CPU.ActiveCfg = Debug
+		{158964A9-CF68-40A1-B56C-E7194EAAF397}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
