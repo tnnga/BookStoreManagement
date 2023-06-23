@@ -1,10 +1,5 @@
-﻿using DTOQLNS;
-using DALQLNS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DALQLNS;
+using DTOQLNS;
 using System.Data;
 
 namespace BLLQLNS
@@ -56,7 +51,5 @@ namespace BLLQLNS
         {
             return dALHoaDon.InsertDonGiaHoaDon(dTOHoaDon);
         }
-
-
     }
 }

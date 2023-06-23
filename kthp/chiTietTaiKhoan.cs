@@ -1,13 +1,6 @@
 ﻿using BLLQLNS;
 using DTOQLNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kthp
@@ -28,7 +21,7 @@ namespace kthp
             InitializeComponent();
             _TenDangNhap = tenDangNhap;
         }
-        
+
         private void chiTietTaiKhoan_Load(object sender, EventArgs e)
         {
             dTOTaiKhoan = new DTOTaiKhoan(_TenDangNhap, "", "", "", "", "", "", "");

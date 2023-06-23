@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kthp
@@ -28,7 +21,7 @@ namespace kthp
             this.soLuong = soLuong;
             this.loaiSach = loaiSach;
             this.noiDungChinh = noiDungChinh;
-        }     
+        }
 
         private void frmSanPhamChiTiet_Load(object sender, EventArgs e)
         {

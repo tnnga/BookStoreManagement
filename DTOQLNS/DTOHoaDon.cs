@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTOQLNS
+﻿namespace DTOQLNS
 {
     public class DTOHoaDon
     {
@@ -14,13 +8,13 @@ namespace DTOQLNS
         private string _GioHoaDon;
         private float _DonGia;
 
-        
+
         public string MaHoaDon { get => _MaHoaDon; set => _MaHoaDon = value; }
         public string MaKhachHang { get => _MaKhachHang; set => _MaKhachHang = value; }
         public string NgayHoaDon { get => _NgayHoaDon; set => _NgayHoaDon = value; }
         public string GioHoaDon { get => _GioHoaDon; set => _GioHoaDon = value; }
         public float DonGia { get => _DonGia; set => _DonGia = value; }
-        
+
 
         public DTOHoaDon() { }
 
@@ -40,7 +34,7 @@ namespace DTOQLNS
             _GioHoaDon = gioHoaDon;
             _DonGia = donGia;
         }
-        
+
     }
     public class DTOChiTietHoaDon
     {

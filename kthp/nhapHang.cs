@@ -1,14 +1,6 @@
 ﻿using BLLQLNS;
 using DTOQLNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kthp
@@ -46,7 +38,7 @@ namespace kthp
         }
 
         private void nhapHang_Load(object sender, EventArgs e)
-        {       
+        {
             dgwNhapHang.DataSource = bLLNhapHang.SelectNhapHang();
             ConfigureSP();
         }
@@ -55,7 +47,7 @@ namespace kthp
         {
             if (cbTimKiemTheo.SelectedIndex == 0)
             {
-                sp = new DTONhapHang(txtTimKiem.Text,"","","",0);
+                sp = new DTONhapHang(txtTimKiem.Text, "", "", "", 0);
                 dgwNhapHang.DataSource = bLLNhapHang.FindMaNhapHang(sp);
                 ConfigureSP();
             }
@@ -99,7 +91,7 @@ namespace kthp
         private void capNhatThongTinNhapHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int rowIndex = this.dgwNhapHang.CurrentCell.RowIndex;
-            
+
             maNhapHang = dgwNhapHang.Rows[rowIndex].Cells[0].Value.ToString().Trim();
             tenNhanVien = dgwNhapHang.Rows[rowIndex].Cells[1].Value.ToString().Trim();
             ngayNhap = dgwNhapHang.Rows[rowIndex].Cells[2].Value.ToString().Trim();
@@ -122,7 +114,7 @@ namespace kthp
 
             if (res == DialogResult.Yes)
             {
-                sp = new DTONhapHang(maNhapHang,"","","",0);
+                sp = new DTONhapHang(maNhapHang, "", "", "", 0);
                 sp2 = new DTOChiTietNhapHang(maNhapHang, "", "", 0);
                 if (bLLNhapHang.DeleteChiTietNhapHangAll(sp2) && bLLNhapHang.DeleteNhapHang(sp))
                 {

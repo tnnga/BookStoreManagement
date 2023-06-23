@@ -1,13 +1,6 @@
 ﻿using BLLQLNS;
 using DTOQLNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kthp
@@ -19,7 +12,7 @@ namespace kthp
         DTOChiTietNhapHang sp = null;
 
         BLLSanPham bLLSanPham = new BLLSanPham();
-        
+
 
         public frmNhapHangThemMoi()
         {
@@ -137,7 +130,7 @@ namespace kthp
         }
 
         private void btnHoanTatThemNhapHang_Click(object sender, EventArgs e)
-        {                   
+        {
 
             DialogResult resquest = MessageBox.Show("Hoàn tất thêm nhập hàng, bạn có muốn in phiếu nhập hàng hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -166,7 +159,7 @@ namespace kthp
 
             dTONhapHang = new DTONhapHang(txtMaNhapHang.Text, "", "", "", 0);
             sp = new DTOChiTietNhapHang(txtMaNhapHang.Text, "", "", 0);
-            
+
             if (bLLNhapHang.DeleteChiTietNhapHangAll(sp) && bLLNhapHang.DeleteNhapHang(dTONhapHang))
             {
                 MessageBox.Show("Huỷ thêm thông tin nhập hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

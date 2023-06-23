@@ -1,13 +1,6 @@
-﻿using BLLQLNS;
-using DTOQLNS;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kthp
@@ -25,7 +18,7 @@ namespace kthp
             InitializeComponent();
         }
 
-        
+
         public void ConfigureSP()
         {
             dgwKhachHang.Columns[0].HeaderText = "Mã khách hàng";
@@ -52,7 +45,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listKhachHang = from khachhang in data.KhachHangs
-                                select new {khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
+                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi };
 
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();
@@ -62,8 +55,8 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             KhachHang sp = (from khachHang in data.KhachHangs
-                          where khachHang.MaKhachHang == maKhachHang.Trim()
-                          select khachHang).Single<KhachHang>();
+                            where khachHang.MaKhachHang == maKhachHang.Trim()
+                            select khachHang).Single<KhachHang>();
 
             sp.TenKhachHang = tenKhachHang;
             sp.GioiTinh = gioiTinh;
@@ -78,8 +71,8 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             KhachHang sp = (from khachHang in data.KhachHangs
-                          where khachHang.MaKhachHang == maKhachHang.Trim()
-                          select khachHang).Single<KhachHang>();
+                            where khachHang.MaKhachHang == maKhachHang.Trim()
+                            select khachHang).Single<KhachHang>();
             data.KhachHangs.DeleteOnSubmit(sp);
             data.SubmitChanges();
 
@@ -155,7 +148,7 @@ namespace kthp
                 dcKTHPDataContext data = new dcKTHPDataContext();
 
                 var listKhachHang = from khachhang in data.KhachHangs
-                                    select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
+                                    select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi };
 
                 dgwKhachHang.DataSource = listKhachHang;
                 ConfigureSP();
@@ -170,7 +163,7 @@ namespace kthp
             dcKTHPDataContext data = new dcKTHPDataContext();
 
             var listKhachHang = from khachhang in data.KhachHangs
-                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi};
+                                select new { khachhang.MaKhachHang, khachhang.TenKhachHang, khachhang.GioiTinh, khachhang.SDT, khachhang.DiaChi };
 
             dgwKhachHang.DataSource = listKhachHang;
             ConfigureSP();

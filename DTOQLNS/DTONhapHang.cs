@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTOQLNS
+﻿namespace DTOQLNS
 {
     public class DTONhapHang
     {
@@ -55,11 +49,11 @@ namespace DTOQLNS
 
         public DTONhapHang(string maNhapHang, string tenNhanVien, string ngayNhap, string gioNhap, float donGia)
         {
-            _MaNhapHang= maNhapHang;
-            _TenNhanVien= tenNhanVien;
-            _NgayNhap= ngayNhap;
-            _GioNhap= gioNhap;
-            _DonGia= donGia;
+            _MaNhapHang = maNhapHang;
+            _TenNhanVien = tenNhanVien;
+            _NgayNhap = ngayNhap;
+            _GioNhap = gioNhap;
+            _DonGia = donGia;
         }
     }
     public class DTOChiTietNhapHang

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTOQLNS;
-using BLLQLNS;
 
 namespace kthp
 {
@@ -164,7 +156,7 @@ namespace kthp
             lblMucLon.Text = lblTrangChu.Text.ToUpper();
 
             lblNgayHienTaiValue.Text = DateTime.Now.ToString("dd-MM-yyyy");
-            lblTenDangNhap.Text = tenDangNhap;       
+            lblTenDangNhap.Text = tenDangNhap;
         }
     }
 }

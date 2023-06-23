@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BLLQLNS;
-using DTOQLNS;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace kthp
@@ -24,7 +16,7 @@ namespace kthp
             this.cTHD_MaHoaDon = cTHD_MaHoaDon;
         }
 
-        
+
 
         private void crw_HoaDon_Load(object sender, EventArgs e)
         {

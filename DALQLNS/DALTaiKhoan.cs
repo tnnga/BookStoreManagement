@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTOQLNS;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTOQLNS;
 
 namespace DALQLNS
 {
@@ -146,7 +142,7 @@ namespace DALQLNS
                 DataTable dt = new DataTable();
 
                 da.Fill(dt);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     cmd.Dispose();
                     return true;

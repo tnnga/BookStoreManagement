@@ -1,16 +1,7 @@
 ﻿using BLLQLNS;
 using DTOQLNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace kthp
 {
@@ -49,7 +40,7 @@ namespace kthp
             string[] luaChonTimKiem = { "Tên sách", "Mã sách" };
             cbTimKiem.Items.AddRange(luaChonTimKiem);
 
-            string[] loaiSach = { "Toán học", "Kinh tế", "Lịch sử", "Khoa học", "Thể thao"};
+            string[] loaiSach = { "Toán học", "Kinh tế", "Lịch sử", "Khoa học", "Thể thao" };
             cbLoaiSach.Items.AddRange(loaiSach);
 
             dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
@@ -60,16 +51,16 @@ namespace kthp
         {
             frmSanPhamThemMoi frmSanPhamThemMoi = new frmSanPhamThemMoi();
             frmSanPhamThemMoi.ShowDialog();
-            
+
             dgwSanPham.DataSource = bLLSanPham.SelectSanPham();
-            ConfigureSP();     
+            ConfigureSP();
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
             if (cbTimKiem.SelectedIndex == 0)
             {
-                sp = new DTOSanPham( "", txtTimKiem.Text, 0, 0, "", "");
+                sp = new DTOSanPham("", txtTimKiem.Text, 0, 0, "", "");
                 dgwSanPham.DataSource = bLLSanPham.FindTenSanPham(sp);
                 ConfigureSP();
             }
@@ -79,7 +70,7 @@ namespace kthp
                 dgwSanPham.DataSource = bLLSanPham.FindMaSanPham(sp);
                 ConfigureSP();
             }
-            if (cbLoaiSach.SelectedIndex != -1 && txtTimKiem.Text == "" )
+            if (cbLoaiSach.SelectedIndex != -1 && txtTimKiem.Text == "")
             {
                 sp = new DTOSanPham("", "", 0, 0, cbLoaiSach.Text, "");
                 dgwSanPham.DataSource = bLLSanPham.PhanLoaiSanPham(sp);
@@ -106,7 +97,7 @@ namespace kthp
             loaiSach = dgwSanPham.Rows[rowIndex].Cells[4].Value.ToString().Trim();
             noiDungChinh = dgwSanPham.Rows[rowIndex].Cells[5].Value.ToString().Trim();
 
-            frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, giaTien, soLuong, loaiSach,noiDungChinh);
+            frmSanPhamChiTiet frmSanPhamChiTiet = new frmSanPhamChiTiet(maSach, tenSach, giaTien, soLuong, loaiSach, noiDungChinh);
             frmSanPhamChiTiet.ShowDialog();
         }
 

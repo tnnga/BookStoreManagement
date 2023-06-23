@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BLLQLNS;
+﻿using BLLQLNS;
 using DTOQLNS;
+using System;
+using System.Windows.Forms;
 
 
 namespace kthp
@@ -24,7 +17,7 @@ namespace kthp
 
         BLLSanPham bLLSanPham = new BLLSanPham();
         DTOSanPham dTOSanPham = null;
-        
+
         public frmSanPhamCapNhat(string maSach, string tenSach, int giaTien, int soLuong, string loaiSach, string noiDungChinh)
         {
             InitializeComponent();
